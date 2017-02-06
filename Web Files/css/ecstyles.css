@@ -38,11 +38,6 @@
             padding: 30px;
         }
         
-        .intro {
-            position: relative;
-            z-index: 2;
-        }
-        
         .blanket {
             position: absolute;
             left: 0;
@@ -143,6 +138,12 @@
             background-color: #005F83;
             border-radius: 5px;
             margin: 1%;
+            position: relative;
+            z-index: 0;
+        }
+        
+        #courseInfo h1.focus {
+            z-index: 2;
         }
         
         #courseInfo h2 {

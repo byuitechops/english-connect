@@ -19,10 +19,15 @@
             overlay = document.querySelector('.overlay');
             if (overlay.getAttribute('class') == 'overlay noblanket') {
                 overlay.setAttribute('class', 'overlay blanket');
+                document.querySelector('body').style = 'overflow:hidden';
+                document.querySelector('.focus').style = 'z-index:2';
             } else {
                 overlay.setAttribute('class', 'overlay noblanket');
+                document.querySelector('body').style = 'overflow:scroll-y';
+                document.querySelector('.focus').style = 'z-index:0';
             }
         }
+
     </script>
     <meta charset="utf-8">
     <title>English Connect | Home</title>
@@ -48,13 +53,11 @@
                     </div>
                 </div>
                 <div id="courseInfo">
-                    <h1 class="dark done">Course Information</h1>
+                    <h1 class="dark focus" onclick="toggleGray()">Course Information</h1>
                     <a href="#awards" onclick="toggleAwards()">
                         <h2 class="dark hover">Awards</h2>
                     </a>
-                    <a onclick="toggleGray()">
-                        <h2 class="dark help">Help</h2>
-                    </a>
+                    <h2 class="dark help">Help</h2>
                 </div>
             </div>
             <div id='courses'>
