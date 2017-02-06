@@ -1,0 +1,413 @@
+        /*        Document Styles*/
+        
+        @import url('https://fonts.googleapis.com/css?family=Open+Sans');
+        * {
+            font-family: 'Open Sans', sans-serif;
+            font-weight: 100;
+            color: #333333;
+        }
+        
+        body {
+            background-color: #ffffff;
+        }
+        
+        .center {
+            max-width: 960px;
+            margin: auto;
+        }
+        
+        .dark {
+            background-color: #005F83;
+            color: #FFF;
+        }
+        
+        #banner {
+            padding: 2px 10px 5px;
+            margin: 0;
+            font-size: 1.2em;
+        }
+        
+        #banner a:visited,
+        #banner a:link {
+            color: #ffffff;
+        }
+        
+        #main {
+            border: solid 1px #ddd;
+            padding: 30px;
+        }
+        /*        Header Info*/
+        
+        .remove {
+            font-size: 0em;
+        }
+        
+        .reset {
+            font-size: initial;
+        }
+        
+        #studentInfo {
+            font-size: initial;
+            display: inline-block;
+            width: 49%;
+            vertical-align: top;
+            margin-left: 1%;
+        }
+        
+        #studentInfo h2 {
+            margin: 0 10px 5px;
+            color: #005F83;
+        }
+        
+        #name {
+            display: inline-block;
+        }
+        
+        #edit {
+            display: inline-block;
+            height: 1.2em;
+            vertical-align: baseline;
+        }
+        
+        #test:after {
+            content: "";
+            background-image: url(../images/edit.png);
+            background-size: 1.1em 1.1em;
+            width: 1.1em;
+            height: 1.1em;
+            display: inline-block;
+            vertical-align: baseline;
+        }
+        
+        #key {
+            margin-left: 10px;
+        }
+        
+        #key h3 {
+            display: inline-block;
+            font-size: 1em;
+            vertical-align: middle;
+            margin: 0 10px 0 0;
+        }
+        
+        .square:before {
+            font-size: 1.55em;
+            content: "■ ";
+        }
+        
+        .square.master:before {
+            color: #005F83;
+        }
+        
+        .square.prog:before {
+            color: #FFB81C;
+        }
+        
+        .square.todo:before {
+            color: #6BA539;
+        }
+        
+        #courseInfo {
+            display: inline-block;
+            width: 30%;
+            height: 90px;
+            vertical-align: top;
+            text-align: center;
+            font-size: 0;
+        }
+        
+        #courseInfo h1 {
+            font-size: 16pt;
+            padding: 20px;
+            background-color: #005F83;
+            border-radius: 5px;
+            margin: 1%;
+        }
+        
+        #courseInfo h2 {
+            font-size: initial;
+            display: inline-block;
+            width: 46%;
+            margin: 1%;
+            border-radius: 5px;
+            padding: 5px 1%;
+            background-color: #6BA539;
+        }
+        
+        #courseInfo .help {
+            background-color: #BC242D;
+        }
+        
+        #profilePic {
+            width: 20%;
+        }
+        /*        Courses Area           */
+        
+        #courses {
+            margin-top: 40px;
+        }
+        
+        .course {
+            margin-top: 40px;
+            font-size: 0;
+        }
+        
+        .course h3 {
+            vertical-align: middle;
+            margin: 5px 0;
+            display: inline-block;
+            width: 20%;
+            font-size: 16pt;
+        }
+        
+        .progress {
+            vertical-align: middle;
+            font-size: initial;
+            display: inline-block;
+            width: 80%;
+            background-color: #ddd;
+            border-radius: 5px;
+            text-align: left;
+            margin-bottom: 8px;
+        }
+        
+        .progress h4 {
+            margin: 0;
+            color: #FFF;
+            padding: 0px 10px;
+        }
+        
+        .bar {
+            min-width: 160px;
+            width: 30%;
+            background-color: #005F83;
+            border-radius: 5px 0 0 5px;
+            padding: 3px;
+        }
+        
+        .container {
+            background-color: #ddd;
+            border-radius: 10px;
+            padding: 1%;
+            font-size: 0em;
+        }
+        
+        .tile {
+            display: inline-block;
+            width: 23%;
+            margin: 1%;
+            color: #005F83;
+            padding: 0;
+            font-size: 0em;
+            border-radius: 10px;
+            transition: .1s;
+        }
+        
+        .tile:hover {
+            box-shadow: 0 0 10px #b3b8bc;
+            transform: scale(1.05);
+            transition: .1s;
+        }
+        
+        .hover:hover {
+            box-shadow: 0 0 10px #b3b8bc;
+            transition: .1s;
+        }
+        
+        .label {
+            display: inline-block;
+            position: relative;
+            width: 85%;
+            background-color: #FFF;
+            margin: 0;
+            height: 100px;
+            border-radius: 0 5px 5px 0;
+            vertical-align: top;
+        }
+        
+        .tile h3 {
+            text-align: center;
+            width: 80%;
+            font-size: initial;
+            position: absolute;
+            margin: 0;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        
+        .color {
+            display: inline-block;
+            width: 15%;
+            background-color: #6BA539;
+            height: 100px;
+            margin: auto;
+            border-radius: 5px 0 0 5px;
+        }
+        /*Topics Page Styles*/
+        
+        #topics .progress {
+            display: block;
+            width: auto;
+            margin-bottom: 20px;
+        }
+        
+        svg {
+            margin-bottom: 30px;
+        }
+        
+        svg path,
+        svg polygon {
+            fill: #6BA539;
+            stroke: white;
+            stroke-width: 5px;
+        }
+        
+        svg text {
+            fill: #FFF;
+            font-size: 12pt;
+        }
+        
+        .overview {
+            width: 75%;
+            margin: 0 0 20px;
+            display: inline-block
+        }
+        
+        .helps {
+            width: 21%;
+            margin: 0 0 0 4%;
+            display: inline-block;
+            vertical-align: top;
+        }
+        /*Practices Page Styles*/
+        
+        #practices svg {
+            margin-bottom: 5px;
+        }
+        
+        .overview h1 {
+            border: solid #A2AAAD;
+            border-width: 0 0 3px 0;
+            margin: 0;
+        }
+        
+        #learnosity {
+            padding: 10px;
+            border: solid #A2AAAD 3px;
+            border-radius: 5px;
+            margin: 20px 0 20px;
+        }
+        
+        .button {
+            background-color: #005F83;
+            text-decoration: none;
+            color: #FFF;
+            padding: 10px;
+            display: block;
+            border-radius: 5px;
+            text-align: center;
+            margin: 10px 0px;
+        }
+        
+        .st0 {
+            fill: #7C7C7C;
+        }
+        
+        .st1 {
+            fill: #B2B2B2;
+        }
+        
+        .st2 {
+            fill: #CCCCCC;
+        }
+        
+        .st3 {
+            fill: #005F83;
+        }
+        
+        .st4 {
+            fill: #EDAD2E;
+        }
+        
+        .st5 {
+            fill: #FFDE9C;
+        }
+        
+        #overlay {
+            position: fixed;
+            padding: 10vh 10vw;
+            top: 0;
+            left: 0;
+            width: 80vw;
+            height: 80vh;
+        }
+        
+        #overlay.visible {
+            background-color: rgba(0, 0, 0, .9);
+            transition: .3s;
+            z-index: 1;
+        }
+        
+        #overlay.hidden svg {
+            width: 0;
+        }
+        
+        #overlay.hidden {
+            height: 0;
+            transition: .3s;
+            z-index: -1;
+        }
+        
+        #awards {
+            background-color: #ffffff;
+            height: 100%;
+            border-radius: 10px;
+        }
+        
+        #awards svg path {
+            stroke: none;
+        }
+        
+        #awards svg {
+            width: 70px;
+            margin: 1%;
+            transition: .3s;
+        }
+        
+        #awards svg g g {
+            transform-origin: center;
+            transition: .1s;
+        }
+        
+        #awards svg g g:hover {
+            transform: scale(1.1);
+            transition: .1s;
+        }
+        /* Styles for mobile */
+        
+        @media (max-width: 800px) {
+            .tile {
+                display: inline-block;
+                width: 48%;
+                margin: 1%;
+                color: #005F83;
+                padding: 0;
+                font-size: 0em;
+                border-radius: 10px;
+                transition: .1s;
+            }
+            #studentInfo {
+                width: 79%;
+                margin-left: 1%;
+                margin-bottom: 20px;
+            }
+            #courseInfo {
+                display: block;
+                width: initial;
+            }
+            .progress {
+                width: 100%;
+                margin-bottom: 15px;
+            }
+        }
