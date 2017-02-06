@@ -14,6 +14,15 @@
             }
         }
 
+        function toggleGray() {
+
+            overlay = document.querySelector('.overlay');
+            if (overlay.getAttribute('class') == 'overlay noblanket') {
+                overlay.setAttribute('class', 'overlay blanket');
+            } else {
+                overlay.setAttribute('class', 'overlay noblanket');
+            }
+        }
     </script>
     <meta charset="utf-8">
     <title>English Connect | Home</title>
@@ -31,7 +40,7 @@
                     <h2 id="name">Sofia Nagiliatti</h2>
                     <a id="test" href="https://pathway.brightspace.com/d2l/lp/profile/profile_edit.d2l?ou=9125" target="_blank"></a>
                     <h2 id="profLevel">Proficiency Level: Intermediate Mid</h2>
-                    <h2 id="gathering Location">Gathering Location: Sao Pauo, Brazil</h2>
+                    <h2 id="gathering Location">Gathering Location: Sao Paulo, Brazil</h2>
                     <div id="key">
                         <h3 class="square todo">TO DO</h3>
                         <h3 class="square prog">IN PROGRESS</h3>
@@ -39,11 +48,13 @@
                     </div>
                 </div>
                 <div id="courseInfo">
-                    <h1 class="dark">Course Information</h1>
+                    <h1 class="dark done">Course Information</h1>
                     <a href="#awards" onclick="toggleAwards()">
                         <h2 class="dark hover">Awards</h2>
                     </a>
-                    <h2 class="dark help">Help</h2>
+                    <a onclick="toggleGray()">
+                        <h2 class="dark help">Help</h2>
+                    </a>
                 </div>
             </div>
             <div id='courses'>
@@ -337,6 +348,7 @@
             </div>
         </div>
     </div>
+    <div class="overlay noblanket"></div>
 </body>
 
 </html>
