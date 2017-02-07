@@ -319,6 +319,19 @@
     <div id="overlay" class="hidden"></div>
     <p>
         <script>
+            var token = new XMLHttpRequest();
+            token.open("GET", "https://pathway.brightspace.com/d2l/auth/api/token");
+            token.onload = function(e) {
+                console.log(token.status);
+                if (token.status == 302) {
+                    var response = JSON.parse(token.response);
+                    console.log(response);
+                } else {
+                    console.log(e);
+                }
+            }
+            profile.send();
+
             var profile = new XMLHttpRequest();
             profile.open("GET", "https://pathway.brightspace.com/d2l/api/lp/1.15/profile/myProfile");
             profile.onload = function(e) {
