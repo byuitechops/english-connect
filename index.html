@@ -6,28 +6,33 @@
     <script>
         /* valence('getFinalGrade', e => { console.log(e) })*/
         function toggleAwards() {
-            overlay = document.getElementById('overlay');
-            if (overlay.getAttribute('class') == 'hidden') {
-                overlay.setAttribute('class', 'visible')
+            toggleGray();
+            var awards = document.querySelector('#awards');
+            if (awards.getAttribute('class') == 'hidden remove') {
+                awards.setAttribute('class', 'visible remove');
             } else {
-                overlay.setAttribute('class', 'hidden')
+                awards.setAttribute('class', 'hidden remove');
+            }
+        }
+
+        function togglePreview() {
+            toggleGray();
+            var button = document.querySelector('#courseInfo h1');
+            if (button.style['zIndex'] == 2) {
+                button.style = "z-index: 0";
+            } else {
+                button.style = "z-index: 2";
             }
         }
 
         function toggleGray() {
-
-            overlay = document.querySelector('.overlay');
-            if (overlay.getAttribute('class') == 'overlay noblanket') {
-                overlay.setAttribute('class', 'overlay blanket');
-                document.querySelector('body').style = 'overflow:hidden';
-                document.querySelector('.focus').style = 'z-index:2';
+            var overlay = document.querySelector('#overlay');
+            if (overlay.getAttribute('class') == 'hidden') {
+                overlay.setAttribute('class', 'visible');
             } else {
-                overlay.setAttribute('class', 'overlay noblanket');
-                document.querySelector('body').style = 'overflow:scroll-y';
-                document.querySelector('.focus').style = 'z-index:0';
+                overlay.setAttribute('class', 'hidden');
             }
         }
-
     </script>
     <meta charset="utf-8">
     <title>English Connect | Home</title>
@@ -36,14 +41,14 @@
 
 <body id="home">
     <div class="center">
-        <h1>English Connect</h1>
+        <h1>English Connect | Intermediate</h1>
         <h2 class="dark" id="banner">Home</h2>
         <div id='main'>
             <div id='header' class="remove">
                 <img id="profilePic" src="Web%20Files/images/SudentInfo.jpg">
                 <div id="studentInfo">
                     <h2 id="name">Sofia Nagiliatti</h2>
-                    <a id="test" href="https://pathway.brightspace.com/d2l/lp/profile/profile_edit.d2l?ou=9125" target="_blank"></a>
+                    <a id="edit" href="https://pathway.brightspace.com/d2l/lp/profile/profile_edit.d2l?ou=9125" target="_blank"></a>
                     <h2 id="profLevel">Proficiency Level: Intermediate Mid</h2>
                     <h2 id="gathering Location">Gathering Location: Sao Paulo, Brazil</h2>
                     <div id="key">
@@ -53,11 +58,11 @@
                     </div>
                 </div>
                 <div id="courseInfo">
-                    <h1 class="dark focus" onclick="toggleGray()">Course Information</h1>
-                    <a href="#awards" onclick="toggleAwards()">
-                        <h2 class="dark hover">Awards</h2>
+                    <h1 class="dark focus button" onclick="togglePreview()" style="z-index: 0">Course Information</h1>
+                    <a onclick="toggleAwards()">
+                        <h2 class="dark button">Awards</h2>
                     </a>
-                    <h2 class="dark help">Help</h2>
+                    <h2 class="dark help button">Help</h2>
                 </div>
             </div>
             <div id='courses'>
@@ -230,128 +235,87 @@
                     </div>
                 </div>
             </div>
-            <div id="overlay" class="hidden" onclick="toggleAwards()">
-                <div id="awards" onclick=null>
+            <div id="awards" class="hidden remove" onclick="toggleAwards()">
+                <div class="awardHeader reset">
                     <svg version="1.1" id="badges" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 10 10" style="enable-background:new 0 0 10 10;" xml:space="preserve">
-                    <g id="inactive">
-                        <circle id="background_1_" class="st0" cx="5" cy="5" r="5"/>
-                        <g id="shield_1_">
-                            <path id="XMLID_5_" class="st1" d="M8.2,3.2C8,3.2,7.8,3.2,7.7,3.2c-1,0-1.9-0.3-2.7-0.9v6C6.9,7.8,8.3,6.1,8.3,4C8.3,3.7,8.3,3.4,8.2,3.2z"/>
-                            <path id="XMLID_7_" class="st2" d="M2.3,3.2c-0.2,0-0.3,0-0.5-0.1C1.7,3.4,1.7,3.7,1.7,4c0,2.1,1.4,3.8,3.3,4.4v-6C4.3,2.9,3.3,3.2,2.3,3.2z"/>
+                        <g id="inactive">
+                            <circle id="background_1_" class="st0" cx="5" cy="5" r="5"/>
+                            <g id="shield_1_">
+                                <path id="XMLID_5_" class="st1" d="M8.2,3.2C8,3.2,7.8,3.2,7.7,3.2c-1,0-1.9-0.3-2.7-0.9v6C6.9,7.8,8.3,6.1,8.3,4C8.3,3.7,8.3,3.4,8.2,3.2z"/>
+                                <path id="XMLID_7_" class="st2" d="M2.3,3.2c-0.2,0-0.3,0-0.5-0.1C1.7,3.4,1.7,3.7,1.7,4c0,2.1,1.4,3.8,3.3,4.4v-6C4.3,2.9,3.3,3.2,2.3,3.2z"/>
+                            </g>
                         </g>
-                    </g>
-                    <g id="active1" >
-                        <circle id="background" class="st3" cx="5" cy="5" r="5"/>
-                        <g id="shield" class = "badgeHover">
-                            <path id="XMLID_9_" class="st4" d="M8.2,3.2C8,3.2,7.8,3.2,7.7,3.2c-1,0-1.9-0.3-2.7-0.9v6C6.9,7.8,8.3,6.1,8.3,4C8.3,3.7,8.3,3.4,8.2,3.2z"/>
-                            <path id="XMLID_8_" class="st5" d="M2.3,3.2c-0.2,0-0.3,0-0.5-0.1C1.7,3.4,1.7,3.7,1.7,4c0,2.1,1.4,3.8,3.3,4.4v-6C4.3,2.9,3.3,3.2,2.3,3.2z"/>
+                        <g id="active1" >
+                            <circle id="background" class="st3" cx="5" cy="5" r="5"/>
+                            <g id="shield" class = "badgeHover">
+                                <path id="XMLID_9_" class="st4" d="M8.2,3.2C8,3.2,7.8,3.2,7.7,3.2c-1,0-1.9-0.3-2.7-0.9v6C6.9,7.8,8.3,6.1,8.3,4C8.3,3.7,8.3,3.4,8.2,3.2z"/>
+                                <path id="XMLID_8_" class="st5" d="M2.3,3.2c-0.2,0-0.3,0-0.5-0.1C1.7,3.4,1.7,3.7,1.7,4c0,2.1,1.4,3.8,3.3,4.4v-6C4.3,2.9,3.3,3.2,2.3,3.2z"/>
+                            </g>
                         </g>
-                    </g>
-                </svg>
-                    <svg version="1.1" id="badges" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 10 10" style="enable-background:new 0 0 10 10;" xml:space="preserve">
-                    <g id="inactive">
-                        <circle id="background_1_" class="st0" cx="5" cy="5" r="5"/>
-                        <g id="shield_1_">
-                            <path id="XMLID_5_" class="st1" d="M8.2,3.2C8,3.2,7.8,3.2,7.7,3.2c-1,0-1.9-0.3-2.7-0.9v6C6.9,7.8,8.3,6.1,8.3,4C8.3,3.7,8.3,3.4,8.2,3.2z"/>
-                            <path id="XMLID_7_" class="st2" d="M2.3,3.2c-0.2,0-0.3,0-0.5-0.1C1.7,3.4,1.7,3.7,1.7,4c0,2.1,1.4,3.8,3.3,4.4v-6C4.3,2.9,3.3,3.2,2.3,3.2z"/>
-                        </g>
-                    </g>
                     </svg>
+                    <h2 class="button">Reading Badges</h2>
+                </div>
+                <div class="awardHeader reset">
                     <svg version="1.1" id="badges" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 10 10" style="enable-background:new 0 0 10 10;" xml:space="preserve">
-                    <g id="inactive">
-                        <circle id="background_1_" class="st0" cx="5" cy="5" r="5"/>
-                        <g id="shield_1_">
-                            <path id="XMLID_5_" class="st1" d="M8.2,3.2C8,3.2,7.8,3.2,7.7,3.2c-1,0-1.9-0.3-2.7-0.9v6C6.9,7.8,8.3,6.1,8.3,4C8.3,3.7,8.3,3.4,8.2,3.2z"/>
-                            <path id="XMLID_7_" class="st2" d="M2.3,3.2c-0.2,0-0.3,0-0.5-0.1C1.7,3.4,1.7,3.7,1.7,4c0,2.1,1.4,3.8,3.3,4.4v-6C4.3,2.9,3.3,3.2,2.3,3.2z"/>
+                        <g id="inactive">
+                            <circle id="background_1_" class="st0" cx="5" cy="5" r="5"/>
+                            <g id="shield_1_">
+                                <path id="XMLID_5_" class="st1" d="M8.2,3.2C8,3.2,7.8,3.2,7.7,3.2c-1,0-1.9-0.3-2.7-0.9v6C6.9,7.8,8.3,6.1,8.3,4C8.3,3.7,8.3,3.4,8.2,3.2z"/>
+                                <path id="XMLID_7_" class="st2" d="M2.3,3.2c-0.2,0-0.3,0-0.5-0.1C1.7,3.4,1.7,3.7,1.7,4c0,2.1,1.4,3.8,3.3,4.4v-6C4.3,2.9,3.3,3.2,2.3,3.2z"/>
+                            </g>
                         </g>
-                    </g>
+                            <g id="active1" >
+                            <circle id="background" class="st3" cx="5" cy="5" r="5"/>
+                            <g id="shield" class = "badgeHover">
+                                <path id="XMLID_9_" class="st4" d="M8.2,3.2C8,3.2,7.8,3.2,7.7,3.2c-1,0-1.9-0.3-2.7-0.9v6C6.9,7.8,8.3,6.1,8.3,4C8.3,3.7,8.3,3.4,8.2,3.2z"/>
+                                <path id="XMLID_8_" class="st5" d="M2.3,3.2c-0.2,0-0.3,0-0.5-0.1C1.7,3.4,1.7,3.7,1.7,4c0,2.1,1.4,3.8,3.3,4.4v-6C4.3,2.9,3.3,3.2,2.3,3.2z"/>
+                            </g>
+                        </g>
                     </svg>
+                    <h2 class="button">Writing Badges</h2>
+                </div>
+                <div class="awardHeader reset">
                     <svg version="1.1" id="badges" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 10 10" style="enable-background:new 0 0 10 10;" xml:space="preserve">
-                    <g id="inactive">
-                        <circle id="background_1_" class="st0" cx="5" cy="5" r="5"/>
-                        <g id="shield_1_">
-                            <path id="XMLID_5_" class="st1" d="M8.2,3.2C8,3.2,7.8,3.2,7.7,3.2c-1,0-1.9-0.3-2.7-0.9v6C6.9,7.8,8.3,6.1,8.3,4C8.3,3.7,8.3,3.4,8.2,3.2z"/>
-                            <path id="XMLID_7_" class="st2" d="M2.3,3.2c-0.2,0-0.3,0-0.5-0.1C1.7,3.4,1.7,3.7,1.7,4c0,2.1,1.4,3.8,3.3,4.4v-6C4.3,2.9,3.3,3.2,2.3,3.2z"/>
+                        <g id="inactive">
+                            <circle id="background_1_" class="st0" cx="5" cy="5" r="5"/>
+                            <g id="shield_1_">
+                                <path id="XMLID_5_" class="st1" d="M8.2,3.2C8,3.2,7.8,3.2,7.7,3.2c-1,0-1.9-0.3-2.7-0.9v6C6.9,7.8,8.3,6.1,8.3,4C8.3,3.7,8.3,3.4,8.2,3.2z"/>
+                                <path id="XMLID_7_" class="st2" d="M2.3,3.2c-0.2,0-0.3,0-0.5-0.1C1.7,3.4,1.7,3.7,1.7,4c0,2.1,1.4,3.8,3.3,4.4v-6C4.3,2.9,3.3,3.2,2.3,3.2z"/>
+                            </g>
                         </g>
-                    </g>
-                </svg>
-                    <svg version="1.1" id="badges" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 10 10" style="enable-background:new 0 0 10 10;" xml:space="preserve">
-                    <g id="inactive">
-                        <circle id="background_1_" class="st0" cx="5" cy="5" r="5"/>
-                        <g id="shield_1_">
-                            <path id="XMLID_5_" class="st1" d="M8.2,3.2C8,3.2,7.8,3.2,7.7,3.2c-1,0-1.9-0.3-2.7-0.9v6C6.9,7.8,8.3,6.1,8.3,4C8.3,3.7,8.3,3.4,8.2,3.2z"/>
-                            <path id="XMLID_7_" class="st2" d="M2.3,3.2c-0.2,0-0.3,0-0.5-0.1C1.7,3.4,1.7,3.7,1.7,4c0,2.1,1.4,3.8,3.3,4.4v-6C4.3,2.9,3.3,3.2,2.3,3.2z"/>
+                            <g id="active1" >
+                            <circle id="background" class="st3" cx="5" cy="5" r="5"/>
+                            <g id="shield" class = "badgeHover">
+                                <path id="XMLID_9_" class="st4" d="M8.2,3.2C8,3.2,7.8,3.2,7.7,3.2c-1,0-1.9-0.3-2.7-0.9v6C6.9,7.8,8.3,6.1,8.3,4C8.3,3.7,8.3,3.4,8.2,3.2z"/>
+                                <path id="XMLID_8_" class="st5" d="M2.3,3.2c-0.2,0-0.3,0-0.5-0.1C1.7,3.4,1.7,3.7,1.7,4c0,2.1,1.4,3.8,3.3,4.4v-6C4.3,2.9,3.3,3.2,2.3,3.2z"/>
+                            </g>
                         </g>
-                    </g>
-                </svg>
-                    <svg version="1.1" id="badges" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 10 10" style="enable-background:new 0 0 10 10;" xml:space="preserve">
-                    <g id="inactive">
-                        <circle id="background_1_" class="st0" cx="5" cy="5" r="5"/>
-                        <g id="shield_1_">
-                            <path id="XMLID_5_" class="st1" d="M8.2,3.2C8,3.2,7.8,3.2,7.7,3.2c-1,0-1.9-0.3-2.7-0.9v6C6.9,7.8,8.3,6.1,8.3,4C8.3,3.7,8.3,3.4,8.2,3.2z"/>
-                            <path id="XMLID_7_" class="st2" d="M2.3,3.2c-0.2,0-0.3,0-0.5-0.1C1.7,3.4,1.7,3.7,1.7,4c0,2.1,1.4,3.8,3.3,4.4v-6C4.3,2.9,3.3,3.2,2.3,3.2z"/>
-                        </g>
-                    </g>
                     </svg>
+                    <h2 class="button">Speaking Badges</h2>
+                </div>
+                <div class="awardHeader reset">
                     <svg version="1.1" id="badges" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 10 10" style="enable-background:new 0 0 10 10;" xml:space="preserve">
-                    <g id="inactive">
-                        <circle id="background_1_" class="st0" cx="5" cy="5" r="5"/>
-                        <g id="shield_1_">
-                            <path id="XMLID_5_" class="st1" d="M8.2,3.2C8,3.2,7.8,3.2,7.7,3.2c-1,0-1.9-0.3-2.7-0.9v6C6.9,7.8,8.3,6.1,8.3,4C8.3,3.7,8.3,3.4,8.2,3.2z"/>
-                            <path id="XMLID_7_" class="st2" d="M2.3,3.2c-0.2,0-0.3,0-0.5-0.1C1.7,3.4,1.7,3.7,1.7,4c0,2.1,1.4,3.8,3.3,4.4v-6C4.3,2.9,3.3,3.2,2.3,3.2z"/>
+                        <g id="inactive">
+                            <circle id="background_1_" class="st0" cx="5" cy="5" r="5"/>
+                            <g id="shield_1_">
+                                <path id="XMLID_5_" class="st1" d="M8.2,3.2C8,3.2,7.8,3.2,7.7,3.2c-1,0-1.9-0.3-2.7-0.9v6C6.9,7.8,8.3,6.1,8.3,4C8.3,3.7,8.3,3.4,8.2,3.2z"/>
+                                <path id="XMLID_7_" class="st2" d="M2.3,3.2c-0.2,0-0.3,0-0.5-0.1C1.7,3.4,1.7,3.7,1.7,4c0,2.1,1.4,3.8,3.3,4.4v-6C4.3,2.9,3.3,3.2,2.3,3.2z"/>
+                            </g>
                         </g>
-                    </g>
+                            <g id="active1" >
+                            <circle id="background" class="st3" cx="5" cy="5" r="5"/>
+                            <g id="shield" class = "badgeHover">
+                                <path id="XMLID_9_" class="st4" d="M8.2,3.2C8,3.2,7.8,3.2,7.7,3.2c-1,0-1.9-0.3-2.7-0.9v6C6.9,7.8,8.3,6.1,8.3,4C8.3,3.7,8.3,3.4,8.2,3.2z"/>
+                                <path id="XMLID_8_" class="st5" d="M2.3,3.2c-0.2,0-0.3,0-0.5-0.1C1.7,3.4,1.7,3.7,1.7,4c0,2.1,1.4,3.8,3.3,4.4v-6C4.3,2.9,3.3,3.2,2.3,3.2z"/>
+                            </g>
+                        </g>
                     </svg>
-                    <svg version="1.1" id="badges" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 10 10" style="enable-background:new 0 0 10 10;" xml:space="preserve">
-                    <g id="inactive">
-                        <circle id="background_1_" class="st0" cx="5" cy="5" r="5"/>
-                        <g id="shield_1_">
-                            <path id="XMLID_5_" class="st1" d="M8.2,3.2C8,3.2,7.8,3.2,7.7,3.2c-1,0-1.9-0.3-2.7-0.9v6C6.9,7.8,8.3,6.1,8.3,4C8.3,3.7,8.3,3.4,8.2,3.2z"/>
-                            <path id="XMLID_7_" class="st2" d="M2.3,3.2c-0.2,0-0.3,0-0.5-0.1C1.7,3.4,1.7,3.7,1.7,4c0,2.1,1.4,3.8,3.3,4.4v-6C4.3,2.9,3.3,3.2,2.3,3.2z"/>
-                        </g>
-                    </g>
-                    </svg>
-                    <svg version="1.1" id="badges" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 10 10" style="enable-background:new 0 0 10 10;" xml:space="preserve">
-                    <g id="inactive">
-                        <circle id="background_1_" class="st0" cx="5" cy="5" r="5"/>
-                        <g id="shield_1_">
-                            <path id="XMLID_5_" class="st1" d="M8.2,3.2C8,3.2,7.8,3.2,7.7,3.2c-1,0-1.9-0.3-2.7-0.9v6C6.9,7.8,8.3,6.1,8.3,4C8.3,3.7,8.3,3.4,8.2,3.2z"/>
-                            <path id="XMLID_7_" class="st2" d="M2.3,3.2c-0.2,0-0.3,0-0.5-0.1C1.7,3.4,1.7,3.7,1.7,4c0,2.1,1.4,3.8,3.3,4.4v-6C4.3,2.9,3.3,3.2,2.3,3.2z"/>
-                        </g>
-                    </g>
-                    </svg>
-                    <svg version="1.1" id="badges" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 10 10" style="enable-background:new 0 0 10 10;" xml:space="preserve">
-                    <g id="inactive">
-                        <circle id="background_1_" class="st0" cx="5" cy="5" r="5"/>
-                        <g id="shield_1_">
-                            <path id="XMLID_5_" class="st1" d="M8.2,3.2C8,3.2,7.8,3.2,7.7,3.2c-1,0-1.9-0.3-2.7-0.9v6C6.9,7.8,8.3,6.1,8.3,4C8.3,3.7,8.3,3.4,8.2,3.2z"/>
-                            <path id="XMLID_7_" class="st2" d="M2.3,3.2c-0.2,0-0.3,0-0.5-0.1C1.7,3.4,1.7,3.7,1.7,4c0,2.1,1.4,3.8,3.3,4.4v-6C4.3,2.9,3.3,3.2,2.3,3.2z"/>
-                        </g>
-                    </g>
-                    </svg>
-                    <svg version="1.1" id="badges" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 10 10" style="enable-background:new 0 0 10 10;" xml:space="preserve">
-                    <g id="inactive">
-                        <circle id="background_1_" class="st0" cx="5" cy="5" r="5"/>
-                        <g id="shield_1_">
-                            <path id="XMLID_5_" class="st1" d="M8.2,3.2C8,3.2,7.8,3.2,7.7,3.2c-1,0-1.9-0.3-2.7-0.9v6C6.9,7.8,8.3,6.1,8.3,4C8.3,3.7,8.3,3.4,8.2,3.2z"/>
-                            <path id="XMLID_7_" class="st2" d="M2.3,3.2c-0.2,0-0.3,0-0.5-0.1C1.7,3.4,1.7,3.7,1.7,4c0,2.1,1.4,3.8,3.3,4.4v-6C4.3,2.9,3.3,3.2,2.3,3.2z"/>
-                        </g>
-                    </g>
-                </svg>
-                    <svg version="1.1" id="badges" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 10 10" style="enable-background:new 0 0 10 10;" xml:space="preserve">
-                    <g id="inactive">
-                        <circle id="background_1_" class="st0" cx="5" cy="5" r="5"/>
-                        <g id="shield_1_">
-                            <path id="XMLID_5_" class="st1" d="M8.2,3.2C8,3.2,7.8,3.2,7.7,3.2c-1,0-1.9-0.3-2.7-0.9v6C6.9,7.8,8.3,6.1,8.3,4C8.3,3.7,8.3,3.4,8.2,3.2z"/>
-                            <path id="XMLID_7_" class="st2" d="M2.3,3.2c-0.2,0-0.3,0-0.5-0.1C1.7,3.4,1.7,3.7,1.7,4c0,2.1,1.4,3.8,3.3,4.4v-6C4.3,2.9,3.3,3.2,2.3,3.2z"/>
-                        </g>
-                    </g>
-                </svg>
+                    <h2 class="button">Listening Badges</h2>
                 </div>
             </div>
         </div>
     </div>
-    <div class="overlay noblanket"></div>
+    <div id="overlay" class="hidden"></div>
 </body>
 
 </html>
