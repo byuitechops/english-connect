@@ -320,7 +320,7 @@
     <p>
         <script>
             var profile = new XMLHttpRequest();
-            profile.open("GET", "/d2l/api/lp/1.15/profile/myProfile");
+            profile.open("GET", "https://pathway.brightspace.com/d2l/api/lp/1.15/profile/myProfile");
             profile.onload = function(e) {
                 console.log(profile.status);
                 if (profile.status == 200) {
@@ -334,7 +334,7 @@
 
             //UserData
             var userData = new XMLHttpRequest();
-            userData.open("GET", "/d2l/api/lp/1.15/users/" + localStorage['Session.UserId']);
+            userData.open("GET", "https://pathway.brightspace.com/d2l/api/lp/1.15/users/" + localStorage['Session.UserId']);
             userData.onload = function(e) {
                 console.log(userData.status);
                 if (userData.status == 200) {
