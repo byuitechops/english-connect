@@ -33,6 +33,7 @@
                 overlay.setAttribute('class', 'hidden');
             }
         }
+
     </script>
     <meta charset="utf-8">
     <title>English Connect | Home</title>
@@ -316,6 +317,37 @@
         </div>
     </div>
     <div id="overlay" class="hidden"></div>
+    <p>
+        <script>
+            var profile = new XMLHttpRequest();
+            profile.open("GET", "/d2l/api/lp/1.15/profile/myProfile");
+            profile.onload = function(e) {
+                console.log(profile.status);
+                if (profile.status == 200) {
+                    var response = JSON.parse(profile.response);
+                    console.log(response);
+                } else {
+                    console.log(e);
+                }
+            }
+            profile.send();
+
+            //UserData
+            var userData = new XMLHttpRequest();
+            userData.open("GET", "/d2l/api/lp/1.15/users/" + localStorage['Session.UserId']);
+            userData.onload = function(e) {
+                console.log(userData.status);
+                if (userData.status == 200) {
+                    var response = JSON.parse(userData.response);
+                    console.log(response);
+                } else {
+                    console.log(e);
+                }
+            }
+            userData.send();
+
+        </script>
+    </p>
 </body>
 
 </html>
