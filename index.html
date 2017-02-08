@@ -37,8 +37,8 @@
             top.location = self.location.href;
             document.querySelector('body > div > div.d2l-popup-title').style = "display:none";
         }
-
     </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8">
     <title>EnglishConnect | Home</title>
     <link rel="stylesheet" type="text/css" href="Web%20Files/css/ecstyles.css">
@@ -56,7 +56,7 @@
                     <h2 id="name">Sofia Nagiliatti</h2>
                     <a id="edit" href="https://pathway.brightspace.com/d2l/lp/profile/profile_edit.d2l?ou=9125" target="_blank"></a>
                     <h2 id="profLevel">Proficiency Level: Intermediate Mid</h2>
-                    <h2 id="gatheringLocation">Gathering Location: Sao Paulo, Brazil</h2>
+                    <h2 id="gatheringLocation">Gathering Location: Not Added</h2>
                     <div id="key">
                         <h3 class="square todo">TO DO</h3>
                         <h3 class="square prog">IN PROGRESS</h3>
@@ -356,7 +356,7 @@
                         if (user.status == 200) {
                             var userData = JSON.parse(user.response);
                             document.getElementById('name').innerText = userData.FirstName + userData.LastName;
-                            if (profileData.HomeTown != "") {
+                            if (profileData.HomeTown != null) {
                                 document.getElementById('gatheringLocation').innerText = 'Gathering Location: ' + profileData.HomeTown;
                             }
                             resizeText();
@@ -372,7 +372,6 @@
                 }
             }
             profile.send();
-
         </script>
     </p>
 </body>
