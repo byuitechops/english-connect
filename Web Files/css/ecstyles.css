@@ -233,7 +233,7 @@
             width: 85%;
             background-color: #FFF;
             margin: 0;
-            height: 100px;
+            height: 100%;
             border-radius: 0 5px 5px 0;
             vertical-align: top;
         }
@@ -253,7 +253,7 @@
             display: inline-block;
             width: 15%;
             background-color: #6BA539;
-            height: 100px;
+            height: 100%;
             margin: auto;
             border-radius: 5px 0 0 5px;
         }
@@ -325,6 +325,7 @@
         }
         
         .button:hover {
+            /*            box-shadow: 0 0 10px #b3b8bc;*/
             opacity: .8;
             transition: .2s;
             cursor: pointer;
@@ -410,18 +411,19 @@
         /* Styles for mobile */
         
         @media screen and (max-width: 800px) {
+            #profilePic{
+                    display:block;
+                    width: 40%;
+                    margin-left:20px;
+            }
             .tile {
-                display: inline-block;
                 width: 48%;
                 margin: 1%;
-                color: #005F83;
-                padding: 0;
-                font-size: 0em;
-                border-radius: 10px;
-                transition: .1s;
+                height: 70px;
             }
+            
             #studentInfo {
-                width: 79%;
+                width: 100%;
                 margin-left: 1%;
                 margin-bottom: 20px;
             }
