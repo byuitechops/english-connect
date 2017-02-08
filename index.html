@@ -4,7 +4,6 @@
 <head>
     <script src="https://content.byui.edu/integ/gen/912ef28e-e9d3-4488-820f-f0d3f52c49f5/0/valence.min.js"></script>
     <script>
-        /* valence('getFinalGrade', e => { console.log(e) })*/
         function toggleAwards() {
             toggleGray();
             var awards = document.querySelector('#awards');
@@ -34,24 +33,30 @@
             }
         }
 
+        if (top.location != self.location) {
+            top.location = self.location.href;
+            document.querySelector('body > div > div.d2l-popup-title').style = "display:none";
+        }
+
     </script>
     <meta charset="utf-8">
-    <title>English Connect | Home</title>
+    <title>EnglishConnect | Home</title>
     <link rel="stylesheet" type="text/css" href="Web%20Files/css/ecstyles.css">
+    <link rel="icon" type="image/png" href="Web%20Files/images/PathwayLogoFavicon.png">
 </head>
 
 <body id="home">
     <div class="center">
-        <h1>English Connect | Intermediate</h1>
+        <h1>EnglishConnect | Intermediate</h1>
         <h2 class="dark" id="banner">Home</h2>
         <div id='main'>
             <div id='header' class="remove">
-                <img id="profilePic" src="Web%20Files/images/SudentInfo.jpg">
+                <img id="profilePic" src="Web%20Files/images/profilePic.png" alt="Profile Picture">
                 <div id="studentInfo">
                     <h2 id="name">Sofia Nagiliatti</h2>
                     <a id="edit" href="https://pathway.brightspace.com/d2l/lp/profile/profile_edit.d2l?ou=9125" target="_blank"></a>
                     <h2 id="profLevel">Proficiency Level: Intermediate Mid</h2>
-                    <h2 id="gathering Location">Gathering Location: Sao Paulo, Brazil</h2>
+                    <h2 id="gatheringLocation">Gathering Location: Sao Paulo, Brazil</h2>
                     <div id="key">
                         <h3 class="square todo">TO DO</h3>
                         <h3 class="square prog">IN PROGRESS</h3>
@@ -319,45 +324,54 @@
     <div id="overlay" class="hidden"></div>
     <p>
         <script>
-            var token = new XMLHttpRequest();
-            token.open("GET", "https://pathway.brightspace.com/d2l/auth/api/token");
-            token.onload = function(e) {
-                console.log(token.status);
-                if (token.status == 302) {
-                    var response = JSON.parse(token.response);
-                    console.log(response);
+            function resizeText() {
+                var text = document.getElementById('name');
+                if (text.innerText.length > 30) {
+                    text.style = "font-size:1em";
+                }
+            }
+            var image = new XMLHttpRequest();
+            image.open("GET", "https://pathway.brightspace.com/d2l/api/lp/1.15/profile/myProfile/image");
+            image.responseType = "blob";
+            image.onload = function(e) {
+                if (image.status == 200) {
+                    var urlCreator = window.URL;
+                    var imageUrl = urlCreator.createObjectURL(this.response);
+                    document.querySelector("#profilePic").src = imageUrl;
                 } else {
                     console.log(e);
                 }
             }
-            token.send();
+            image.send();
 
             var profile = new XMLHttpRequest();
             profile.open("GET", "https://pathway.brightspace.com/d2l/api/lp/1.15/profile/myProfile");
             profile.onload = function(e) {
-                console.log(profile.status);
                 if (profile.status == 200) {
-                    var response = JSON.parse(profile.response);
-                    console.log(response);
+                    var profileData = JSON.parse(profile.response);
+                    //UserData
+                    var user = new XMLHttpRequest();
+                    user.open("GET", "https://pathway.brightspace.com/d2l/api/lp/1.15/users/whoami");
+                    user.onload = function(e) {
+                        if (user.status == 200) {
+                            var userData = JSON.parse(user.response);
+                            document.getElementById('name').innerText = userData.FirstName + userData.LastName;
+                            if (profileData.HomeTown != "") {
+                                document.getElementById('gatheringLocation').innerText = 'Gathering Location: ' + profileData.HomeTown;
+                            }
+                            resizeText();
+                        } else {
+                            console.log(e);
+                            resizeText();
+                        }
+                    }
+                    user.send();
                 } else {
                     console.log(e);
+                    resizeText();
                 }
             }
             profile.send();
-
-            //UserData
-            var userData = new XMLHttpRequest();
-            userData.open("GET", "https://pathway.brightspace.com/d2l/api/lp/1.15/users/" + localStorage['Session.UserId']);
-            userData.onload = function(e) {
-                console.log(userData.status);
-                if (userData.status == 200) {
-                    var response = JSON.parse(userData.response);
-                    console.log(response);
-                } else {
-                    console.log(e);
-                }
-            }
-            userData.send();
 
         </script>
     </p>
