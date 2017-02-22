@@ -2,380 +2,274 @@
 <html>
 
 <head>
-    <script src="https://content.byui.edu/integ/gen/912ef28e-e9d3-4488-820f-f0d3f52c49f5/0/valence.min.js"></script>
-    <script>
-        function toggleAwards() {
-            toggleGray();
-            var awards = document.querySelector('#awards');
-            if (awards.getAttribute('class') == 'hidden remove') {
-                awards.setAttribute('class', 'visible remove');
-            } else {
-                awards.setAttribute('class', 'hidden remove');
-            }
-        }
-
-        function togglePreview() {
-            toggleGray();
-            var button = document.querySelector('#courseInfo h1');
-            if (button.style['zIndex'] == 2) {
-                button.style = "z-index: 0";
-            } else {
-                button.style = "z-index: 2";
-            }
-        }
-
-        function toggleGray() {
-            var overlay = document.querySelector('#overlay');
-            if (overlay.getAttribute('class') == 'hidden') {
-                overlay.setAttribute('class', 'visible');
-            } else {
-                overlay.setAttribute('class', 'hidden');
-            }
-        }
-
-        if (top.location != self.location) {
-            top.location = self.location.href;
-            document.querySelector('body > div > div.d2l-popup-title').style = "display:none";
-        }
-
-    </script>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta charset="utf-8">
-    <title>EnglishConnect | Home</title>
-    <link rel="stylesheet" type="text/css" href="Web%20Files/css/ecstyles.css">
-    <link rel="icon" type="image/png" href="Web%20Files/images/PathwayLogoFavicon.png">
+  <script src="https://content.byui.edu/integ/gen/912ef28e-e9d3-4488-820f-f0d3f52c49f5/0/valence.min.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+  <title>EnglishConnect | Home</title>
+  <link rel="stylesheet" type="text/css" href="Web%20Files/css/ecstyles.css">
+  <link rel="icon" type="image/png" href="Web%20Files/images/PathwayLogoFavicon.png">
 </head>
 
 <body id="home">
-    <div class="center">
-        <h1 id="title">EnglishConnect | Intermediate</h1>
-        <h2 class="dark" id="banner">Home</h2>
-        <div id='main'>
-            <div id='header' class="remove">
-                <img id="profilePic" src="Web%20Files/images/profilePic.png" alt="Profile Picture">
-                <div id="studentInfo">
-                    <h2 id="name">Sofia Nagiliatti</h2>
-                    <a id="edit" href="https://pathway.brightspace.com/d2l/lp/profile/profile_edit.d2l?ou=9125" target="_blank"></a>
-                    <h2 id="profLevel">Proficiency Level: Intermediate Mid</h2>
-                    <h2 id="gatheringLocation">Gathering Location: Not Added</h2>
-                    <div id="key">
-                        <h3 class="square todo">TO DO</h3>
-                        <h3 class="square prog">IN PROGRESS</h3>
-                        <h3 class="square master">MASTERED</h3>
-                    </div>
-                </div>
-                <div id="courseInfo">
-                    <h1 class="dark focus button" onclick="togglePreview()" style="z-index: 0">Course Information</h1>
-                    <a onclick="toggleAwards()">
-                        <h2 class="dark button">Awards</h2>
-                    </a>
-                    <h2 class="dark help button">Help</h2>
-                </div>
-            </div>
-            <div id='courses'>
-                <div id='Reading' class="course">
-                    <h3>Reading</h3>
-                    <div class="progress">
-                        <div class="bar">
-                            <h4>Topics: <span></span>3/48 (20%)</h4>
-                        </div>
-                    </div>
-                    <div class="container">
-                        <a href="topics.html">
-                            <div class="tile" id="rl1">
-                                <div class='color'></div>
-                                <div class="label">
-                                    <h3>Level 1</h3>
-                                </div>
-                            </div>
-                        </a>
-                        <a href="topics.html">
-                            <div class="tile" id="rl2">
-                                <div class='color'></div>
-                                <div class="label">
-                                    <h3>Level 2</h3>
-                                </div>
-                            </div>
-                        </a>
-                        <a href="topics.html">
-                            <div class="tile" id="rl3">
-                                <div class='color'></div>
-                                <div class="label">
-                                    <h3>Level 3</h3>
-                                </div>
-                            </div>
-                        </a>
-                        <a href="topics.html">
-                            <div class="tile" id="rl4">
-                                <div class='color'></div>
-                                <div class="label">
-                                    <h3>Level 4</h3>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div id='Writing' class="course">
-                    <h3>Writing</h3>
-                    <div class="progress">
-                        <div class="bar">
-                            <h4>Topics: <span></span>3/48 (20%)</h4>
-                        </div>
-                    </div>
-                    <div class="container">
-                        <a href="topics.html">
-                            <div class="tile" id="wl1">
-                                <div class='color'></div>
-                                <div class="label">
-                                    <h3>Level 1</h3>
-                                </div>
-                            </div>
-                        </a>
-                        <a href="topics.html">
-                            <div class="tile" id="wl2">
-                                <div class='color'></div>
-                                <div class="label">
-                                    <h3>Level 2</h3>
-                                </div>
-                            </div>
-                        </a>
-                        <a href="topics.html">
-                            <div class="tile" id="wl3">
-                                <div class='color'></div>
-                                <div class="label">
-                                    <h3>Level 3</h3>
-                                </div>
-                            </div>
-                        </a>
-                        <a href="topics.html">
-                            <div class="tile" id="wl4">
-                                <div class='color'></div>
-                                <div class="label">
-                                    <h3>Level 4</h3>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div id='Speaking' class="course">
-                    <h3>Speaking</h3>
-                    <div class="progress">
-                        <div class="bar">
-                            <h4>Topics: <span></span>3/48 (20%)</h4>
-                        </div>
-                    </div>
-                    <div class="container">
-                        <a href="topics.html">
-                            <div class="tile" id="sl1">
-                                <div class='color'></div>
-                                <div class="label">
-                                    <h3>Level 1</h3>
-                                </div>
-                            </div>
-                        </a>
-                        <a href="topics.html">
-                            <div class="tile" id="sl2">
-                                <div class='color'></div>
-                                <div class="label">
-                                    <h3>Level 2</h3>
-                                </div>
-                            </div>
-                        </a>
-                        <a href="topics.html">
-                            <div class="tile" id="sl3">
-                                <div class='color'></div>
-                                <div class="label">
-                                    <h3>Level 3</h3>
-                                </div>
-                            </div>
-                        </a>
-                        <a href="topics.html">
-                            <div class="tile" id="sl4">
-                                <div class='color'></div>
-                                <div class="label">
-                                    <h3>Level 4</h3>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div id='Listening' class="course">
-                    <h3>Listening</h3>
-                    <div class="progress">
-                        <div class="bar">
-                            <h4>Topics: <span></span>3/48 (20%)</h4>
-                        </div>
-                    </div>
-                    <div class="container">
-                        <a href="topics.html">
-                            <div class="tile" id="ll1">
-                                <div class='color'></div>
-                                <div class="label">
-                                    <h3>Level 1</h3>
-                                </div>
-                            </div>
-                        </a>
-                        <a href="topics.html">
-                            <div class="tile" id="ll2">
-                                <div class='color'></div>
-                                <div class="label">
-                                    <h3>Level 2</h3>
-                                </div>
-                            </div>
-                        </a>
-                        <a href="topics.html">
-                            <div class="tile" id="ll3">
-                                <div class='color'></div>
-                                <div class="label">
-                                    <h3>Level 3</h3>
-                                </div>
-                            </div>
-                        </a>
-                        <a href="topics.html">
-                            <div class="tile" id="ll4">
-                                <div class='color'></div>
-                                <div class="label">
-                                    <h3>Level 4</h3>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div id="awards" class="hidden remove" onclick="toggleAwards()">
-                <div class="awardHeader reset">
-                    <svg version="1.1" id="badges" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 10 10" style="enable-background:new 0 0 10 10;" xml:space="preserve">
-                        <g id="inactive">
-                            <circle id="background_1_" class="st0" cx="5" cy="5" r="5"/>
-                            <g id="shield_1_">
-                                <path id="XMLID_5_" class="st1" d="M8.2,3.2C8,3.2,7.8,3.2,7.7,3.2c-1,0-1.9-0.3-2.7-0.9v6C6.9,7.8,8.3,6.1,8.3,4C8.3,3.7,8.3,3.4,8.2,3.2z"/>
-                                <path id="XMLID_7_" class="st2" d="M2.3,3.2c-0.2,0-0.3,0-0.5-0.1C1.7,3.4,1.7,3.7,1.7,4c0,2.1,1.4,3.8,3.3,4.4v-6C4.3,2.9,3.3,3.2,2.3,3.2z"/>
-                            </g>
-                        </g>
-                        <g id="active1" >
-                            <circle id="background" class="st3" cx="5" cy="5" r="5"/>
-                            <g id="shield" class = "badgeHover">
-                                <path id="XMLID_9_" class="st4" d="M8.2,3.2C8,3.2,7.8,3.2,7.7,3.2c-1,0-1.9-0.3-2.7-0.9v6C6.9,7.8,8.3,6.1,8.3,4C8.3,3.7,8.3,3.4,8.2,3.2z"/>
-                                <path id="XMLID_8_" class="st5" d="M2.3,3.2c-0.2,0-0.3,0-0.5-0.1C1.7,3.4,1.7,3.7,1.7,4c0,2.1,1.4,3.8,3.3,4.4v-6C4.3,2.9,3.3,3.2,2.3,3.2z"/>
-                            </g>
-                        </g>
-                    </svg>
-                    <h2 class="button">Reading Badges</h2>
-                </div>
-                <div class="awardHeader reset">
-                    <svg version="1.1" id="badges" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 10 10" style="enable-background:new 0 0 10 10;" xml:space="preserve">
-                        <g id="inactive">
-                            <circle id="background_1_" class="st0" cx="5" cy="5" r="5"/>
-                            <g id="shield_1_">
-                                <path id="XMLID_5_" class="st1" d="M8.2,3.2C8,3.2,7.8,3.2,7.7,3.2c-1,0-1.9-0.3-2.7-0.9v6C6.9,7.8,8.3,6.1,8.3,4C8.3,3.7,8.3,3.4,8.2,3.2z"/>
-                                <path id="XMLID_7_" class="st2" d="M2.3,3.2c-0.2,0-0.3,0-0.5-0.1C1.7,3.4,1.7,3.7,1.7,4c0,2.1,1.4,3.8,3.3,4.4v-6C4.3,2.9,3.3,3.2,2.3,3.2z"/>
-                            </g>
-                        </g>
-                            <g id="active1" >
-                            <circle id="background" class="st3" cx="5" cy="5" r="5"/>
-                            <g id="shield" class = "badgeHover">
-                                <path id="XMLID_9_" class="st4" d="M8.2,3.2C8,3.2,7.8,3.2,7.7,3.2c-1,0-1.9-0.3-2.7-0.9v6C6.9,7.8,8.3,6.1,8.3,4C8.3,3.7,8.3,3.4,8.2,3.2z"/>
-                                <path id="XMLID_8_" class="st5" d="M2.3,3.2c-0.2,0-0.3,0-0.5-0.1C1.7,3.4,1.7,3.7,1.7,4c0,2.1,1.4,3.8,3.3,4.4v-6C4.3,2.9,3.3,3.2,2.3,3.2z"/>
-                            </g>
-                        </g>
-                    </svg>
-                    <h2 class="button">Writing Badges</h2>
-                </div>
-                <div class="awardHeader reset">
-                    <svg version="1.1" id="badges" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 10 10" style="enable-background:new 0 0 10 10;" xml:space="preserve">
-                        <g id="inactive">
-                            <circle id="background_1_" class="st0" cx="5" cy="5" r="5"/>
-                            <g id="shield_1_">
-                                <path id="XMLID_5_" class="st1" d="M8.2,3.2C8,3.2,7.8,3.2,7.7,3.2c-1,0-1.9-0.3-2.7-0.9v6C6.9,7.8,8.3,6.1,8.3,4C8.3,3.7,8.3,3.4,8.2,3.2z"/>
-                                <path id="XMLID_7_" class="st2" d="M2.3,3.2c-0.2,0-0.3,0-0.5-0.1C1.7,3.4,1.7,3.7,1.7,4c0,2.1,1.4,3.8,3.3,4.4v-6C4.3,2.9,3.3,3.2,2.3,3.2z"/>
-                            </g>
-                        </g>
-                            <g id="active1" >
-                            <circle id="background" class="st3" cx="5" cy="5" r="5"/>
-                            <g id="shield" class = "badgeHover">
-                                <path id="XMLID_9_" class="st4" d="M8.2,3.2C8,3.2,7.8,3.2,7.7,3.2c-1,0-1.9-0.3-2.7-0.9v6C6.9,7.8,8.3,6.1,8.3,4C8.3,3.7,8.3,3.4,8.2,3.2z"/>
-                                <path id="XMLID_8_" class="st5" d="M2.3,3.2c-0.2,0-0.3,0-0.5-0.1C1.7,3.4,1.7,3.7,1.7,4c0,2.1,1.4,3.8,3.3,4.4v-6C4.3,2.9,3.3,3.2,2.3,3.2z"/>
-                            </g>
-                        </g>
-                    </svg>
-                    <h2 class="button">Speaking Badges</h2>
-                </div>
-                <div class="awardHeader reset">
-                    <svg version="1.1" id="badges" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 10 10" style="enable-background:new 0 0 10 10;" xml:space="preserve">
-                        <g id="inactive">
-                            <circle id="background_1_" class="st0" cx="5" cy="5" r="5"/>
-                            <g id="shield_1_">
-                                <path id="XMLID_5_" class="st1" d="M8.2,3.2C8,3.2,7.8,3.2,7.7,3.2c-1,0-1.9-0.3-2.7-0.9v6C6.9,7.8,8.3,6.1,8.3,4C8.3,3.7,8.3,3.4,8.2,3.2z"/>
-                                <path id="XMLID_7_" class="st2" d="M2.3,3.2c-0.2,0-0.3,0-0.5-0.1C1.7,3.4,1.7,3.7,1.7,4c0,2.1,1.4,3.8,3.3,4.4v-6C4.3,2.9,3.3,3.2,2.3,3.2z"/>
-                            </g>
-                        </g>
-                            <g id="active1" >
-                            <circle id="background" class="st3" cx="5" cy="5" r="5"/>
-                            <g id="shield" class = "badgeHover">
-                                <path id="XMLID_9_" class="st4" d="M8.2,3.2C8,3.2,7.8,3.2,7.7,3.2c-1,0-1.9-0.3-2.7-0.9v6C6.9,7.8,8.3,6.1,8.3,4C8.3,3.7,8.3,3.4,8.2,3.2z"/>
-                                <path id="XMLID_8_" class="st5" d="M2.3,3.2c-0.2,0-0.3,0-0.5-0.1C1.7,3.4,1.7,3.7,1.7,4c0,2.1,1.4,3.8,3.3,4.4v-6C4.3,2.9,3.3,3.2,2.3,3.2z"/>
-                            </g>
-                        </g>
-                    </svg>
-                    <h2 class="button">Listening Badges</h2>
-                </div>
-            </div>
+  <div class="center">
+    <h1 id="title">EnglishConnect | Intermediate</h1>
+    <h2 class="dark" id="banner">Home</h2>
+    <div id='main'>
+      <div id='header' class="remove">
+        <img id="profilePic" src="Web%20Files/images/profilePic.png" alt="Profile Picture">
+        <div id="studentInfo">
+          <h2 id="name">Please Log In</h2>
+          <a id="edit" href="https://pathway.brightspace.com/d2l/lp/profile/profile_edit.d2l?ou=9125" target="_blank"></a>
+          <h2 id="profLevel">Proficiency Level: Intermediate Mid</h2>
+          <h2 id="gatheringLocation">Gathering Location: Not Added</h2>
+          <div id="key">
+            <h3 class="square todo">TO DO</h3>
+            <h3 class="square prog">IN PROGRESS</h3>
+            <h3 class="square master">MASTERED</h3>
+          </div>
         </div>
+        <div id="courseInfo" class="remove">
+          <h1 class="dark focus button" onclick="togglePreview()" style="z-index: 0">Course Information</h1>
+          <a onclick="toggle('overlay'); toggle('awards')">
+            <h2 class="dark button">Awards</h2>
+          </a>
+          <h2 class="dark help button">Help</h2>
+        </div>
+      </div>
+      <div id='courses'>
+        <div class="course remove">
+          <h3>Reading</h3>
+          <div id='reading' class="progress">
+            <h4>Topics: <span></span>/32 <span></span></h4>
+            <div class="bar"></div>
+          </div>
+          <div class="container">
+            <a href="topics.html">
+              <div class="tile" id="rl1">
+                <div class="color blue"></div>
+                <div class="label">
+                  <h3>Level 1</h3>
+                </div>
+              </div>
+            </a>
+            <a href="topics.html">
+              <div class="tile" id="rl2">
+                <div class="color yellow"></div>
+                <div class="label">
+                  <h3>Level 2</h3>
+                </div>
+              </div>
+            </a>
+            <a href="topics.html">
+              <div class="tile" id="rl3">
+                <div class="color green"></div>
+                <div class="label">
+                  <h3>Level 3</h3>
+                </div>
+              </div>
+            </a>
+            <a href="topics.html">
+              <div class="tile" id="rl4">
+                <div class="color green"></div>
+                <div class="label">
+                  <h3>Level 4</h3>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="course remove">
+          <h3>Writing</h3>
+          <div id='writing' class="progress">
+            <h4>Topics: <span></span>/32 <span></span></h4>
+            <div class="bar"></div>
+          </div>
+          <div class="container">
+            <a href="topics.html">
+              <div class="tile" id="wl1">
+                <div class="color blue"></div>
+                <div class="label">
+                  <h3>Level 1</h3>
+                </div>
+              </div>
+            </a>
+            <a href="topics.html">
+              <div class="tile" id="wl2">
+                <div class="color blue"></div>
+                <div class="label">
+                  <h3>Level 2</h3>
+                </div>
+              </div>
+            </a>
+            <a href="topics.html">
+              <div class="tile" id="wl3">
+                <div class="color blue"></div>
+                <div class="label">
+                  <h3>Level 3</h3>
+                </div>
+              </div>
+            </a>
+            <a href="topics.html">
+              <div class="tile" id="wl4">
+                <div class="color yellow"></div>
+                <div class="label">
+                  <h3>Level 4</h3>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="course remove">
+          <h3>Speaking</h3>
+          <div id='speaking' class="progress">
+            <h4>Topics: <span></span>/32 <span></span></h4>
+            <div class="bar"></div>
+          </div>
+          <div class="container">
+            <a href="topics.html">
+              <div class="tile" id="sl1">
+                <div class="color blue"></div>
+                <div class="label">
+                  <h3>Level 1</h3>
+                </div>
+              </div>
+            </a>
+            <a href="topics.html">
+              <div class="tile" id="sl2">
+                <div class="color blue"></div>
+                <div class="label">
+                  <h3>Level 2</h3>
+                </div>
+              </div>
+            </a>
+            <a href="topics.html">
+              <div class="tile" id="sl3">
+                <div class="color yellow"></div>
+                <div class="label">
+                  <h3>Level 3</h3>
+                </div>
+              </div>
+            </a>
+            <a href="topics.html">
+              <div class="tile" id="sl4">
+                <div class="color green"></div>
+                <div class="label">
+                  <h3>Level 4</h3>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="course remove">
+          <h3>Listening</h3>
+          <div id='listening' class="progress">
+            <h4>Topics: <span></span>/32 <span></span></h4>
+            <div class="bar"></div>
+          </div>
+          <div class="container">
+            <a href="topics.html">
+              <div class="tile" id="ll1">
+                <div class="color blue"></div>
+                <div class="label">
+                  <h3>Level 1</h3>
+                </div>
+              </div>
+            </a>
+            <a href="topics.html">
+              <div class="tile" id="ll2">
+                <div class="color yellow"></div>
+                <div class="label">
+                  <h3>Level 2</h3>
+                </div>
+              </div>
+            </a>
+            <a href="topics.html">
+              <div class="tile" id="ll3">
+                <div class="color green"></div>
+                <div class="label">
+                  <h3>Level 3</h3>
+                </div>
+              </div>
+            </a>
+            <a href="topics.html">
+              <div class="tile" id="ll4">
+                <div class="color green"></div>
+                <div class="label">
+                  <h3>Level 4</h3>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
     </div>
-    <div id="overlay" class="hidden"></div>
-    <p>
-        <script>
-            function resizeText() {
-                var text = document.getElementById('name');
-                if (text.innerText.length > 30) {
-                    text.style = "font-size:1em";
-                }
-            }
-            var image = new XMLHttpRequest();
-            image.open("GET", "https://pathway.brightspace.com/d2l/api/lp/1.15/profile/myProfile/image");
-            image.responseType = "blob";
-            image.onload = function(e) {
-                if (image.status == 200) {
-                    var urlCreator = window.URL;
-                    var imageUrl = urlCreator.createObjectURL(this.response);
-                    document.querySelector("#profilePic").src = imageUrl;
-                } else {
-                    console.log(e);
-                }
-            }
-            image.send();
-
-            var profile = new XMLHttpRequest();
-            profile.open("GET", "https://pathway.brightspace.com/d2l/api/lp/1.15/profile/myProfile");
-            profile.onload = function(e) {
-                if (profile.status == 200) {
-                    var profileData = JSON.parse(profile.response);
-                    //UserData
-                    var user = new XMLHttpRequest();
-                    user.open("GET", "https://pathway.brightspace.com/d2l/api/lp/1.15/users/whoami");
-                    user.onload = function(e) {
-                        if (user.status == 200) {
-                            var userData = JSON.parse(user.response);
-                            document.getElementById('name').innerText = userData.FirstName + userData.LastName;
-                            if (profileData.HomeTown != null) {
-                                document.getElementById('gatheringLocation').innerText = 'Gathering Location: ' + profileData.HomeTown;
-                            }
-                            resizeText();
-                        } else {
-                            console.log(e);
-                            resizeText();
-                        }
-                    }
-                    user.send();
-                } else {
-                    console.log(e);
-                    resizeText();
-                }
-            }
-            profile.send();
-
-        </script>
-    </p>
+  </div>
+  <div id="awards" class="content hidden remove" onclick="toggle('overlay'); toggle('awards');">
+    <div class="award reset">
+      <img src="Web%20Files/images/Badge_WorkComm.png" alt="Daily Life Badge">
+      <div class="stars1"></div>
+      <h2 class="button">Work and Professional Communications</h2>
+    </div>
+    <div class="award reset">
+      <img src="Web%20Files/images/Badge_Finance.png" alt="Daily Life Badge">
+      <div class="stars2"></div>
+      <h2 class="button">Personal Finance</h2>
+    </div>
+    <div class="award reset">
+      <img src="Web%20Files/images/Badge_Hum.png" alt="Daily Life Badge">
+      <div class="stars3"></div>
+      <h2 class="button">Humanities</h2>
+    </div>
+    <div class="award reset">
+      <img src="Web%20Files/images/Badge_News.png" alt="Daily Life Badge">
+      <div class="stars4"></div>
+      <h2 class="button">News and Events</h2>
+    </div>
+    <div class="award reset">
+      <img src="Web%20Files/images/Badge_Envir.png" alt="Daily Life Badge">
+      <div class="stars0"></div>
+      <h2 class="button">Your Environment</h2>
+    </div>
+    <div class="award reset">
+      <img src="Web%20Files/images/Badge_Goals.png" alt="Daily Life Badge">
+      <div class="stars0"></div>
+      <h2 class="button">Goals and Challanges</h2>
+    </div>
+    <div class="award reset">
+      <img src="Web%20Files/images/Badge_SocComm.png" alt="Daily Life Badge">
+      <div class="stars0"></div>
+      <h2 class="button">Social Communications</h2>
+    </div>
+    <div class="award reset">
+      <img src="Web%20Files/images/Badge_Family.png" alt="Daily Life Badge">
+      <div class="stars0"></div>
+      <h2 class="button">Family</h2>
+    </div>
+    <div class="award reset">
+      <img src="Web%20Files/images/Badge_RecTrav.png" alt="Daily Life Badge">
+      <div class="stars0"></div>
+      <h2 class="button">Recreation and Travel</h2>
+    </div>
+    <div class="award reset">
+      <img src="Web%20Files/images/Badge_DailLife.png" alt="Daily Life Badge">
+      <div class="stars0"></div>
+      <h2 class="button">Daily Life</h2>
+    </div>
+    <div class="award reset">
+      <img src="Web%20Files/images/Badge_Educ.png" alt="Daily Life Badge">
+      <div class="stars0"></div>
+      <h2 class="button">Education</h2>
+    </div>
+    <div class="award reset">
+      <img src="Web%20Files/images/Badge_EthVal.png" alt="Daily Life Badge">
+      <div class="stars0"></div>
+      <h2 class="button">Ethics and Values</h2>
+    </div>
+  </div>
+  <div id="overlay" class="hidden"></div>
+  <p>
+    <script src="Web%20Files/js/scripts.js"></script>
+  </p>
 </body>
 
 </html>

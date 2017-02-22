@@ -1,0 +1,67 @@
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <script type="text/javascript" src="/d2l/orgtools/ltilaunch/pearsonLtiLaunch.js"></script>
+  <script type="text/javascript" src="/d2l/common/math/MathML.js?v=10.6.9.5092-10"></script>
+  <script type="text/javascript">
+    document.addEventListener('DOMContentLoaded', function() {
+      D2LMathML.DesktopInit('https://s.brightspace.com/lib/mathjax/2.6.1/MathJax.js?config=MML_HTMLorMML',
+        'https://s.brightspace.com/lib/mathjax/2.6.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML%2cSafe');
+    });
+
+  </script>
+  <script type="text/javascript">
+    function lti_launch(vars) {
+      var query = '';
+      for (var key in vars) {
+        if (query.length == 0) {
+          query += '?' + key + '=' + encodeURIComponent(vars[key]);
+        } else {
+          query += '&' + key + '=' + encodeURIComponent(vars[key]);
+        }
+      }
+      location.replace('/d2l/customization/pearsonlti/158869/Launch' + query);
+    }
+
+  </script>
+</head>
+
+<body>
+  <p>
+    <a onclick="lti_launch({'showbanner':'yes','targetid':'gradebook','pagelink':'popup','book':'dfg04uD2L','handler_urn':'pearson/tpi/mml_xl'}, '_blank');" href="#">MyMathLab Gradebook</a>
+  </p>
+</body>
+
+</html>
+
+
+
+
+
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <script type="text/javascript">
+    function lti_launch(vars) {
+      var query = '';
+      for (var key in vars) {
+        if (query.length == 0) {
+          query += '?' + key + '=' + encodeURIComponent(vars[key]);
+        } else {
+          query += '&' + key + '=' + encodeURIComponent(vars[key]);
+        }
+      }
+      location.replace('http://harkermedia.com/' + query);
+    }
+
+  </script>
+</head>
+
+<body>
+  <p><a onclick="lti_launch({'type':'assess','item':'aa6067fa-86eb-41a4-b1e3-c82032d7b153'}, 'learnosity');" href="#">lti Launch</a></p>
+  <p id="learnosity"></p>
+</body>
+
+</html>
