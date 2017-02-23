@@ -17,6 +17,11 @@ function togglePreview() {
   }
 }
 
+function toggleThis(eleId) {
+  toggle(eleId);
+  toggle('overlay');
+}
+
 function toggle(eleId) {
   var target = document.querySelector('#' + eleId);
   target.classList.toggle('hidden');

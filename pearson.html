@@ -21,7 +21,9 @@
           query += '&' + key + '=' + encodeURIComponent(vars[key]);
         }
       }
-      location.replace('/d2l/customization/pearsonlti/158869/Launch' + query);
+      var hi = '/d2l/customization/pearsonlti/158869/Launch' + query;
+      console.log(hi)
+      location.replace(hi);
     }
 
   </script>

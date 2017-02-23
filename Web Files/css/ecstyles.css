@@ -1,6 +1,6 @@
         /*        Document Styles*/
         
-        @import url('https://fonts.googleapis.com/css?family=Open+Sans');
+        @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,700');
         * {
           font-family: 'Open Sans', sans-serif;
           font-weight: 100;
@@ -63,6 +63,18 @@
           transition: background-color .3s;
         }
         
+        .close {
+          color: #fff;
+          font-size: 18pt;
+          position: fixed;
+          top: 20px;
+          right: 20px;
+        }
+        
+        .close:hover {
+          cursor: pointer;
+        }
+        
         .hidden {
           position: fixed;
           left: 0;
@@ -87,13 +99,13 @@
         #studentInfo {
           font-size: initial;
           display: inline-block;
-          width: 49%;
+          width: 54%;
           vertical-align: top;
           margin-left: 1%;
         }
         
         #studentInfo h2 {
-          margin: 0 10px 5px;
+          margin: 0 10px;
           color: #005F83;
         }
         
@@ -111,7 +123,7 @@
           vertical-align: baseline;
         }
         
-        #home #key {
+        #key {
           margin-left: 10px;
         }
         
@@ -171,27 +183,30 @@
         }
         
         #profilePic {
-          width: 20%;
+          width: 15%;
         }
         /*        Courses Area           */
         
         .course {
-          margin-top: 40px;
+          margin-top: 30px;
+        }
+        
+        .course img {
+          width: 40px;
+          vertical-align: middle;
+          margin: 0 10px 10px 0;
         }
         
         .course h3 {
           vertical-align: middle;
-          margin: 5px 0;
+          margin: 0 0 10px;
           display: inline-block;
-          width: 20%;
           font-size: 16pt;
         }
         
         .progress {
           vertical-align: middle;
           font-size: initial;
-          display: inline-block;
-          width: 80%;
           background-color: #E6E6E8;
           border-radius: 5px;
           text-align: left;
@@ -204,8 +219,6 @@
           width: 150px;
           text-align: center;
           margin: 0;
-          color: #FFF;
-          background-color: #005F83;
           padding: 3px;
           border-radius: 5px 0 0 5px;
         }
@@ -217,7 +230,7 @@
         .bar {
           display: inline-block;
           width: calc((100% - 161px) / 5);
-          background-color: #6BA539;
+          background-color: #747778;
           height: 28px;
           border-radius: 0 5px 5px 0;
           vertical-align: top;
@@ -226,19 +239,28 @@
         .container {
           background-color: #E6E6E8;
           border-radius: 10px;
-          padding: 1%;
+          padding: 10px;
         }
         
         .tile {
           display: inline-block;
-          width: 23%;
-          margin: 1%;
+          width: calc(.25 * (100% - 80px));
+          margin: 10px;
           color: #005F83;
           padding: 0;
           font-size: 0em;
           border-radius: 10px;
           transition: .1s;
+          height: 120px;
+        }
+        
+        #home .tile {
           height: 100px;
+        }
+        
+        #home .tile h3 {
+          transform: translate(-50%, -50%);
+          top: 50%;
         }
         
         .tile:hover {
@@ -258,15 +280,24 @@
           vertical-align: top;
         }
         
-        .tile h3 {
-          text-align: center;
-          width: 80%;
-          font-size: initial;
+        .label img {
           position: absolute;
-          margin: 0;
-          top: 50%;
+          width: 40px;
+          top: 30%;
           left: 50%;
           transform: translate(-50%, -50%);
+        }
+        
+        .tile h3 {
+          line-height: 11pt;
+          text-align: center;
+          width: 90%;
+          font-size: 12pt;
+          position: absolute;
+          margin: 0;
+          top: 53%;
+          left: 50%;
+          transform: translate(-50%, 0%);
         }
         
         .color {
@@ -285,22 +316,54 @@
         }
         
         #topics .container {
-          margin-top: 20px;
+          margin: 20px 0;
         }
         
-        .helps {
-          margin: 20px -1%;
+        .container .button {
+          width: calc(.5 * (100% - 5px));
+          margin-right: 5px;
+        }
+        
+        .twoThirds .button {
+          width: calc(.5 * (100% - 10px));
+          margin-right: 0;
+        }
+        
+        .twoThirds .button:first-of-type {
+          margin-right: 10px;
+        }
+        
+        .oneThird .button {
+          width: 100% !important;
+        }
+        
+        .helps h2 {
+          margin: 0;
+          font-size: 18pt;
+        }
+        
+        .helps .container {
+          display: inline-block;
+          margin: 20px 0;
+        }
+        
+        .container.twoThirds {
+          width: calc(66.66% - 30px);
+          margin: 20px 20px 0 0;
+        }
+        
+        .oneThird {
+          width: calc(33.33% - 30px);
         }
         
         .helps .button {
-          margin: 10px 1%;
-          width: 31.33%;
           display: inline-block;
-          padding: 2% 0;
+          width: calc(50% - 5px);
+          padding: 10px 0;
         }
         
         .step {
-          margin: 5px 0;
+          margin: 40px 0 5px;
           font-size: 18pt;
         }
         
@@ -330,6 +393,50 @@
           margin-left: 40px;
         }
         /*Practices Page Styles*/
+        
+        #header.dailyLife {
+          background: url('../images/daily_life_banner.jpg');
+          height: 230px;
+          background-position: center;
+          background-size: cover;
+          position: relative;
+          margin-bottom: 30px;
+        }
+        
+        .topicHeading h4,
+        .topicHeading h2 {
+          margin: 0;
+          font-weight: 600;
+          line-height: 20pt;
+        }
+        
+        .topicHeading {
+          width: 100%;
+          position: absolute;
+          bottom: 0;
+          background-color: rgba(255, 255, 255, .6);
+          margin: 20px 0px;
+        }
+        
+        .topicHeading div {
+          display: inline-block;
+          width: calc(100% - 106px);
+          position: relative;
+          vertical-align: middle;
+          padding: 0 0 5px;
+        }
+        
+        .topicHeading:before {
+          background-image: url('../images/icons/ECI_DailLife.png');
+          content: "";
+          background-size: 70px 70px;
+          width: 70px;
+          height: 70px;
+          display: inline-block;
+          vertical-align: middle;
+          margin: -5px 10px;
+          line-height: 0;
+        }
         
         #pracOl {
           list-style-type: none;
@@ -505,14 +612,32 @@
           font-size: 2em;
           background-color: #fff;
         }
+        
+        .levelHeading {
+          border-bottom: 3px solid #747778;
+          height: 53px;
+          margin-bottom: 40px;
+        }
+        
+        .levelHeading:before {
+          background-image: url('../images/icons/ECI_Speaking.png');
+          content: "";
+          background-size: 70px 70px;
+          width: 70px;
+          height: 70px;
+          display: inline-block;
+          vertical-align: middle;
+          margin: -5px 10px 0 -15px;
+          line-height: 0;
+        }
         /* Styles for mobile */
         
         @media screen and (max-width: 850px) {
           #topics .tile,
           #practice .tile {
-            width: 31.33%;
-            margin: 1%;
-            height: 70px;
+            width: calc(.3333 * (100% - 60px));
+            margin: 10px;
+            height: 110px;
           }
           #topics .tile h3,
           #practice .tile h3 {
@@ -541,13 +666,22 @@
             width: 40%;
             margin-left: 20px;
           }
+          .container {
+            padding: 5px;
+          }
           .tile {
-            width: 48% !important;
-            margin: 1% !important;
+            width: calc(.5 * (100% - 20px)) !important;
+            margin: 5px !important;
+            height: 100px !important;
+          }
+          #home .tile {
             height: 70px !important;
           }
           .tile h3 {
             font-size: 10pt !important;
+          }
+          #home .tile h3 {
+            font-size: 12pt !important;
           }
           #studentInfo {
             width: 100%;
