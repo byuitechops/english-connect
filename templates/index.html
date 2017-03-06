@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script src="https://content.byui.edu/integ/gen/912ef28e-e9d3-4488-820f-f0d3f52c49f5/0/valence.min.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+  <title>EnglishConnect | Home</title>
+  <link rel="stylesheet" type="text/css" href="css/ecstyles.css">
+  <link rel="icon" type="image/png" href="images/PathwayLogoFavicon.png">
+</head>
+
+<body id="home">
+  <div class="center">
+    <h1 id="title">EnglishConnect | Intermediate</h1>
+    <div id="banner" class="dark">
+      <h2 id="breadcrumbs">Home</h2>
+      <a class="remove" onclick="toggleThis('awards')" href="#">
+        <div id="awardBar">
+          <p>Badges:</p>
+          <img src="images/Badge_Finance.png">
+          <p>1</p>
+          <img src="images/Badge_DailLife.png">
+          <p>2</p>
+          <img src="images/Badge_Family.png">
+          <p>3</p>
+          <img src="images/Badge_Envir.png">
+          <p>4</p>
+          <img src="images/Badge_Educ.png">
+          <p>5</p>
+          <img src="images/Badge_Goals.png">
+          <p>6</p>
+        </div>
+      </a>
+    </div>
+    <div id='main'>
+      <div id='header' class="remove">
+        <img id="profilePic" src="images/profilePic.png" alt="Profile Picture">
+        <div id="studentInfo">
+          <h2 id="name">Please Log In</h2>
+          <a id="edit" href="https://pathway.brightspace.com/d2l/lp/profile/profile_edit.d2l?ou=9125" target="_blank"></a>
+          <h2 id="profLevel">Proficiency Level: Intermediate Mid</h2>
+          <h2 id="gatheringLocation">Gathering Location: Not Added</h2>
+          <div id="key">
+            <h3 class="square todo">TO DO</h3>
+            <h3 class="square prog">IN PROGRESS</h3>
+            <h3 class="square master">MASTERED</h3>
+          </div>
+        </div>
+        <div id="courseInfo" class="remove">
+          <h2 class="focus button" onclick="togglePreview()" style="z-index: 0">Course Information</h2>
+          <h2 class="help button">Help</h2>
+        </div>
+      </div>
+      <div id='courses'>
+        <div class="course remove">
+          <h3>Level 1</h3>
+          <div id='reading' class="progress">
+            <h4 class="dark">Topics: <span></span>/32 <span></span></h4>
+            <div class="bar"></div>
+          </div>
+          <div class="container">
+            <a href="topics.html">
+              <div class="tile" id="rl1">
+                <div class="color blue"></div>
+                <div class="label">
+                  <img src="images/icons/ECI_Reading.png">
+                  <h3>Reading</h3>
+                </div>
+              </div>
+            </a>
+            <a href="topics.html">
+              <div class="tile" id="rl2">
+                <div class="color yellow"></div>
+                <div class="label">
+                  <img src="images/icons/ECI_Writing.png">
+                  <h3>Writing</h3>
+                </div>
+              </div>
+            </a>
+            <a href="topics.html">
+              <div class="tile" id="rl3">
+                <div class="color green"></div>
+                <div class="label">
+                  <img src="images/icons/ECI_Speaking.png">
+                  <h3>Speaking</h3>
+                </div>
+              </div>
+            </a>
+            <a href="topics.html">
+              <div class="tile" id="rl4">
+                <div class="color green"></div>
+                <div class="label">
+                  <img src="images/icons/ECI_Listening.png">
+                  <h3>Listening</h3>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="course remove">
+          <h3>Level 2</h3>
+          <div id='writing' class="progress">
+            <h4 class="dark">Topics: <span></span>/32 <span></span></h4>
+            <div class="bar"></div>
+          </div>
+          <div class="container">
+            <a href="topics.html">
+              <div class="tile" id="wl1">
+                <div class="color blue"></div>
+                <div class="label">
+                  <h3>Reading</h3>
+                  <img src="images/icons/ECI_Reading.png">
+                </div>
+              </div>
+            </a>
+            <a href="topics.html">
+              <div class="tile" id="wl2">
+                <div class="color blue"></div>
+                <div class="label">
+                  <img src="images/icons/ECI_Writing.png">
+                  <h3>Writing</h3>
+                </div>
+              </div>
+            </a>
+            <a href="topics.html">
+              <div class="tile" id="wl3">
+                <div class="color blue"></div>
+                <div class="label">
+                  <img src="images/icons/ECI_Speaking.png">
+                  <h3>Speaking</h3>
+                </div>
+              </div>
+            </a>
+            <a href="topics.html">
+              <div class="tile" id="wl4">
+                <div class="color yellow"></div>
+                <div class="label">
+                  <img src="images/icons/ECI_Listening.png">
+                  <h3>Listening</h3>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="course remove">
+          <h3>Level 3</h3>
+          <div id='speaking' class="progress">
+            <h4 class="dark">Topics: <span></span>/32 <span></span></h4>
+            <div class="bar"></div>
+          </div>
+          <div class="container">
+            <a href="topics.html">
+              <div class="tile" id="sl1">
+                <div class="color blue"></div>
+                <div class="label">
+                  <img src="images/icons/ECI_Reading.png">
+                  <h3>Reading</h3>
+                </div>
+              </div>
+            </a>
+            <a href="topics.html">
+              <div class="tile" id="sl2">
+                <div class="color blue"></div>
+                <div class="label">
+                  <img src="images/icons/ECI_Writing.png">
+                  <h3>Writing</h3>
+                </div>
+              </div>
+            </a>
+            <a href="topics.html">
+              <div class="tile" id="sl3">
+                <div class="color yellow"></div>
+                <div class="label">
+                  <img src="images/icons/ECI_Speaking.png">
+                  <h3>Speaking</h3>
+                </div>
+              </div>
+            </a>
+            <a href="topics.html">
+              <div class="tile" id="sl4">
+                <div class="color green"></div>
+                <div class="label">
+                  <img src="images/icons/ECI_Listening.png">
+                  <h3>Listening</h3>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="course remove">
+          <h3>Level 4</h3>
+          <div id='listening' class="progress">
+            <h4 class="dark">Topics: <span></span>/32 <span></span></h4>
+            <div class="bar"></div>
+          </div>
+          <div class="container">
+            <a href="topics.html">
+              <div class="tile" id="ll1">
+                <div class="color blue"></div>
+                <div class="label">
+                  <img src="images/icons/ECI_Reading.png">
+                  <h3>Reading</h3>
+                </div>
+              </div>
+            </a>
+            <a href="topics.html">
+              <div class="tile" id="ll2">
+                <div class="color yellow"></div>
+                <div class="label">
+                  <img src="images/icons/ECI_Writing.png">
+                  <h3>Writing</h3>
+                </div>
+              </div>
+            </a>
+            <a href="topics.html">
+              <div class="tile" id="ll3">
+                <div class="color green"></div>
+                <div class="label">
+                  <img src="images/icons/ECI_Speaking.png">
+                  <h3>Speaking</h3>
+                </div>
+              </div>
+            </a>
+            <a href="topics.html">
+              <div class="tile" id="ll4">
+                <div class="color green"></div>
+                <div class="label">
+                  <img src="images/icons/ECI_Listening.png">
+                  <h3>Listening</h3>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="awards" class="content hidden remove">
+      <a class="close" onclick="toggleThis(this.parentNode.id)">✕</a>
+      <h2 class="reset" onclick="changeFocus('page1')">Page 1</h2>
+      <h2 class="reset" onclick="changeFocus('page2')">Page 2</h2>
+      <h2 class="reset" onclick="changeFocus('page3')">Page 3</h2>
+      <div id="page1" class="page focus">
+        <div class="award reset">
+          <div class="stars1"></div>
+          <img src="images/Badge_WorkComm.png" alt="Daily Life Badge">
+          <p>Work and Professional Communications</p>
+        </div>
+        <div class="award reset">
+          <div class="stars2"></div>
+          <img src="images/Badge_Finance.png" alt="Daily Life Badge">
+          <p>Personal Finance</p>
+        </div>
+        <div class="award reset">
+          <div class="stars3"></div>
+          <img src="images/Badge_Hum.png" alt="Daily Life Badge">
+          <p>Humanities</p>
+        </div>
+        <div class="award reset">
+          <div class="stars4"></div>
+          <img src="images/Badge_News.png" alt="Daily Life Badge">
+          <p>News and Events</p>
+        </div>
+      </div>
+      <div id="page2" class="page">
+        <div class="award reset">
+          <div class="stars0"></div>
+          <img src="images/Badge_Envir.png" alt="Daily Life Badge">
+          <p>Your Environment</p>
+        </div>
+        <div class="award reset">
+          <div class="stars0"></div>
+          <img src="images/Badge_Goals.png" alt="Daily Life Badge">
+          <p>Goals and Challanges</p>
+        </div>
+        <div class="award reset">
+          <div class="stars0"></div>
+          <img src="images/Badge_SocComm.png" alt="Daily Life Badge">
+          <p>Social Communications</p>
+        </div>
+        <div class="award reset">
+          <div class="stars0"></div>
+          <img src="images/Badge_Family.png" alt="Daily Life Badge">
+          <p>Family</p>
+        </div>
+      </div>
+      <div id="page3" class="page">
+        <div class="award reset">
+          <div class="stars0"></div>
+          <img src="images/Badge_RecTrav.png" alt="Daily Life Badge">
+          <p>Recreation and Travel</p>
+        </div>
+        <div class="award reset">
+          <div class="stars0"></div>
+          <img src="images/Badge_DailLife.png" alt="Daily Life Badge">
+          <p>Daily Life</p>
+        </div>
+        <div class="award reset">
+          <div class="stars0"></div>
+          <img src="images/Badge_Educ.png" alt="Daily Life Badge">
+          <p>Education</p>
+        </div>
+        <div class="award reset">
+          <div class="stars0"></div>
+          <img src="images/Badge_EthVal.png" alt="Daily Life Badge">
+          <p>Ethics and Values</p>
+        </div>
+      </div>
+    </div>
+    <div id="overlay" class="hidden"></div>
+    <p>
+      <script src="js/scripts.js"></script>
+    </p>
+  </div>
+</body>
+
+</html>

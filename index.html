@@ -13,7 +13,26 @@
 <body id="home">
   <div class="center">
     <h1 id="title">EnglishConnect | Intermediate</h1>
-    <h2 class="dark" id="banner">Home</h2>
+    <div id="banner" class="dark">
+      <h2 id="breadcrumbs">Home</h2>
+      <a class="remove" onclick="toggleThis('awards')" href="#">
+        <div id="awardBar">
+          <p>Badges:</p>
+          <img src="Web%20Files/images/Badge_Finance.png">
+          <p>1</p>
+          <img src="Web%20Files/images/Badge_DailLife.png">
+          <p>2</p>
+          <img src="Web%20Files/images/Badge_Family.png">
+          <p>3</p>
+          <img src="Web%20Files/images/Badge_Envir.png">
+          <p>4</p>
+          <img src="Web%20Files/images/Badge_Educ.png">
+          <p>5</p>
+          <img src="Web%20Files/images/Badge_Goals.png">
+          <p>6</p>
+        </div>
+      </a>
+    </div>
     <div id='main'>
       <div id='header' class="remove">
         <img id="profilePic" src="Web%20Files/images/profilePic.png" alt="Profile Picture">
@@ -29,16 +48,13 @@
           </div>
         </div>
         <div id="courseInfo" class="remove">
-          <h1 class="focus button" onclick="togglePreview()" style="z-index: 0">Course Information</h1>
-          <a onclick="toggleThis('awards')">
-            <h2 class="button">Awards</h2>
-          </a>
+          <h2 class="focus button" onclick="togglePreview()" style="z-index: 0">Course Information</h2>
           <h2 class="help button">Help</h2>
         </div>
       </div>
       <div id='courses'>
         <div class="course remove">
-          <img src="Web%20Files/images/icons/ECI_Listening.png">
+          <img src="Web%20Files/images/icons/ECI_Reading.png">
           <h3>Reading</h3>
           <div id='reading' class="progress">
             <h4 class="dark">Topics: <span></span>/32 <span></span></h4>
@@ -80,7 +96,7 @@
           </div>
         </div>
         <div class="course remove">
-          <img src="Web%20Files/images/icons/ECI_Listening.png">
+          <img src="Web%20Files/images/icons/ECI_Writing.png">
           <h3>Writing</h3>
           <div id='writing' class="progress">
             <h4 class="dark">Topics: <span></span>/32 <span></span></h4>
@@ -122,7 +138,7 @@
           </div>
         </div>
         <div class="course remove">
-          <img src="Web%20Files/images/icons/ECI_Listening.png">
+          <img src="Web%20Files/images/icons/ECI_Speaking.png">
           <h3>Speaking</h3>
           <div id='speaking' class="progress">
             <h4 class="dark">Topics: <span></span>/32 <span></span></h4>
@@ -207,74 +223,83 @@
         </div>
       </div>
     </div>
+    <div id="awards" class="content hidden remove">
+      <a class="close" onclick="toggleThis(this.parentNode.id)">✕</a>
+      <h2 class="reset" onclick="changeFocus('page1')">Page 1</h2>
+      <h2 class="reset" onclick="changeFocus('page2')">Page 2</h2>
+      <h2 class="reset" onclick="changeFocus('page3')">Page 3</h2>
+      <div id="page1" class="page focus">
+        <div class="award reset">
+          <div class="stars1"></div>
+          <img src="Web%20Files/images/Badge_WorkComm.png" alt="Daily Life Badge">
+          <p>Work and Professional Communications</p>
+        </div>
+        <div class="award reset">
+          <div class="stars2"></div>
+          <img src="Web%20Files/images/Badge_Finance.png" alt="Daily Life Badge">
+          <p>Personal Finance</p>
+        </div>
+        <div class="award reset">
+          <div class="stars3"></div>
+          <img src="Web%20Files/images/Badge_Hum.png" alt="Daily Life Badge">
+          <p>Humanities</p>
+        </div>
+        <div class="award reset">
+          <div class="stars4"></div>
+          <img src="Web%20Files/images/Badge_News.png" alt="Daily Life Badge">
+          <p>News and Events</p>
+        </div>
+      </div>
+      <div id="page2" class="page">
+        <div class="award reset">
+          <div class="stars0"></div>
+          <img src="Web%20Files/images/Badge_Envir.png" alt="Daily Life Badge">
+          <p>Your Environment</p>
+        </div>
+        <div class="award reset">
+          <div class="stars0"></div>
+          <img src="Web%20Files/images/Badge_Goals.png" alt="Daily Life Badge">
+          <p>Goals and Challanges</p>
+        </div>
+        <div class="award reset">
+          <div class="stars0"></div>
+          <img src="Web%20Files/images/Badge_SocComm.png" alt="Daily Life Badge">
+          <p>Social Communications</p>
+        </div>
+        <div class="award reset">
+          <div class="stars0"></div>
+          <img src="Web%20Files/images/Badge_Family.png" alt="Daily Life Badge">
+          <p>Family</p>
+        </div>
+      </div>
+      <div id="page3" class="page">
+        <div class="award reset">
+          <div class="stars0"></div>
+          <img src="Web%20Files/images/Badge_RecTrav.png" alt="Daily Life Badge">
+          <p>Recreation and Travel</p>
+        </div>
+        <div class="award reset">
+          <div class="stars0"></div>
+          <img src="Web%20Files/images/Badge_DailLife.png" alt="Daily Life Badge">
+          <p>Daily Life</p>
+        </div>
+        <div class="award reset">
+          <div class="stars0"></div>
+          <img src="Web%20Files/images/Badge_Educ.png" alt="Daily Life Badge">
+          <p>Education</p>
+        </div>
+        <div class="award reset">
+          <div class="stars0"></div>
+          <img src="Web%20Files/images/Badge_EthVal.png" alt="Daily Life Badge">
+          <p>Ethics and Values</p>
+        </div>
+      </div>
+    </div>
+    <div id="overlay" class="hidden"></div>
+    <p>
+      <script src="Web%20Files/js/scripts.js"></script>
+    </p>
   </div>
-  <div id="awards" class="content hidden remove">
-    <a class="close" onclick="toggleThis(this.parentNode.id)">✕</a>
-    <div class="award reset">
-      <img src="Web%20Files/images/Badge_WorkComm.png" alt="Daily Life Badge">
-      <div class="stars1"></div>
-      <h2 class="button">Work and Professional Communications</h2>
-    </div>
-    <div class="award reset">
-      <img src="Web%20Files/images/Badge_Finance.png" alt="Daily Life Badge">
-      <div class="stars2"></div>
-      <h2 class="button">Personal Finance</h2>
-    </div>
-    <div class="award reset">
-      <img src="Web%20Files/images/Badge_Hum.png" alt="Daily Life Badge">
-      <div class="stars3"></div>
-      <h2 class="button">Humanities</h2>
-    </div>
-    <div class="award reset">
-      <img src="Web%20Files/images/Badge_News.png" alt="Daily Life Badge">
-      <div class="stars4"></div>
-      <h2 class="button">News and Events</h2>
-    </div>
-    <div class="award reset">
-      <img src="Web%20Files/images/Badge_Envir.png" alt="Daily Life Badge">
-      <div class="stars0"></div>
-      <h2 class="button">Your Environment</h2>
-    </div>
-    <div class="award reset">
-      <img src="Web%20Files/images/Badge_Goals.png" alt="Daily Life Badge">
-      <div class="stars0"></div>
-      <h2 class="button">Goals and Challanges</h2>
-    </div>
-    <div class="award reset">
-      <img src="Web%20Files/images/Badge_SocComm.png" alt="Daily Life Badge">
-      <div class="stars0"></div>
-      <h2 class="button">Social Communications</h2>
-    </div>
-    <div class="award reset">
-      <img src="Web%20Files/images/Badge_Family.png" alt="Daily Life Badge">
-      <div class="stars0"></div>
-      <h2 class="button">Family</h2>
-    </div>
-    <div class="award reset">
-      <img src="Web%20Files/images/Badge_RecTrav.png" alt="Daily Life Badge">
-      <div class="stars0"></div>
-      <h2 class="button">Recreation and Travel</h2>
-    </div>
-    <div class="award reset">
-      <img src="Web%20Files/images/Badge_DailLife.png" alt="Daily Life Badge">
-      <div class="stars0"></div>
-      <h2 class="button">Daily Life</h2>
-    </div>
-    <div class="award reset">
-      <img src="Web%20Files/images/Badge_Educ.png" alt="Daily Life Badge">
-      <div class="stars0"></div>
-      <h2 class="button">Education</h2>
-    </div>
-    <div class="award reset">
-      <img src="Web%20Files/images/Badge_EthVal.png" alt="Daily Life Badge">
-      <div class="stars0"></div>
-      <h2 class="button">Ethics and Values</h2>
-    </div>
-  </div>
-  <div id="overlay" class="hidden"></div>
-  <p>
-    <script src="Web%20Files/js/scripts.js"></script>
-  </p>
 </body>
 
 </html>
