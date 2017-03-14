@@ -9,7 +9,7 @@
   <link rel="stylesheet" type="text/css" href="css/ecstyles.css">
 </head>
 
-<body id="practices">
+<body id="level3_writing_humanities" class="practices">
   <div class="center">
     <h1 id="title">EnglishConnect | Intermediate</h1>
     <div id="banner" class="dark">
@@ -64,124 +64,48 @@
           <h3 class="square master">MASTERED</h3>
         </div>
         <ol id="pracOl" class="remove">
-          <li class="reset blue">
-            <a href="https://pathway.brightspace.com/d2l/le/lti/30179/toolLaunch/14/128475061?service=items&activity=ec3_writ_t4_psg1" target="learnosity">
-            </a>
+          <li id="level3_writing_humanities_psg1" class="reset green">
+            <a onclick="ECIlti({'service':'items','activity':'ec3_writ_t4_psg1'}, 'learnosity');" href="#learnosity"></a>
           </li>
-          <li class="reset blue">
-            <a href="https://pathway.brightspace.com/d2l/le/lti/30179/toolLaunch/14/128475061?service=items&activity=ec3_writ_t4_psg2" target="learnosity">
-            </a>
+          <li id="level3_writing_humanities_psg2" class="reset green">
+            <a onclick="ECIlti({'service':'items','activity':'ec3_writ_t4_psg2'}, 'learnosity');" href="#learnosity"></a>
           </li>
-          <li class="reset blue">
-            <a href="https://pathway.brightspace.com/d2l/le/lti/30179/toolLaunch/14/128475061?service=items&activity=ec3_writ_t4_psg3" target="learnosity">
-            </a>
+          <li id="level3_writing_humanities_psg3" class="reset green">
+            <a onclick="ECIlti({'service':'items','activity':'ec3_writ_t4_psg3'}, 'learnosity');" href="#learnosity"></a>
           </li>
-          <li class="reset yellow">
-            <a href="https://pathway.brightspace.com/d2l/le/lti/30179/toolLaunch/14/128475061?service=items&activity=ec3_writ_t4_psg4" target="learnosity">
-            </a>
+          <li id="level3_writing_humanities_psg4" class="reset green">
+            <a onclick="ECIlti({'service':'items','activity':'ec3_writ_t4_psg4'}, 'learnosity');" href="#learnosity"></a>
           </li>
-          <li class="reset green">
-            <a href="https://pathway.brightspace.com/d2l/le/lti/30179/toolLaunch/14/128475061?service=items&activity=ec3_writ_t4_psg5" target="learnosity">
-            </a>
+          <li id="level3_writing_humanities_psg5" class="reset green">
+            <a onclick="ECIlti({'service':'items','activity':'ec3_writ_t4_psg5'}, 'learnosity');" href="#learnosity"></a>
           </li>
-          <li class="reset green">
-            <a href="https://pathway.brightspace.com/d2l/le/lti/30179/toolLaunch/14/128475061?service=items&activity=ec3_writ_t4_psg6" target="learnosity">
-            </a>
+          <li id="level3_writing_humanities_psg6" class="reset green">
+            <a onclick="ECIlti({'service':'items','activity':'ec3_writ_t4_psg6'}, 'learnosity');" href="#learnosity"></a>
           </li>
-          <li class="reset green">
-            <a href="https://pathway.brightspace.com/d2l/le/lti/30179/toolLaunch/14/128475061?service=items&activity=ec3_writ_t4_psg7" target="learnosity">
-            </a>
+          <li id="level3_writing_humanities_psg7" class="reset green">
+            <a onclick="ECIlti({'service':'items','activity':'ec3_writ_t4_psg7'}, 'learnosity');" href="#learnosity"></a>
           </li>
-          <li class="reset green">
-            <a href="https://pathway.brightspace.com/d2l/le/lti/30179/toolLaunch/14/128475061?service=items&activity=ec3_writ_t4_psg8" target="learnosity">
-            </a>
+          <li id="level3_writing_humanities_psg8" class="reset green">
+            <a onclick="ECIlti({'service':'items','activity':'ec3_writ_t4_psg8'}, 'learnosity');" href="#learnosity"></a>
           </li>
-          <li class="reset green">
-            <a href="https://pathway.brightspace.com/d2l/le/lti/30179/toolLaunch/14/128475061?service=items&activity=ec3_writ_t4_psg9" target="learnosity">
-            </a>
+          <li id="level3_writing_humanities_psg9" class="reset green">
+            <a onclick="ECIlti({'service':'items','activity':'ec3_writ_t4_psg9'}, 'learnosity');" href="#learnosity"></a>
           </li>
-          <li class="reset green">
-            <a href="https://pathway.brightspace.com/d2l/le/lti/30179/toolLaunch/14/128475061?service=items&activity=ec3_writ_t4_psg10" target="learnosity">
-            </a>
+          <li id="level3_writing_humanities_psg10" class="reset green">
+            <a onclick="ECIlti({'service':'items','activity':'ec3_writ_t4_psg10'}, 'learnosity');" href="#learnosity"></a>
           </li>
         </ol>
       </div>
-      <iframe width="600" height="520" name="learnosity" id="learnosity"></iframe>
-      <a href="#" class="button step">Mastery Check</a>
+      <div id='learnosityDiv'>
+        <iframe width="600" height="520" name="learnosity" id="learnosity"></iframe>
+        <!--        <a onclick="leaveFullscreen('learnosity')" href='#learnosity'>✕</a>-->
+        <a onclick="toggleFullscreen('learnosity')" href='#learnosity'>⤡</a>
+        <a onclick="toggleFullscreen('learnosity')" href='#learnosity'>⤢</a>
+      </div>
+      <a id="level3_writing_humanities_psg11" class="button step green" onclick="ECIlti({'service':'items','activity':'ec3_writ_t4_vocab'}, 'learnosity');" href="#learnosity">Mastery Check</a>
     </div>
   </div>
-  <div id="awards" class="content hidden remove">
-    <a class="close" onclick="toggleThis(this.parentNode.id)">✕</a>
-    <h2 class="reset" onclick="changeFocus('page1')">Page 1</h2>
-    <h2 class="reset" onclick="changeFocus('page2')">Page 2</h2>
-    <h2 class="reset" onclick="changeFocus('page3')">Page 3</h2>
-    <div id="page1" class="page focus">
-      <div class="award reset">
-        <div class="stars1"></div>
-        <img src="images/Badge_WorkComm.png" alt="Daily Life Badge">
-        <p>Work and Professional Communications</p>
-      </div>
-      <div class="award reset">
-        <div class="stars2"></div>
-        <img src="images/Badge_Finance.png" alt="Daily Life Badge">
-        <p>Personal Finance</p>
-      </div>
-      <div class="award reset">
-        <div class="stars3"></div>
-        <img src="images/Badge_Hum.png" alt="Daily Life Badge">
-        <p>Humanities</p>
-      </div>
-      <div class="award reset">
-        <div class="stars4"></div>
-        <img src="images/Badge_News.png" alt="Daily Life Badge">
-        <p>News and Events</p>
-      </div>
-    </div>
-    <div id="page2" class="page">
-      <div class="award reset">
-        <div class="stars0"></div>
-        <img src="images/Badge_Envir.png" alt="Daily Life Badge">
-        <p>Your Environment</p>
-      </div>
-      <div class="award reset">
-        <div class="stars0"></div>
-        <img src="images/Badge_Goals.png" alt="Daily Life Badge">
-        <p>Goals and Challanges</p>
-      </div>
-      <div class="award reset">
-        <div class="stars0"></div>
-        <img src="images/Badge_SocComm.png" alt="Daily Life Badge">
-        <p>Social Communications</p>
-      </div>
-      <div class="award reset">
-        <div class="stars0"></div>
-        <img src="images/Badge_Family.png" alt="Daily Life Badge">
-        <p>Family</p>
-      </div>
-    </div>
-    <div id="page3" class="page">
-      <div class="award reset">
-        <div class="stars0"></div>
-        <img src="images/Badge_RecTrav.png" alt="Daily Life Badge">
-        <p>Recreation and Travel</p>
-      </div>
-      <div class="award reset">
-        <div class="stars0"></div>
-        <img src="images/Badge_DailLife.png" alt="Daily Life Badge">
-        <p>Daily Life</p>
-      </div>
-      <div class="award reset">
-        <div class="stars0"></div>
-        <img src="images/Badge_Educ.png" alt="Daily Life Badge">
-        <p>Education</p>
-      </div>
-      <div class="award reset">
-        <div class="stars0"></div>
-        <img src="images/Badge_EthVal.png" alt="Daily Life Badge">
-        <p>Ethics and Values</p>
-      </div>
-    </div>
-  </div>
+  <div id="awards" class="content hidden remove"></div>
   <div id="overlay" class="hidden" class="hidden"></div>
   <div id="skill" class="hidden content temp" onclick="toggleThis(this)">
     <a class="close" onclick="toggleThis(this.parentNode.id)">✕</a>Hello, I'm Your Skills</div>

@@ -1,0 +1,148 @@
+/*eslint-env browser*/
+
+// <![CDATA[
+function createCategory(categoryName) {
+  var category = new XMLHttpRequest();
+  category.open("POST", "/d2l/api/le/1.15/30179/grades/categories/");
+  category.setRequestHeader("Content-Type", "application/json");
+  category.setRequestHeader("X-Csrf-Token", localStorage['XSRF.Token']);
+  category.send(JSON.stringify({
+    "Name": categoryName,
+    "ShortName": categoryName,
+    "CanExceedMax": false,
+    "ExcludeFromFinalGrade": false,
+    "StartDate": null,
+    "EndDate": null,
+    "Weight": null,
+    "MaxPoints": null,
+    "AutoPoints": null,
+    "WeightDistributionType": null,
+    "NumberOfHighestToDrop": null,
+    "NumberOfLowestToDrop": null
+  }));
+  category.onload = function (e) {
+    if (category.status == 200) {
+      var categoryData = category.response;
+      console.log(categoryData);
+      return categoryData.Id;
+    } else {
+      console.log(e);
+      return;
+    }
+  }
+  category.onreadystatechange = function () {
+    if (category.readyState === 4) {
+      console.log("made It");
+      console.log(category);
+    }
+  };
+}
+
+
+function generateItems() {
+  var counter = 0
+  var subjects = ["reading", "writing", "speaking", "listening"];
+  var topics = [
+          "dailyLife",
+          "workAndProfessionalCommunications",
+          "personalFinance",
+          "humanities",
+          "newsAndEvents",
+          "yourEnvironment",
+          "goalsAndChallenges",
+          "socialCommunications",
+          "family",
+          "recreationAndTravel",
+          "education",
+          "ethicsAndValues"
+        ];
+  /*Levels*/
+  for (var i = 0; i < 4; i++) {
+    var level = "level" + (i + 1);
+
+    /*Subjects*/
+    for (var l = 0; l < 4; l++) {
+      var subject = subjects[l];
+      var categoryId = createCategory(level + "_" + subject);
+      /*Topics*/
+      function makeItems(categoryId) {
+        for (var j = 0; j < 12; j++) {
+          var topic = topics[j];
+
+          /*Passages*/
+          for (var k = 0; k < 11; k++) {
+            var psg = "psg" + (k + 1);
+            var itemId = categoryId + "_" + topic + "_" + psg;
+            counter++;
+            console.log(itemId, counter);
+            var grades = new XMLHttpRequest();
+            grades.open("POST", "/d2l/api/le/1.15/30179/grades/");
+            grades.setRequestHeader("Content-Type", "application/json");
+            grades.setRequestHeader("X-Csrf-Token", localStorage['XSRF.Token']);
+            grades.send(JSON.stringify({
+              "MaxPoints": 1,
+              "IsBonus": false,
+              "ExcludeFromFinalGradeCalculation": false,
+              "GradeSchemeId": null,
+              "Name": itemId,
+              "ShortName": itemId,
+              "GradeType": "PassFail",
+              "CategoryId": categoryId,
+              "Description": {
+                "Content": "",
+                "Type": "Text|Html"
+              },
+              "AssociatedTool": null
+            }));
+
+          }
+        }
+      }
+      makeItems(categoryId);
+    }
+  }
+}
+
+function getGrades(category) {
+  var grades = new XMLHttpRequest();
+  grades.open("GET", "/d2l/api/le/1.15/30179/grades/categories/");
+  grades.onload = function (e) {
+    if (grades.status == 200) {
+      var gradesData = grades.response;
+      console.log(gradesData);
+    } else {
+      console.log(e);
+    }
+  }
+  grades.send();
+}
+
+
+function one() {
+  var grades = new XMLHttpRequest();
+  grades.open("POST", "/d2l/api/le/1.15/30179/grades/");
+  grades.setRequestHeader("Content-Type", "application/json");
+  grades.setRequestHeader("X-Csrf-Token", localStorage['XSRF.Token']);
+  grades.send(JSON.stringify({
+    "MaxPoints": 1,
+    "IsBonus": false,
+    "ExcludeFromFinalGradeCalculation": false,
+    "GradeSchemeId": null,
+    "Name": "test",
+    "ShortName": "test",
+    "GradeType": "PassFail",
+    "CategoryId": "207140",
+    "Description": {
+      "Content": "",
+      "Type": "Text|Html"
+    },
+    "AssociatedTool": null
+  }));
+  grades.onreadystatechange = function () {
+    if (grades.readyState === 4) {
+      console.log("made It");
+      console.log(grades);
+    }
+  };
+}
+// ]]>

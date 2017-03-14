@@ -6,7 +6,12 @@ var fs = require('fs'),
   htmlFiles = require('./htmlFilesToObject.js')(),
   handlebars = require('Handlebars'),
   topicsPage, practicesPage, i = 0,
-  template;
+  template, location;
+if (typeof (process.argv[2]) == 'undefined') {
+  location = 'generatedPages'
+} else {
+  location = 'devPages'
+}
 
 function small(string) {
   if (string == null || string == 'undefined') {
@@ -68,7 +73,7 @@ data.levels.forEach(function (level) {
     topicsPage = generatePage(level, subject);
 
     //Write the topicsPage
-    fs.writeFileSync('generatedPages/' + small(level) + "_" + small(subject) + '.html', topicsPage);
+    fs.writeFileSync(location + '/' + small(level) + "_" + small(subject) + '.html', topicsPage);
     i++;
     console.log("Wrote page " + i + "/208");
     data.topics.forEach(function (topic) {
@@ -76,7 +81,7 @@ data.levels.forEach(function (level) {
       practicesPage = generatePage(level, subject, topic);
 
       //Write the practicesPage
-      fs.writeFileSync('generatedPages/' + small(level) + "_" + small(subject) + "_" + small(topic) + '.html', practicesPage);
+      fs.writeFileSync(location + '/' + small(level) + "_" + small(subject) + "_" + small(topic) + '.html', practicesPage);
       i++;
       console.log("Wrote page " + i + "/208");
     })

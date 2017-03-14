@@ -8,7 +8,7 @@ var data = {
   "Humanities",
   "News and Events",
   "Your Environment",
-  "Goals and Challanges",
+  "Goals and Challenges",
   "Social Communications",
   "Family",
   "Recreation and Travel",

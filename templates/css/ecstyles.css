@@ -360,13 +360,13 @@
         }
         /*Topics Page Styles*/
         
-        #topics .progress {
+        .topics .progress {
           display: block;
           width: auto;
           margin-bottom: 20px;
         }
         
-        #topics .container {
+        .topics .container {
           margin: 20px 0;
         }
         
@@ -718,13 +718,13 @@
         /* Styles for mobile */
         
         @media screen and (max-width: 850px) {
-          #topics .tile,
+          .topics .tile,
           #practice .tile {
             width: calc(.3333 * (100% - 60px));
             margin: 10px;
             height: 110px;
           }
-          #topics .tile h3,
+          .topics .tile h3,
           #practice .tile h3 {
             font-size: 11pt;
           }

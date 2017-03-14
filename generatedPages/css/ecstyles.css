@@ -13,18 +13,6 @@
           counter-reset: step;
         }
         
-        .green {
-          background-color: #6BA539;
-        }
-        
-        .blue {
-          background-color: #005F83;
-        }
-        
-        .yellow {
-          background-color: #FFB81C;
-        }
-        
         .center {
           max-width: 960px;
           margin: auto;
@@ -103,7 +91,8 @@
         }
         
         #profilePic {
-          width: 15%;
+          width: calc(15% - 6px);
+          border: #005F83 solid 3px;
         }
         
         #studentInfo {
@@ -117,6 +106,27 @@
         #studentInfo h2 {
           margin: 0 10px;
           color: #005F83;
+        }
+        
+        .button {
+          background-color: #747778;
+          text-decoration: none;
+          color: #FFF;
+          padding: 10px;
+          display: block;
+          border-radius: 5px;
+          text-align: center;
+          transition: background-color .2s;
+        }
+        
+        .button blue {
+          background-color: #005f83
+        }
+        
+        .button:hover {
+          opacity: .8;
+          transition: .2s;
+          cursor: pointer;
         }
         
         #name {
@@ -146,6 +156,18 @@
         
         #key h3:last-of-type {
           margin-right: 0;
+        }
+        
+        .green {
+          background-color: #6BA539;
+        }
+        
+        .blue {
+          background-color: #005F83;
+        }
+        
+        .yellow {
+          background-color: #FFB81C;
         }
         
         .square:before {
@@ -183,6 +205,8 @@
           height: 85px;
           vertical-align: top;
           line-height: 12pt;
+          position: relative;
+          z-index: 2;
         }
         
         #courseInfo .help {
@@ -214,12 +238,11 @@
         
         #awardBar {
           display: inline-block;
-          border-radius: 5px;
           width: 300px;
           text-align: right;
           position: absolute;
           right: 30px;
-          top: 2px;
+          top: 0px;
           margin: 0;
           background-color: #005F83;
         }
@@ -561,27 +584,22 @@
           border: solid #A2AAAD 3px;
           border-radius: 5px;
           margin: 20px 0;
+          transition: height .3s;
         }
         
-        .button {
-          background-color: #747778;
+        #learnosity.fullscreen {
+          height: 95vh;
+        }
+        
+        #learnosityDiv {
+          position: relative;
+        }
+        
+        #learnosityDiv a {
+          position: absolute;
+          top: 1.5em;
+          right: .5em;
           text-decoration: none;
-          color: #FFF;
-          padding: 10px;
-          display: block;
-          border-radius: 5px;
-          text-align: center;
-          transition: background-color .2s;
-        }
-        
-        .button blue {
-          background-color: #005f83
-        }
-        
-        .button:hover {
-          opacity: .8;
-          transition: .2s;
-          cursor: pointer;
         }
         /*  Awards Styles  */
         
@@ -591,7 +609,7 @@
           height: 80vh;
           border-radius: 10px;
           transition: background .3s;
-          background: rgba(0, 0, 0, .6);
+          background: rgba(0, 0, 0, .9);
           padding: 1vw;
         }
         
@@ -711,13 +729,13 @@
         /* Styles for mobile */
         
         @media screen and (max-width: 850px) {
-          #topics .tile,
+          .topics .tile,
           #practice .tile {
             width: calc(.3333 * (100% - 60px));
             margin: 10px;
             height: 110px;
           }
-          #topics .tile h3,
+          .topics .tile h3,
           #practice .tile h3 {
             font-size: 11pt;
             line-height: 11pt;

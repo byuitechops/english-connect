@@ -64,7 +64,6 @@ function resizeText() {
   }
 }
 
-
 var image = new XMLHttpRequest();
 image.open("GET", "https://pathway.brightspace.com/d2l/api/lp/1.15/profile/myProfile/image");
 image.responseType = "blob";
