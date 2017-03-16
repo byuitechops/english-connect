@@ -595,11 +595,34 @@
           position: relative;
         }
         
-        #learnosityDiv a {
+        #expand {
           position: absolute;
           top: 1.5em;
-          right: .5em;
+          right: 2em;
           text-decoration: none;
+          font-size: 1.5em;
+          background-color: #747778;
+          padding: 5px 15px 10px;
+          color: #FFF;
+          border-radius: 5px;
+          vertical-align: top;
+        }
+        
+        #expand:before {
+          opacity: 0;
+          transition: .3s;
+        }
+        
+        #expand:hover:before {
+          content: "Resize";
+          position: absolute;
+          transform: translate(-42%, -120%);
+          background: #747778;
+          padding: 5px 15px;
+          border-radius: 5px;
+          font-size: 12pt;
+          z-index: 5;
+          opacity: 1;
         }
         /*  Awards Styles  */
         
