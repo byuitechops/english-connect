@@ -38,24 +38,58 @@ function createCategory(categoryName) {
   };
 }
 
+var counter = 0
+var subjects = ["reading", "writing", "speaking", "listening"];
+var topics = [
+  "dailylife",
+  "workandprofessionalcommunications",
+  "personalfinance",
+  "humanities",
+  "newsandevents",
+  "yourenvironment",
+  "goalsandchallenges",
+  "socialcommunications",
+  "family",
+  "recreationandtravel",
+  "education",
+  "ethicsandvalues"
+  ];
+
+function makeItems(categoryId) {
+  for (var j = 0; j < 12; j++) {
+    var topic = topics[j];
+
+    /*Passages*/
+    for (var k = 0; k < 11; k++) {
+      var psg = "psg" + (k + 1);
+      var itemId = categoryId + "_" + topic + "_" + psg;
+      counter++;
+      console.log(itemId, counter);
+      var grades = new XMLHttpRequest();
+      grades.open("POST", "/d2l/api/le/1.15/30179/grades/");
+      grades.setRequestHeader("Content-Type", "application/json");
+      grades.setRequestHeader("X-Csrf-Token", localStorage['XSRF.Token']);
+      grades.send(JSON.stringify({
+        "MaxPoints": 1,
+        "IsBonus": false,
+        "ExcludeFromFinalGradeCalculation": false,
+        "GradeSchemeId": null,
+        "Name": itemId,
+        "ShortName": itemId,
+        "GradeType": "PassFail",
+        "CategoryId": categoryId,
+        "Description": {
+          "Content": "",
+          "Type": "Text|Html"
+        },
+        "AssociatedTool": null
+      }));
+
+    }
+  }
+}
 
 function generateItems() {
-  var counter = 0
-  var subjects = ["reading", "writing", "speaking", "listening"];
-  var topics = [
-          "dailyLife",
-          "workAndProfessionalCommunications",
-          "personalFinance",
-          "humanities",
-          "newsAndEvents",
-          "yourEnvironment",
-          "goalsAndChallenges",
-          "socialCommunications",
-          "family",
-          "recreationAndTravel",
-          "education",
-          "ethicsAndValues"
-        ];
   /*Levels*/
   for (var i = 0; i < 4; i++) {
     var level = "level" + (i + 1);
@@ -65,39 +99,6 @@ function generateItems() {
       var subject = subjects[l];
       var categoryId = createCategory(level + "_" + subject);
       /*Topics*/
-      function makeItems(categoryId) {
-        for (var j = 0; j < 12; j++) {
-          var topic = topics[j];
-
-          /*Passages*/
-          for (var k = 0; k < 11; k++) {
-            var psg = "psg" + (k + 1);
-            var itemId = categoryId + "_" + topic + "_" + psg;
-            counter++;
-            console.log(itemId, counter);
-            var grades = new XMLHttpRequest();
-            grades.open("POST", "/d2l/api/le/1.15/30179/grades/");
-            grades.setRequestHeader("Content-Type", "application/json");
-            grades.setRequestHeader("X-Csrf-Token", localStorage['XSRF.Token']);
-            grades.send(JSON.stringify({
-              "MaxPoints": 1,
-              "IsBonus": false,
-              "ExcludeFromFinalGradeCalculation": false,
-              "GradeSchemeId": null,
-              "Name": itemId,
-              "ShortName": itemId,
-              "GradeType": "PassFail",
-              "CategoryId": categoryId,
-              "Description": {
-                "Content": "",
-                "Type": "Text|Html"
-              },
-              "AssociatedTool": null
-            }));
-
-          }
-        }
-      }
       makeItems(categoryId);
     }
   }

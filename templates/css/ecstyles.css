@@ -489,7 +489,7 @@
           line-height: 0;
         }
         
-        #pracOl {
+        #pracNav {
           list-style-type: none;
           margin: 0;
           padding: 0;
@@ -497,7 +497,7 @@
           overflow: hidden;
         }
         
-        #pracOl a {
+        #pracNav a {
           text-decoration: none;
           display: block;
           width: 100%;
@@ -505,13 +505,13 @@
           height: 40px;
         }
         
-        #pracOl li {
+        #pracNav li {
           position: relative;
           display: inline-block;
           width: 10%;
         }
         
-        #pracOl a:before {
+        #pracNav a:before {
           color: #fff;
           counter-increment: options;
           content: counter(options) " ";
@@ -520,7 +520,7 @@
           left: 55%;
         }
         
-        #pracOl a:after {
+        #pracNav a:after {
           display: inline-block;
           vertical-align: middle;
           line-height: 0;
@@ -529,34 +529,34 @@
           z-index: 1;
         }
         
-        #pracOl .green a:after {
+        #pracNav .green a:after {
           content: url(../images/greenPointer.svg);
         }
         
-        #pracOl .blue a:after {
+        #pracNav .blue a:after {
           content: url(../images/bluePointer.svg);
         }
         
-        #pracOl .yellow a:after {
+        #pracNav .yellow a:after {
           content: url(../images/yellowPointer.svg);
         }
         
-        #pracOl li:first-of-type {
+        #pracNav li:first-of-type {
           border-radius: 5px 0px 0px 5px;
           width: calc(10% - 10px);
         }
         
-        #pracOl li:first-of-type a:before,
-        #pracOl li:last-of-type a:before {
+        #pracNav li:first-of-type a:before,
+        #pracNav li:last-of-type a:before {
           left: 45%;
         }
         
-        #pracOl li:last-of-type {
+        #pracNav li:last-of-type {
           border-radius: 0px 5px 5px 0px;
           width: calc(10% + 10px);
         }
         
-        #pracOl li:last-of-type a:after {
+        #pracNav li:last-of-type a:after {
           content: none;
         }
         
@@ -833,21 +833,21 @@
           .step:before {
             margin: 0 10px 0 0;
           }
-          #pracOl li {
+          #pracNav li {
             width: 20%;
             margin-bottom: 3px;
           }
-          #pracOl li:first-of-type,
-          #pracOl li:nth-of-type(6) {
+          #pracNav li:first-of-type,
+          #pracNav li:nth-of-type(6) {
             border-radius: 5px 0px 0px 5px;
             width: calc(20% - 10px);
           }
-          #pracOl li:nth-of-type(6) a:before,
-          #pracOl li:nth-of-type(5) a:before {
+          #pracNav li:nth-of-type(6) a:before,
+          #pracNav li:nth-of-type(5) a:before {
             left: 45%;
           }
-          #pracOl li:last-of-type,
-          #pracOl li:nth-of-type(5) {
+          #pracNav li:last-of-type,
+          #pracNav li:nth-of-type(5) {
             border-radius: 0px 5px 5px 0px;
             width: calc(20% + 10px);
           }

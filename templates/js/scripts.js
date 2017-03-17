@@ -37,13 +37,6 @@ function changeFocus(eleId) {
   target.classList.add('focus');
 }
 
-var numMastered = {
-  reading: 20,
-  writing: 26,
-  speaking: 19,
-  listening: 11
-}
-
 function changePerc(percObj) {
   var subjects = document.querySelectorAll('.progress');
   var asPerc = {};

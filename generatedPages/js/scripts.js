@@ -5,21 +5,23 @@
 var subjects = ["reading", "writing", "speaking", "listening"],
   levels = ["level1", "level2", "level3", "level4"],
   topics = [
-  "dailyLife",
-  "workAndProfessionalCommunications",
-  "personalFinance",
+  "dailylife",
+  "workandprofessionalcommunications",
+  "personalfinance",
   "humanities",
-  "newsAndEvents",
-  "yourEnvironment",
-  "goalsAndChallenges",
-  "socialCommunications",
+  "newsandevents",
+  "yourenvironment",
+  "goalsandchallenges",
+  "socialcommunications",
   "family",
-  "recreationAndTravel",
+  "recreationandtravel",
   "education",
-  "ethicsAndValues"
-  ];
+  "ethicsandvalues"
+  ],
+  passages = ["psg1", "psg2", "psg3", "psg4", "psg5", "psg6", "psg7", "psg8", "psg9", "psg10", "psg11"];
 
-/* OU number required for LTI Request */
+/* OU n
+mastered: 0,umber required for LTI Request */
 var refer = top.location.pathname.split('/');
 var ou = refer[refer.length - 1];
 
@@ -63,147 +65,114 @@ function toggleFullscreen(eleId) {
   ele.classList.toggle('fullscreen');
 }
 
-/* Data Operations */
-var numMastered = {
-  level1: 20,
-  level2: 26,
-  level3: 19,
-  level4: 11
-}
-
-function changePerc(percObj) {
-  var subjects = document.querySelectorAll('.progress');
-  var asPerc = {};
-  Object.keys(numMastered).map(function (each) {
-    asPerc[each] = (Math.round(numMastered[each] / 32 * 100) + '%');
-  });
-  subjects.forEach(function (subject) {
-    subject.children[1].style = 'width: calc((100% - 161px) *' + numMastered[subject.id] / 32;
-    subject.children[0].children[0].innerText = numMastered[subject.id];
-    subject.children[0].children[1].innerText = asPerc[subject.id];
-  }, numMastered, asPerc);
-}
-
 /* ---- Grade info ---- */
-/*get grade values*/
 
-function colorHomeTiles(gradeValues) {
-  gradeValues.forEach(function (value) {
-    var tile = document.getElementById(value.Name);
-    var color = tile.querySelector('.color');
-    var whichColor;
-    if (value.Earned / value.Poss >= .6) {
-      whichColor = 'blue';
-    } else if (value.Earned / value.Poss > 0) {
-      whichColor = 'yellow'
-    } else {
-      whichColor = 'green';
+function color(eleId, color) {
+  var ele = document.getElementById(eleId);
+  ele.classList.toggle('green');
+  ele.classList.toggle(color);
+}
+
+function homeOps(grades) {
+  getProfileInfo()
+    // poulate the tiles by querying grades obj
+  var tiles = document.querySelectorAll('.color');
+  tiles.forEach(function (tile) {
+    var path = tile.id.split('_');
+    if (grades[path[0]][path[1]]["mastered"] >= 8) {
+      color(tile.id, 'blue');
+    } else if (grades[path[0]][path[1]]["total"] != null) {
+      color(tile.id, 'yellow')
     }
-    color.setAttribute('class', 'color ' + whichColor);
+  });
+  // move the progress bars and change the percentages
+  var levels = document.querySelectorAll('.progress');
+  levels.forEach(function (level) {
+    level.children[0].children[0].innerText = grades[level.id]["total"];
+    level.children[0].children[1].innerText = Math.round(grades[level.id]["total"] / 32 * 100);
+    level.children[1].style = 'width: calc((100% - 161px) *' + grades[level.id]["total"] / 32;
   })
 }
 
-function colorTopicTiles(gradeValues) {
-  for (var value in gradeValues) {
-    var tile = document.getElementById(gradeValues[value].Name);
-    var color = tile.querySelector('.color');
-    var whichColor;
-    if (gradeValues[value].Sum == 11) {
-      whichColor = 'blue';
-    } else if (gradeValues[value].Sum > 0) {
-      whichColor = 'yellow';
-    } else {
-      whichColor = 'green';
+function topicOps(grades) {
+  var tiles = document.querySelectorAll('.color');
+  tiles.forEach(function (tile) {
+    var path = tile.id.split('_')
+    if (grades[path[0]][path[1]][path[2]]["psg11"] == 1) {
+      color(tile.id, 'blue');
+    } else if (grades[path[0]][path[1]][path[2]]["total"] != null) {
+      color(tile.id, 'yellow')
     }
-    color.setAttribute('class', 'color ' + whichColor);
-  }
+  });
+  var level = document.querySelector('.progress');
+  var path = level.id.split('_');
+  level.children[0].children[0].innerText = grades[path[0]][path[1]]["mastered"];
+  level.children[0].children[1].innerText = Math.round(grades[path[0]][path[1]]["mastered"] / 12 * 100);
+  level.children[1].style = 'width: calc((100% - 161px) *' + grades[path[0]][path[1]]["mastered"] / 12;
 }
 
-function colorPracTiles(gradeValues) {
-  gradeValues.forEach(function (value) {
-    var button = document.querySelector('[id*="psg' + value.Name.split('_')[3] + '"]');
-    var whichColor;
-    if (value.Earned == 1) {
-      whichColor = 'blue';
-    } else if (value.Earned == 0) {
-      whichColor = 'yellow';
-    } else {
-      whichColor = 'green';
+function pracOps(grades) {
+  var buttons = document.querySelectorAll('.passage');
+  buttons.forEach(function (button) {
+    var path = button.id.split('_')
+    if (grades[path[0]][path[1]][path[2]][path[3]] == 1) {
+      color(button.id, 'blue');
+    } else if (grades[path[0]][path[1]][path[2]]["total"] != null) {
+      color(button.id, 'yellow')
     }
-    if (button.tagName == "A") {
-      button.setAttribute('class', 'button step ' + whichColor);
-    } else {
-      button.setAttribute('class', 'reset ' + whichColor);
-    }
-  })
+  });
 }
 
 function controller() {
-  var gradeValues = JSON.parse(localStorage["grade-values"]);
-  var filteredGrades = []
-
+  var grades = JSON.parse(localStorage["grades-obj"]);
   var pageId = document.querySelector('body').id;
 
   if (pageId == 'home') {
-    getProfileInfo()
-    filteredGrades = gradeValues.filter(function (value) {
-      return value.Type == 5;
-    });
-    colorHomeTiles(filteredGrades);
-    changePerc(numMastered);
+    homeOps(grades);
   } else if (pageId.length > 16) {
-    var pracGrades = gradeValues.filter(function (value) {
-      return value.Type == 2 && value.Name.toLowerCase().includes(pageId);
-    })
-    var readyGrades = [];
-    for (var i = 0; i < pracGrades.length; i++) {
-      readyGrades[i] = {
-        Name: pageId + "_" + (i + 1),
-        Earned: pracGrades[i].Earned
-      }
-    }
-    colorPracTiles(readyGrades);
+    pracOps(grades, pageId);
   } else {
-    var levelGrades = gradeValues.filter(function (value) {
-      return value.Type == 2 && value.Name.includes(pageId);
-    })
-    var topicGrades = [];
-    topics.forEach(function (topic) {
-      topicGrades[topic] = {
-        Sum: 0,
-        Name: pageId + "_" + topic.toLowerCase()
-      };
-    });
-    levelGrades.forEach(function (grade) {
-      var topic = grade.Name.split('_')[2];
-      topicGrades[topic].Sum += grade.Earned;
-    });
-    colorTopicTiles(topicGrades);
+    topicOps(grades, pageId)
   }
 }
 /* Get Grade values */
 
 function getGradeValues() {
-
   var item = new XMLHttpRequest();
   item.open("GET", "/d2l/api/le/1.15/" + ou + "/grades/values/myGradeValues/");
   item.onload = function (e) {
     if (item.status == 200) {
       var response = JSON.parse(item.response);
-      var gradeValues = [];
-      gradeValues.push({
-        "userId": localStorage["Session.UserId"]
+      localStorage.setItem("last-updated", JSON.stringify([
+        localStorage["Session.UserId"],
+        new Date().getTime()
+      ]));
+      var filtered = response.filter(function (value) {
+        return value.GradeObjectType == 2;
       });
-      response.forEach(function (grade) {
-        gradeValues.push({
-          Name: grade.GradeObjectName,
-          Id: grade.GradeObjectIdentifier,
-          Earned: grade.PointsNumerator,
-          Poss: grade.PointsDenominator,
-          Type: grade.GradeObjectType,
+      // Populate grades obj
+      filtered.forEach(function (grade) {
+        var location = grade.GradeObjectName.toLowerCase().split('_');
+        grades[location[0]][location[1]][location[2]][location[3]] = grade.PointsNumerator;
+      });
+      levels.forEach(function (level) {
+        subjects.forEach(function (subject) {
+          topics.forEach(function (topic) {
+            passages.forEach(function (psg) {
+              var psgVal = grades[level][subject][topic][psg];
+              if (psgVal != null) {
+                grades[level][subject][topic]["total"] += psgVal;
+                grades[level][subject]["total"] += psgVal;
+              }
+            });
+            if (grades[level][subject][topic]["psg11"] == 1) {
+              grades[level][subject]["mastered"] += 1;
+              grades[level]["total"] += 1;
+            }
+          })
         })
-      });
-      localStorage["grade-values"] = JSON.stringify(gradeValues);
+      })
+      localStorage["grades-obj"] = JSON.stringify(grades);
       controller();
     } else {
       console.log(e);
@@ -213,11 +182,12 @@ function getGradeValues() {
 }
 
 /* clear grade values if user is not the same */
-if (localStorage.getItem("grade-values") === null) {
+if (localStorage.getItem("grades-obj") === null) {
   getGradeValues();
 } else {
-  if (JSON.parse(localStorage["grade-values"]["userId"] != localStorage["Session.UserId"])) {
-    localStorage.removeItem('gradeValues');
+  var lastUpdated = JSON.parse(localStorage["last-updated"]);
+  if (lastUpdated[0] != localStorage["Session.UserId"] || ((new Date().getTime()) - lastUpdated[1]) > 1000 * 60 * 60) {
+    localStorage.removeItem('grades-obj');
     getGradeValues();
   } else {
     controller();
@@ -278,7 +248,7 @@ function getProfileInfo() {
   }
   image.send();
 }
-
+/* To be executed on every page*/
 /* Awards HTML */
 var awards = new XMLHttpRequest();
 awards.open("GET", "awards.html");
