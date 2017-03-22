@@ -1,0 +1,68 @@
+<head>
+  <style>
+    .line {
+      fill: none;
+      stroke: #333333;
+      stroke-width: 4;
+      stroke-miterlimit: 10;
+    }
+    
+    .fill {
+      fill: #005F83;
+    }
+    
+    svg {
+      width: 65px;
+      display: inline-block;
+      margin: 10px;
+    }
+    
+    text {
+      font-size: 20px;
+      font-family: 'Open Sans';
+      font-weight: 600;
+      fill: #333333;
+    }
+
+  </style>
+</head>
+
+<body>
+  <svg version="1.1" id="a" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100;" xml:space="preserve">
+  <polygon id="web" class="fill"/>
+  <line id="XMLID_1_" class="line" x1="50" y1="0" x2="50" y2="100" />
+  <line id="XMLID_2_" class="line" x1="0" y1="50" x2="100" y2="50" />
+</svg>
+
+  <svg version="1.1" id="b" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100;" xml:space="preserve">
+  <polygon id="web" class="fill"/>
+  <line id="XMLID_1_" class="line" x1="50" y1="0" x2="50" y2="100" />
+  <line id="XMLID_2_" class="line" x1="0" y1="50" x2="100" y2="50" />
+</svg>
+
+  <script>
+    function generateChart(chartArrayData) {
+      chartArrayData.forEach(function(data) {
+        var chart = document.getElementById(data.eleId);
+        chart.getElementById('web').setAttribute('points', "50," + (50 - data.listeningPerc / 2) + ", " + (data.speakingPerc / 2 + 50) + "," + "50 50," + (50 + data.readingPerc / 2) + ", " + (50 - data.writingPerc / 2) + "," + "50 ");
+      })
+    }
+
+    var sampleArray = [{
+      "eleId": 'a',
+      "listeningPerc": 70,
+      "speakingPerc": 60,
+      "readingPerc": 50,
+      "writingPerc": 40
+    }, {
+      "eleId": 'b',
+      "listeningPerc": 40,
+      "speakingPerc": 50,
+      "readingPerc": 60,
+      "writingPerc": 70
+    }]
+
+    generateChart(sampleArray);
+
+  </script>
+</body>
