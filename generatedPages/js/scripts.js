@@ -26,7 +26,11 @@ var refer = top.location.pathname.split('/');
 var ou = refer[refer.length - 1];
 
 /*hide D2L */
-top.document.getElementsByTagName("header")[0].style = "display: none;";
+try {
+  top.document.getElementsByTagName("header")[0].style = "display: none;";
+} catch (e) {
+  console.log(e);
+}
 
 /* Toggle Functions */
 
@@ -88,7 +92,7 @@ function homeOps(grades) {
   // move the progress bars and change the percentages
   var levels = document.querySelectorAll('.progress');
   levels.forEach(function (level) {
-    level.children[0].children[0].innerText = grades[level.id]["total"];
+    level.children[0].children[0].innerText = 0 + grades[level.id]["total"];
     level.children[0].children[1].innerText = Math.round(grades[level.id]["total"] / 32 * 100);
     level.children[1].style = 'width: calc((100% - 161px) *' + grades[level.id]["total"] / 32;
   })
@@ -106,7 +110,7 @@ function topicOps(grades) {
   });
   var level = document.querySelector('.progress');
   var path = level.id.split('_');
-  level.children[0].children[0].innerText = grades[path[0]][path[1]]["mastered"];
+  level.children[0].children[0].innerText = 0 + grades[path[0]][path[1]]["mastered"];
   level.children[0].children[1].innerText = Math.round(grades[path[0]][path[1]]["mastered"] / 12 * 100);
   level.children[1].style = 'width: calc((100% - 161px) *' + grades[path[0]][path[1]]["mastered"] / 12;
 }
@@ -196,13 +200,14 @@ if (localStorage.getItem("grades-obj") === null) {
 /* --- Page Content --- */
 
 function getProfileInfo() {
-
-  function resizeText() {
-    var text = document.getElementById('name');
-    if (text.innerText.length > 30) {
-      text.style = "font-size:1em";
-    }
+  /* Resize text if name is too long */
+  var text = document.getElementById('name');
+  if (text.innerText.length > 30) {
+    text.style = "font-size:1em";
   }
+
+  /* Update edit profile button */
+  document.getElementById('edit').href = "/d2l/lp/profile/profile_edit.d2l?ou=" + ou;
 
   /* Student Data */
   var profile = new XMLHttpRequest();
@@ -219,16 +224,13 @@ function getProfileInfo() {
           if (profileData.HomeTown != null) {
             document.getElementById('gatheringLocation').innerText = 'Hometown: ' + profileData.HomeTown;
           }
-          resizeText();
         } else {
           console.log(e);
-          resizeText();
         }
       }
       user.send();
     } else {
       console.log(e);
-      resizeText();
     }
   }
   profile.send();
