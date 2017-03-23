@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+  <title>EnglishConnect | Home</title>
+  <link rel="stylesheet" type="text/css" href="css/ecstyles.css">
+  <link rel="icon" type="image/png" href="images/PathwayLogoFavicon.png">
+</head>
+
+<body id="info">
+  <div class="center">
+    <h1 id="title">EnglishConnect | Intermediate</h1>
+    <div id="banner" class="dark">
+      <h2 id="breadcrumbs"><a href="index.html">Home</a> > Course Information </h2>
+      <a class="remove" onclick="toggleThis('awards')" href="#">
+        <div id="awardBar">
+          <p>Badges:</p>
+          <img src="images/Badge_Finance.png" alt="Badge">
+          <p>1</p>
+          <img src="images/Badge_DailLife.png" alt="Badge">
+          <p>2</p>
+          <img src="images/Badge_Family.png" alt="Badge">
+          <p>3</p>
+          <img src="images/Badge_Envir.png" alt="Badge">
+          <p>4</p>
+          <img src="images/Badge_Educ.png" alt="Badge">
+          <p>5</p>
+          <img src="images/Badge_Goals.png" alt="Badge">
+          <p>6</p>
+        </div>
+      </a>
+    </div>
+    <div id='main'>
+      <h1 class="step">Click through the buttons below to prepare for this course</h1>
+      <ol id="pracNav" class="remove">
+        <li id="level1_listening_ethicsandvalues_psg1" class="reset green passage">
+          <a onclick="ECIlti({'service':'items','activity':'ec1_list_t12_psg1'}, 'learnosity');" href="#learnosity">Watch this Video</a>
+        </li>
+        <li id="level1_listening_ethicsandvalues_psg2" class="reset green passage">
+          <a onclick="ECIlti({'service':'items','activity':'ec1_list_t12_psg2'}, 'learnosity');" href="#learnosity">How to Begin</a>
+        </li>
+        <li id="level1_listening_ethicsandvalues_psg3" class="reset green passage">
+          <a onclick="ECIlti({'service':'items','activity':'ec1_list_t12_psg3'}, 'learnosity');" href="#learnosity">Getting Help</a>
+        </li>
+        <li id="level1_listening_ethicsandvalues_psg4" class="reset green passage">
+          <a onclick="ECIlti({'service':'items','activity':'ec1_list_t12_psg4'}, 'learnosity');" href="#learnosity">What You will do</a>
+        </li>
+        <li id="level1_listening_ethicsandvalues_psg5" class="reset green passage">
+          <a onclick="ECIlti({'service':'items','activity':'ec1_list_t12_psg5'}, 'learnosity');" href="#learnosity">Tips for Success</a>
+        </li>
+      </ol>
+      <div id='learnosityDiv'>
+        <iframe width="600" height="520" name="learnosity" id="learnosity" allowfullscreen></iframe>
+      </div>
+      <h1 class="step">You are now read to begin the EnglishConnect Intermediate course!</h1>
+      <div class="remove">
+        <div id="courseInfo" class="inline">
+          <a class="button reset">Course Information</a>
+          <p class="reset">You can return to this page any time by clicking on the "Course Information" button</p>
+        </div>
+        <div class="reset inline">
+          <a class="button green" href="index.html">Start Course Now</a>
+        </div>
+      </div>
+    </div>
+    <div id="awards" class="content hidden remove"></div>
+    <div id="overlay" class="hidden"></div>
+    <p>
+      <!--<script src="js/grades.js"></script>-->
+      <script src="js/scripts.js"></script>
+    </p>
+  </div>
+</body>
+
+</html>

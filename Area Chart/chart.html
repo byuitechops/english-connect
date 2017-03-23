@@ -7,59 +7,143 @@
       stroke-miterlimit: 10;
     }
     
+    .thinLine {
+      fill: none;
+      stroke: #005F83;
+      stroke-width: 3;
+    }
+    
     .fill {
-      fill: #005F83;
+      fill: rgba(77, 167, 0, 0.7);
+      stroke: rgba(107, 165, 57, 0);
+      stroke-width: 2;
+      transition: .1s;
+    }
+    
+    .fill:hover {
+      fill: rgba(77, 167, 0, 0.8);
+      stroke: #6ba539;
+      stroke-width: 2;
     }
     
     svg {
-      width: 65px;
       display: inline-block;
       margin: 10px;
+      vertical-align: top;
+    }
+    
+    .guts {
+      transform: translate(15px, 15px);
     }
     
     text {
-      font-size: 20px;
+      font-size: 10px;
       font-family: 'Open Sans';
-      font-weight: 600;
+      font-weight: 700;
       fill: #333333;
+    }
+    
+    .small {
+      width: 65px;
+    }
+    
+    .large {
+      width: 200px;
+    }
+    
+    .large .line {
+      stroke-width: 2;
+    }
+    
+    .large .thinLine {
+      stroke-width: 1.2;
+    }
+    
+    .crosshair {
+      fill: none;
+      stroke: #333333;
+      stroke-width: 1;
     }
 
   </style>
 </head>
 
 <body>
-  <svg version="1.1" id="a" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100;" xml:space="preserve">
-  <polygon id="web" class="fill"/>
-  <line id="XMLID_1_" class="line" x1="50" y1="0" x2="50" y2="100" />
-  <line id="XMLID_2_" class="line" x1="0" y1="50" x2="100" y2="50" />
-</svg>
+  <svg version="1.1" id="a" class="small" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 130 130" xml:space="preserve">
+    <g class = "guts">
+    <polygon id="line" class="thinLine" />
+    <line id="XMLID_1_" class="line" x1="50" y1="0" x2="50" y2="100" />
+    <line id="XMLID_2_" class="line" x1="0" y1="50" x2="100" y2="50" />
+    <polygon id="fill" class="fill"/>
+    </g>
+  </svg>
+  <svg version="1.1" id="b" class="large" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 130 130" xml:space="preserve">
+    <g class = "guts">
+      <polygon id="line" class="thinLine" />
+      <line id="XMLID_1_" class="line" x1="50" y1="0" x2="50" y2="100" />
+      <line id="XMLID_2_" class="line" x1="0" y1="50" x2="100" y2="50" />
+      <line id="crossHair0" class="crosshair" x1="60" y1="47" x2="60" y2="50" />
+      <line id="crossHair1" class="crosshair" x1="70" y1="47" x2="70" y2="50" />
+      <line id="crossHair2" class="crosshair" x1="80" y1="47" x2="80" y2="50" />
+      <line id="crossHair3" class="crosshair" x1="90" y1="47" x2="90" y2="50" />
+      <line id="crossHair4" class="crosshair" x1="10" y1="47" x2="10" y2="50" />
+      <line id="crossHair5" class="crosshair" x1="20" y1="47" x2="20" y2="50" />
+      <line id="crossHair6" class="crosshair" x1="30" y1="47" x2="30" y2="50" />
+      <line id="crossHair7" class="crosshair" x1="40" y1="47" x2="40" y2="50" />
 
-  <svg version="1.1" id="b" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100;" xml:space="preserve">
-  <polygon id="web" class="fill"/>
-  <line id="XMLID_1_" class="line" x1="50" y1="0" x2="50" y2="100" />
-  <line id="XMLID_2_" class="line" x1="0" y1="50" x2="100" y2="50" />
-</svg>
+      <line id="crossHair01" class="crosshair" y1="60" x1="53" y2="60" x2="50" />
+      <line id="crossHair02" class="crosshair" y1="70" x1="53" y2="70" x2="50" />
+      <line id="crossHair03" class="crosshair" y1="80" x1="53" y2="80" x2="50" />
+      <line id="crossHair04" class="crosshair" y1="90" x1="53" y2="90" x2="50" />
+      <line id="crossHair05" class="crosshair" y1="10" x1="53" y2="10" x2="50" />
+      <line id="crossHair06" class="crosshair" y1="20" x1="53" y2="20" x2="50" />
+      <line id="crossHair07" class="crosshair" y1="30" x1="53" y2="30" x2="50" />
+      <line id="crossHair08" class="crosshair" y1="40" x1="53" y2="40" x2="50" />
+      <polygon id="fill" class="fill" title="tooltip"/>
+    </g>
+    <text x="62" y="10">L</text>
+    <text x="120" y="69">S</text>
+    <text x="61" y="128">R</text>
+    <text x="0" y="69">W</text>
+  </svg>
 
   <script>
     function generateChart(chartArrayData) {
       chartArrayData.forEach(function(data) {
-        var chart = document.getElementById(data.eleId);
-        chart.getElementById('web').setAttribute('points', "50," + (50 - data.listeningPerc / 2) + ", " + (data.speakingPerc / 2 + 50) + "," + "50 50," + (50 + data.readingPerc / 2) + ", " + (50 - data.writingPerc / 2) + "," + "50 ");
+        var chart = document.getElementById(data.chartId);
+        chart.getElementById('line').setAttribute('points', "50," + (50 - data.line.listeningPerc / 2) + ", " + (data.line.speakingPerc / 2 + 50) + "," + "50 50," + (50 + data.line.readingPerc / 2) + ", " + (50 - data.line.writingPerc / 2) + "," + "50 ");
+        chart.getElementById('fill').setAttribute('points', "50," + (50 - data.fill.listeningPerc / 2) + ", " + (data.fill.speakingPerc / 2 + 50) + "," + "50 50," + (50 + data.fill.readingPerc / 2) + ", " + (50 - data.fill.writingPerc / 2) + "," + "50 ");
       })
     }
 
     var sampleArray = [{
-      "eleId": 'a',
-      "listeningPerc": 70,
-      "speakingPerc": 60,
-      "readingPerc": 50,
-      "writingPerc": 40
+      "chartId": "a",
+      "fill": {
+        "listeningPerc": 70,
+        "speakingPerc": 60,
+        "readingPerc": 50,
+        "writingPerc": 40
+      },
+      "line": {
+        "listeningPerc": 80,
+        "speakingPerc": 80,
+        "readingPerc": 80,
+        "writingPerc": 80
+      }
     }, {
-      "eleId": 'b',
-      "listeningPerc": 40,
-      "speakingPerc": 50,
-      "readingPerc": 60,
-      "writingPerc": 70
+      "chartId": "b",
+      "fill": {
+        "listeningPerc": 40,
+        "speakingPerc": 50,
+        "readingPerc": 60,
+        "writingPerc": 70
+      },
+      "line": {
+        "listeningPerc": 80,
+        "speakingPerc": 80,
+        "readingPerc": 80,
+        "writingPerc": 80
+      }
     }]
 
     generateChart(sampleArray);
