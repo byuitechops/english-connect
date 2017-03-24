@@ -445,8 +445,7 @@
         }
         /*Practices Page Styles*/
         
-        #header.dailyLife {
-          background: url('../images/daily_life_banner.jpg');
+        #header.banner {
           height: 230px;
           background-position: center;
           background-size: cover;
