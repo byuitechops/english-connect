@@ -138,6 +138,7 @@ function controller() {
   var pageId = document.querySelector('body').id;
 
   if (pageId == 'home') {
+    checkFirstTime();
     homeOps(grades);
   } else if (pageId.length > 16) {
     pracOps(grades, pageId);
@@ -203,6 +204,13 @@ if (localStorage.getItem("grades-obj") === null) {
     controller();
   }
 }
+
+/* ----- Intro Screen -----*/
+if (localStorage.getItem("ECIhasVisited") != "true") {
+  togglePreview();
+  localStorage.setItem("ECIhasVisited", true);
+}
+
 /* --- Page Content --- */
 
 function getProfileInfo() {

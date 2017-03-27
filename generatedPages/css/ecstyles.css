@@ -206,7 +206,6 @@
         vertical-align: top;
         line-height: 12pt;
         position: relative;
-        z-index: 2;
       }
       
       #courseInfo .help {
