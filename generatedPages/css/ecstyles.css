@@ -357,6 +357,7 @@
         height: 100%;
         border-radius: 0 5px 5px 0;
         vertical-align: top;
+        overflow: hidden;
       }
       
       .label img {
@@ -377,6 +378,8 @@
         top: 53%;
         left: 50%;
         transform: translate(-50%, 0%);
+        overflow: hidden;
+        padding-bottom: 5px;
       }
       
       .color {
@@ -657,6 +660,10 @@
         max-width: 120px;
       }
       
+      .award.grayed {
+        filter: grayscale(.5) brightness(.3);
+      }
+      
       .award p {
         color: #fff;
         padding: 0 5px 3px;
@@ -681,6 +688,7 @@
         margin: 0;
         border-bottom: solid 3px #333333;
         transition: background-color .3s;
+        border-radius: 5px 5px 0 0;
       }
       
       #awards h2 img {
@@ -689,7 +697,8 @@
         margin: 0 auto 10px;
       }
       
-      #awards h2:hover {
+      #awards h2:hover,
+      h2.focus {
         cursor: pointer;
         background-color: #333333;
       }
@@ -769,10 +778,10 @@
       
       #info #pracNav a {
         color: #fff;
-        padding: 8px 5px 10px 25px;
+        padding: 8px 0 10px 25px;
         height: auto;
         text-align: center;
-        font-size: 11pt;
+        font-size: 13px;
       }
       
       #info #pracNav li {
@@ -789,18 +798,20 @@
         width: calc(30% - 20px);
         font-size: initial;
         padding: 5px;
+        margin: 1px 0;
+      }
+      
+      #info #courseInfo p {
+        display: inline-block;
+        width: calc(70% - 50px);
+        padding: 10px 10px 10px 40px;
+        margin: 0;
       }
       
       #info a.button {
         font-size: 1.5em;
         padding: 15px;
-      }
-      
-      #info #courseInfo p {
-        display: inline-block;
-        width: calc(60% - 20px);
-        padding: 10px 10px 10px 40px;
-        margin: 0;
+        margin: 10px 0;
       }
       
       #info #courseInfo p:before {
@@ -810,7 +821,7 @@
       }
       /* Styles for mobile */
       
-      @media screen and (max-width: 850px) {
+      @media screen and (max-width: 768px) {
         .topics .tile,
         #practice .tile {
           width: calc(.3333 * (100% - 60px));
@@ -828,6 +839,16 @@
         .award img {
           width: 40%;
         }
+        #info .inline {
+          display: block;
+          width: 100%;
+        }
+        #info #courseInfo .button {
+          width: calc(40% - 20px);
+        }
+        #info #courseInfo p {
+          width: calc(60% - 50px);
+        }
         #breadcrumbs {
           padding: 0;
         }
@@ -840,9 +861,19 @@
         #banner {
           padding: 10px 15px;
         }
+        #info #pracNav .green a:after {
+          content: url('../images/greenPointerLarge.svg');
+        }
+        #info #pracNav a {
+          color: #fff;
+          padding: 8px 0 10px 25px;
+          height: 40px;
+          text-align: center;
+          font-size: 13px;
+        }
       }
       
-      @media screen and (max-width: 600px) {
+      @media screen and (max-width: 520px) {
         #title {
           display: none;
         }
@@ -981,5 +1012,14 @@
         #pracNav li:nth-of-type(5) {
           border-radius: 0px 5px 5px 0px;
           width: calc(20% + 10px);
+        }
+        #info #pracNav li {
+          display: block;
+          width: 100%;
+          border-radius: 5px;
+          height: 40px;
+        }
+        #info #pracNav a {
+          font-size: 16px;
         }
       }

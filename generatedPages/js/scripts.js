@@ -55,13 +55,19 @@ function toggle(eleId) {
   target.classList.toggle('visible');
 }
 
-function changeFocus(eleId) {
+function changeFocus(eleId, tab) {
   var pages = document.querySelectorAll('.page');
   pages.forEach(function (page) {
     page.classList.remove('focus');
   })
   var target = document.getElementById(eleId);
   target.classList.add('focus');
+
+  var tabs = document.querySelectorAll('#awards h2');
+  tabs.forEach(function (tab) {
+    tab.classList.remove('focus');
+  })
+  tab.classList.add('focus');
 }
 
 function toggleFullscreen(eleId) {

@@ -1,12 +1,12 @@
 <a class="close" onclick="toggleThis(this.parentNode.id)">✕</a>
-<h2 class="reset" onclick="changeFocus('page1')"><img src="images/icons/ECI_Writing.png">Milestones</h2>
-<h2 class="reset" onclick="changeFocus('page2')"><img src="images/icons/ECI_Reading.png">Reading</h2>
-<h2 class="reset" onclick="changeFocus('page3')"><img src="images/icons/ECI_Writing.png">Writing</h2>
-<h2 class="reset" onclick="changeFocus('page3')"><img src="images/icons/ECI_Speaking.png">Speaking</h2>
-<h2 class="reset" onclick="changeFocus('page3')"><img src="images/icons/ECI_Listening.png">Listening</h2>
-<h2 class="reset" onclick="changeFocus('page3')"><img src="images/icons/ECI_Writing.png">Topics</h2>
+<h2 class="reset focus" onclick="changeFocus('page1', this)"><img src="images/icons/ECI_Writing.png">Milestones</h2>
+<h2 class="reset" onclick="changeFocus('page2', this)"><img src="images/icons/ECI_Listening.png">Listening</h2>
+<h2 class="reset" onclick="changeFocus('page3', this)"><img src="images/icons/ECI_Speaking.png">Speaking</h2>
+<h2 class="reset" onclick="changeFocus('page4', this)"><img src="images/icons/ECI_Reading.png">Reading</h2>
+<h2 class="reset" onclick="changeFocus('page5', this)"><img src="images/icons/ECI_Writing.png">Writing</h2>
+<h2 class="reset" onclick="changeFocus('page6', this)"><img src="images/icons/ECI_Writing.png">Topics</h2>
 <div id="page1" class="page focus">
-  <div class="award reset">
+  <div class="award reset grayed">
     <div class="stars1"></div>
     <img src="images/Badge_WorkComm.png" alt="Badge">
     <p>Work and Professional Communications</p>
@@ -28,7 +28,7 @@
   </div>
 </div>
 <div id="page2" class="page">
-  <div class="award reset">
+  <div class="award reset grayed">
     <div class="stars0"></div>
     <img src="images/Badge_Envir.png" alt="Badge">
     <p>Your Environment</p>
@@ -38,7 +38,7 @@
     <img src="images/Badge_Goals.png" alt="Badge">
     <p>Goals and Challenges</p>
   </div>
-  <div class="award reset">
+  <div class="award reset grayed">
     <div class="stars0"></div>
     <img src="images/Badge_SocComm.png" alt="Badge">
     <p>Social Communications</p>
@@ -50,29 +50,29 @@
   </div>
 </div>
 <div id="page3" class="page">
-  <div class="award reset">
+  <div class="award reset grayed">
     <div class="stars0"></div>
     <img src="images/Badge_RecTrav.png" alt="Badge">
     <p>Recreation and Travel</p>
   </div>
-  <div class="award reset">
+  <div class="award reset grayed">
     <div class="stars0"></div>
     <img src="images/Badge_DailLife.png" alt="Badge">
     <p>Daily Life</p>
   </div>
-  <div class="award reset">
+  <div class="award reset grayed">
     <div class="stars0"></div>
     <img src="images/Badge_Educ.png" alt="Badge">
     <p>Education</p>
   </div>
-  <div class="award reset">
+  <div class="award reset grayed">
     <div class="stars0"></div>
     <img src="images/Badge_EthVal.png" alt="Badge">
     <p>Ethics and Values</p>
   </div>
 </div>
 <div id="page4" class="page">
-  <div class="award reset">
+  <div class="award reset grayed">
     <div class="stars0"></div>
     <img src="images/Badge_RecTrav.png" alt="Badge">
     <p>Recreation and Travel</p>
@@ -82,7 +82,7 @@
     <img src="images/Badge_DailLife.png" alt="Badge">
     <p>Daily Life</p>
   </div>
-  <div class="award reset">
+  <div class="award reset grayed">
     <div class="stars0"></div>
     <img src="images/Badge_Educ.png" alt="Badge">
     <p>Education</p>
@@ -94,17 +94,17 @@
   </div>
 </div>
 <div id="page5" class="page">
-  <div class="award reset">
+  <div class="award reset grayed">
     <div class="stars0"></div>
     <img src="images/Badge_RecTrav.png" alt="Badge">
     <p>Recreation and Travel</p>
   </div>
-  <div class="award reset">
+  <div class="award reset grayed">
     <div class="stars0"></div>
     <img src="images/Badge_DailLife.png" alt="Badge">
     <p>Daily Life</p>
   </div>
-  <div class="award reset">
+  <div class="award reset grayed">
     <div class="stars0"></div>
     <img src="images/Badge_Educ.png" alt="Badge">
     <p>Education</p>
@@ -117,7 +117,7 @@
 </div>
 
 <div id="page6" class="page">
-  <div class="award reset">
+  <div class="award reset grayed">
     <div class="stars0"></div>
     <img src="images/Badge_RecTrav.png" alt="Badge">
     <p>Recreation and Travel</p>
@@ -127,7 +127,7 @@
     <img src="images/Badge_DailLife.png" alt="Badge">
     <p>Daily Life</p>
   </div>
-  <div class="award reset">
+  <div class="award reset grayed">
     <div class="stars0"></div>
     <img src="images/Badge_Educ.png" alt="Badge">
     <p>Education</p>
