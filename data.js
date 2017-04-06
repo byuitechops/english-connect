@@ -3,17 +3,17 @@ var data = {
   levels: ["Level 1", "Level 2", "Level 3", "Level 4"],
   topics: [
   "Daily Life",
-  "Work and Professional Communications",
-  "Personal Finance",
+  "Education",
+  "Ethics and Values",
+  "Family",
+  "Goals and Challenges",
   "Humanities",
   "News and Events",
-  "Your Environment",
-  "Goals and Challenges",
-  "Social Communications",
-  "Family",
+  "Personal Finance",
   "Recreation and Travel",
-  "Education",
-  "Ethics and Values"
+  "Social Communications",
+  "Work and Professional Communications",
+  "Your Environment"
   ]
 }
 

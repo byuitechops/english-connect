@@ -46,8 +46,8 @@
           </div>
         </div>
         <div id="courseInfo" class="remove">
-          <a class="focus button" href="course_info.html" style="z-index: 2">Course Information</a>
-          <a class="help button">Help</a>
+          <a class="button" href="course_info.html" style="z-index: 2">Course Information</a>
+          <a class="help button" onclick="localStorage.removeItem('ECIhasVisited')">Help</a>
         </div>
       </div>
       <div id='courses'>
@@ -236,7 +236,7 @@
     <div id="awards" class="content hidden remove"></div>
     <div id="overlay" class="hidden"></div>
     <p>
-      <!--<script src="js/grades.js"></script>-->
+      <script src="js/grades.js"></script>
       <script src="js/scripts.js"></script>
     </p>
   </div>

@@ -39,6 +39,10 @@
         margin: 0;
         font-size: 1.2em;
         display: inline-block;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        width: 100%;
+        overflow: hidden;
       }
       
       #main {
@@ -579,16 +583,19 @@
         content: none;
       }
       
-      #learnosity {
+      iframe {
+        display: block;
         width: calc(100% - 6px);
+        max-width: 900px;
         border: solid #A2AAAD 3px;
         border-radius: 5px;
-        margin: 20px 0;
+        margin: 20px auto;
         transition: height .3s;
       }
       
-      #learnosity.fullscreen {
-        height: 95vh;
+      #vocabFrame {
+        height: calc(80vh - 40px);
+        border: none;
       }
       
       #learnosityDiv {

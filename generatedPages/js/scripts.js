@@ -84,8 +84,9 @@ function color(eleId, color) {
 }
 
 function homeOps(grades) {
-  getProfileInfo()
-    // poulate the tiles by querying grades obj
+  getProfileInfo();
+  checkFirstTime();
+  // poulate the tiles by querying grades obj
   var tiles = document.querySelectorAll('.color');
   tiles.forEach(function (tile) {
     var path = tile.id.split('_');
@@ -138,11 +139,10 @@ function controller() {
   var pageId = document.querySelector('body').id;
 
   if (pageId == 'home') {
-    checkFirstTime();
     homeOps(grades);
   } else if (pageId.length > 16) {
     pracOps(grades, pageId);
-  } else {
+  } else if (pageId.length > 4) {
     topicOps(grades, pageId)
   }
 }
@@ -206,9 +206,13 @@ if (localStorage.getItem("grades-obj") === null) {
 }
 
 /* ----- Intro Screen -----*/
-if (localStorage.getItem("ECIhasVisited") != "true") {
-  togglePreview();
-  localStorage.setItem("ECIhasVisited", true);
+
+function checkFirstTime() {
+  if (localStorage.getItem("ECIhasVisited") != "true") {
+    togglePreview();
+    document.querySelector('#courseInfo a:first-child').innerText = "Start Here";
+    localStorage.setItem("ECIhasVisited", true);
+  }
 }
 
 /* --- Page Content --- */
@@ -279,7 +283,7 @@ if (document.getElementById('awards')) {
   awards.send();
 }
 
-function ECIlti(vars) {
+function ECIlti(vars, frameId) {
   var query = '';
   console.log(window.location.pathname);
 
@@ -290,5 +294,5 @@ function ECIlti(vars) {
       query += '&' + key + '=' + encodeURIComponent(vars[key]);
     }
   }
-  document.getElementById('learnosity').src = '/d2l/le/lti/' + ou + '/toolLaunch/14/128475061' + query;
+  document.getElementById(frameId).src = '/d2l/le/lti/' + ou + '/toolLaunch/14/128475061' + query;
 }
