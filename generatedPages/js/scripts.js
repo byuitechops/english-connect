@@ -20,17 +20,11 @@ var subjects = ["reading", "writing", "speaking", "listening"],
   ],
   passages = ["psg1", "psg2", "psg3", "psg4", "psg5", "psg6", "psg7", "psg8", "psg9", "psg10", "psg11"];
 
-/* OU n
-mastered: 0,umber required for LTI Request */
-var refer = top.location.pathname.split('/');
-var ou = refer[refer.length - 1];
-
+/* OU number required for LTI Request */
+var refer = window.location.pathname.split('~')[1].split('/')[0];
+var ou = refer[1];
+var ou = 1458190;
 /*hide D2L */
-try {
-  top.document.getElementsByTagName("header")[0].style = "display: none;";
-} catch (e) {
-  console.log(e);
-}
 
 /* Toggle Functions */
 
@@ -218,11 +212,6 @@ function checkFirstTime() {
 /* --- Page Content --- */
 
 function getProfileInfo() {
-  /* Resize text if name is too long */
-  var text = document.getElementById('name');
-  if (text.innerText.length > 30) {
-    text.style = "font-size:1em";
-  }
 
   /* Update edit profile button */
   document.getElementById('edit').href = "/d2l/lp/profile/profile_edit.d2l?ou=" + ou;
@@ -242,7 +231,12 @@ function getProfileInfo() {
           if (profileData.HomeTown != null) {
             document.getElementById('gatheringLocation').innerText = 'Hometown: ' + profileData.HomeTown;
           }
-        } else {
+  /* Resize text if name is too long */
+  var text = document.getElementById('name');
+  if (text.innerText.length > 30) {
+    text.style = "font-size:1em";
+  }
+} else {
           console.log(e);
         }
       }
@@ -285,7 +279,6 @@ if (document.getElementById('awards')) {
 
 function ECIlti(vars, frameId) {
   var query = '';
-  console.log(window.location.pathname);
 
   for (var key in vars) {
     if (query.length == 0) {
@@ -294,5 +287,7 @@ function ECIlti(vars, frameId) {
       query += '&' + key + '=' + encodeURIComponent(vars[key]);
     }
   }
-  document.getElementById(frameId).src = '/d2l/le/lti/' + ou + '/toolLaunch/14/128475061' + query;
+    
+  console.log("query", query, "ou:", ou);
+  document.getElementById(frameId).src = 'https://byuh.instructure.com/courses/' + ou + '/modules/items/15607983' + query;
 }

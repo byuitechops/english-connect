@@ -1,4 +1,12 @@
-<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 560 560" style="enable-background:new 0 0 560 560;" xml:space="preserve">
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Loading...</title>
+</head>
+
+<body>
+    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 560 560" style="enable-background:new 0 0 560 560;" xml:space="preserve">
 <style type="text/css">
   .st0{fill:transparent;}
   .st1{fill:#6BA539;}
@@ -8,11 +16,16 @@
   .st5{fill:none;}
   
   @keyframes loading{
-  0% {}
-  25% {transform: rotateY(180deg);}
-  50% {transform: rotate(90deg);}
-  75% {transform: rotateY(90deg);}
-  100% {transform: rotate(0deg);}
+  0% {
+    transition: .3s;}
+  25% {transform: rotateY(180deg);
+    transition: .3s;}
+  50% {transform: rotate(90deg);
+    transition: .3s;}
+  75% {transform: rotateY(90deg);
+    transition: .3s;}
+  100% {transform: rotate(0deg);
+    transition: .3s;}
   }
   
   svg{background-color: #E6E6E6;}
@@ -21,8 +34,8 @@
     transform-origin: center;
     animation-name: loading;
     animation-duration: 4s;
+    transition: .3s;
     animation-iteration-count: infinite;
-  transition: .3s;
   }
   #center path{
     transform-origin: center;
@@ -46,3 +59,7 @@
 	<rect id="rectangel" x="216.8" y="217.5" class="st5" width="126.3" height="126.3"/>
 </g>
 </svg>
+
+</body>
+
+</html>
