@@ -151,6 +151,7 @@
       }
       
       #studentInfo .button {
+          display: inline-block;
           height: 20px;
           padding: 3px 0 7px;
           width: 100px;
@@ -160,6 +161,14 @@
       #studentInfo h2 {
           margin: 0;
           color: #005F83;
+      }
+      
+      #studentInfo>p {
+          display: inline-block;
+          margin-left: 3%;
+          color: #01ab01;
+          font-weight: 600;
+          opacity: 0;
       }
       
       .button {
