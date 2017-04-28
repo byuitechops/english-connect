@@ -11,11 +11,12 @@
 <body id="level1_listening_education" class="practices">
     <div class="center">
         <h1 id="title">EnglishConnect | Intermediate</h1>
+        <a class="button help" href="https://byui.az1.qualtrics.com/jfe/form/SV_6QhmgO7v782ZADb?&Page=level1_listening_education" target="_blank">Help</a>
         <div id="banner" class="dark">
             <h2 id="breadcrumbs"><a href="index.html">Home</a> > <a href="level1_listening.html">Listening Level 1</a> > Education</h2>
         </div>
         <div id='header' class="banner" style="background-image: url(images/banners/education_banner.jpg);">
-            <div class="practicesHeading">
+            <div class="practicesHeading listening">
                 <img src="images/icons/ECI_education.png">
                 <div>
                     <h4>Listening Level 1</h4>
@@ -25,9 +26,13 @@
         </div>
         <div id='main'>
             <div class="overview">
-                <h2 class="step">Read</h2>
-                <p>In this topic, you will learn how use the strategies, grammar, and vocabulary in your speaking. This topic will present situations that might happen in daily life. You can revisit the strategies, grammar, and vocabulary pages if you need to review.</p>
-                <h2 class="step">Study</h2>
+                <img src="images/icons/Goal_icon_listening.png" class="icon goals">
+                <h2 class="step">Goals: Focus Your Learning</h2>
+                <div class="goalsContainer">
+                    <p>In this topic, you will learn how use the strategies, grammar, and vocabulary in your speaking. This topic will present situations that might happen in daily life. You can revisit the strategies, grammar, and vocabulary pages if you need to review.</p>
+                </div>
+                <img src="images/icons/PrepareIcon_listening.png" class="icon goals">
+                <h2 class="step">Prepare</h2>
                 <div class="helps remove">
                     <div class="container twoThirds">
                         <h2 class="reset">Review</h2>
@@ -39,56 +44,61 @@
                         <a class="button reset" onclick="toggle('overlay'); toggle('vocab'); ECIlti({'service':'items','activity':'ec1_list_t2_vocab'}, 'vocabFrame');">Vocabulary</a>
                     </div>
                 </div>
+                <img src="images/icons/Practice_icon_listening.png" class="icon goals">
                 <h2 class="step">Practice</h2>
                 <ol id="pracNav" class="remove">
-                    <li id="level1_listening_education_psg1" class="reset green passage">
+                    <li id="level1_listening_education_psg1" class="reset listening passage">
                         <a onclick="ECIlti({'service':'items','activity':'ec1_list_t2_psg1'}, 'learnosity');" href="#learnosity"></a>
                     </li>
-                    <li id="level1_listening_education_psg2" class="reset green passage">
+                    <li id="level1_listening_education_psg2" class="reset listening passage">
                         <a onclick="ECIlti({'service':'items','activity':'ec1_list_t2_psg2'}, 'learnosity');" href="#learnosity"></a>
                     </li>
-                    <li id="level1_listening_education_psg3" class="reset green passage">
+                    <li id="level1_listening_education_psg3" class="reset listening passage">
                         <a onclick="ECIlti({'service':'items','activity':'ec1_list_t2_psg3'}, 'learnosity');" href="#learnosity"></a>
                     </li>
-                    <li id="level1_listening_education_psg4" class="reset green passage">
+                    <li id="level1_listening_education_psg4" class="reset listening passage">
                         <a onclick="ECIlti({'service':'items','activity':'ec1_list_t2_psg4'}, 'learnosity');" href="#learnosity"></a>
                     </li>
-                    <li id="level1_listening_education_psg5" class="reset green passage">
+                    <li id="level1_listening_education_psg5" class="reset listening passage">
                         <a onclick="ECIlti({'service':'items','activity':'ec1_list_t2_psg5'}, 'learnosity');" href="#learnosity"></a>
                     </li>
-                    <li id="level1_listening_education_psg6" class="reset green passage">
+                    <li id="level1_listening_education_psg6" class="reset listening passage">
                         <a onclick="ECIlti({'service':'items','activity':'ec1_list_t2_psg6'}, 'learnosity');" href="#learnosity"></a>
                     </li>
-                    <li id="level1_listening_education_psg7" class="reset green passage">
+                    <li id="level1_listening_education_psg7" class="reset listening passage">
                         <a onclick="ECIlti({'service':'items','activity':'ec1_list_t2_psg7'}, 'learnosity');" href="#learnosity"></a>
                     </li>
-                    <li id="level1_listening_education_psg8" class="reset green passage">
+                    <li id="level1_listening_education_psg8" class="reset listening passage">
                         <a onclick="ECIlti({'service':'items','activity':'ec1_list_t2_psg8'}, 'learnosity');" href="#learnosity"></a>
                     </li>
-                    <li id="level1_listening_education_psg9" class="reset green passage">
+                    <li id="level1_listening_education_psg9" class="reset listening passage">
                         <a onclick="ECIlti({'service':'items','activity':'ec1_list_t2_psg9'}, 'learnosity');" href="#learnosity"></a>
                     </li>
-                    <li id="level1_listening_education_psg10" class="reset green passage">
+                    <li id="level1_listening_education_psg10" class="reset listening passage">
                         <a onclick="ECIlti({'service':'items','activity':'ec1_list_t2_psg10'}, 'learnosity');" href="#learnosity"></a>
                     </li>
                 </ol>
             </div>
-            <div id='learnosityDiv'>
-                <iframe width="600" height="520" name="learnosity" id="learnosity" allowfullscreen></iframe>
-            </div>
-            <a id="level1_listening_education_psg11" class="button step green passage" onclick="ECIlti({'service':'items','activity':'ec1_list_t2_vocab'}, 'learnosity');" href="#learnosity">Mastery Check</a>
+            <img src="images/icons/MasteryCheck_icon_listening.png" class="icon goals">
+            <a id="level1_listening_education_psg11" class="button mastery green passage" onclick="ECIlti({'service':'items','activity':'ec1_list_t2_vocab'}, 'learnosity');" href="#learnosity">Mastery Check</a>
         </div>
     </div>
-    <div id="awards" class="content hidden remove"></div>
     <div id="overlay" class="hidden" class="hidden"></div>
-    <div id="skill" class="hidden content temp" onclick="toggleThis(this)">
-        <a class="close" onclick="toggleThis(this.parentNode.id)">✕</a>Hello, I'm Your Skills</div>
+    <div id="learnosityDiv" class="content hidden remove">
+        <iframe width="600" height="520" name="learnosity" id="learnosity" allowfullscreen></iframe>
+    </div>
+    <div id="skill" class="hidden content temp">
+        <a class="close" onclick="toggleThis(this.parentNode.id)">✕</a>
+        <iframe src="skills instruction/Instruction Page - How to Summarize.pdf"></iframe>
+    </div>
     <div id="vocab" class="hidden content temp" onclick="toggleThis(this)">
         <a class="close" onclick="toggleThis(this.parentNode.id)">✕</a>
         <iframe width="100%" height="520" name="vocabFrame" id="vocabFrame" allowfullscreen></iframe>
     </div>
-    <div id="grammar" class="hidden content temp" onclick="toggleThis(this)">
-        <a class="close" onclick="toggleThis(this.parentNode.id)">✕</a>Hello, I'm Your Grammar</div>
+    <div id="grammar" class="hidden content temp">
+        <a class="close" onclick="toggleThis(this.parentNode.id)">✕</a>
+        <object data="grammar/grammar_level1.pdf" type="application/pdf"></object>
+    </div>
     <p>
         <script src="js/scripts.js"></script>
     </p>

@@ -2,852 +2,833 @@
         
         @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,700');
         * {
-          font-family: 'Open Sans', sans-serif;
-          font-weight: 100;
-          color: #333333;
+            font-family: 'Open Sans', sans-serif;
+            font-weight: 100;
+            color: #333333;
         }
         
         body {
-          background-color: #ffffff;
-          z-index: 0;
-          counter-reset: step;
+            background-color: #ffffff;
+            z-index: 0;
         }
         
         .green {
-          background-color: #6BA539;
+            background-color: #6BA539;
         }
         
         .blue {
-          background-color: #005F83;
+            background-color: #005F83;
         }
         
         .yellow {
-          background-color: #FFB81C;
+            background-color: #FFB81C;
         }
         
         .center {
-          max-width: 960px;
-          margin: auto;
-          position: relative;
+            max-width: 960px;
+            margin: auto;
+            position: relative;
         }
         
         .dark {
-          background-color: #005F83;
-          color: #FFF;
+            background-color: #005F83;
+            color: #FFF;
         }
         
         #banner a:visited,
         #banner a:link {
-          color: #ffffff;
+            color: #ffffff;
         }
         
         #banner {
-          position: relative;
+            position: relative;
         }
         
         #breadcrumbs {
-          color: #fff;
-          padding: 2px 10px 5px 30px;
-          margin: 0;
-          font-size: 1.2em;
-          display: inline-block;
+            color: #fff;
+            padding: 2px 10px 5px 30px;
+            margin: 0;
+            font-size: 1.2em;
+            display: inline-block;
         }
         
         #main {
-          border: solid 1px #ddd;
-          padding: 30px;
+            border: solid 1px #ddd;
+            padding: 30px;
         }
         
         .visible {
-          position: fixed;
-          left: 0;
-          top: 0;
-          width: 100%;
-          height: 100%;
-          background-color: rgba(0, 0, 0, .7);
-          z-index: 1;
-          transition: background-color .3s;
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, .7);
+            z-index: 1;
+            transition: background-color .3s;
         }
         
         .close {
-          color: #fff;
-          font-size: 18pt;
-          position: fixed;
-          top: 20px;
-          right: 20px;
+            color: #fff;
+            font-size: 18pt;
+            position: fixed;
+            top: 20px;
+            right: 20px;
         }
         
         .close:hover {
-          cursor: pointer;
+            cursor: pointer;
         }
         
         .hidden {
-          position: fixed;
-          left: 0;
-          top: 0;
-          width: 100%;
-          height: 100%;
-          background-color: rgba(0, 0, 0, 0);
-          z-index: -1;
-          transition: background-color .3s;
-          z-index 0s .3s;
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0);
+            z-index: -1;
+            transition: background-color .3s;
+            z-index 0s .3s;
         }
         /*        Header Info*/
         
         .remove {
-          font-size: 0em;
+            font-size: 0em;
         }
         
         .reset {
-          font-size: initial;
+            font-size: initial;
         }
         
         #profilePic {
-          width: 15%;
+            width: 15%;
         }
         
         #studentInfo {
-          font-size: initial;
-          display: inline-block;
-          width: 54%;
-          vertical-align: top;
-          margin-left: 1%;
+            font-size: initial;
+            display: inline-block;
+            width: 54%;
+            vertical-align: top;
+            margin-left: 1%;
         }
         
         #studentInfo h2 {
-          margin: 0 10px;
-          color: #005F83;
+            margin: 0 10px;
+            color: #005F83;
         }
         
         #name {
-          display: inline-block;
+            display: inline-block;
         }
         
         #edit:after {
-          content: "";
-          background-image: url(../images/edit.png);
-          background-size: 1.1em 1.1em;
-          width: 1.1em;
-          height: 1.1em;
-          display: inline-block;
-          vertical-align: baseline;
+            content: "";
+            background-image: url(../images/edit.png);
+            background-size: 1.1em 1.1em;
+            width: 1.1em;
+            height: 1.1em;
+            display: inline-block;
+            vertical-align: baseline;
         }
         
         #key {
-          margin-left: 10px;
+            margin-left: 10px;
         }
         
         #key h3 {
-          display: inline-block;
-          font-size: 1em;
-          vertical-align: middle;
-          margin: 0 10px 10px 0;
+            display: inline-block;
+            font-size: 1em;
+            vertical-align: middle;
+            margin: 0 10px 10px 0;
         }
         
         .square:before {
-          font-size: 1.55em;
-          content: "■ ";
+            font-size: 1.55em;
+            content: "■ ";
         }
         
         .square.master:before {
-          color: #005F83;
+            color: #005F83;
         }
         
         .square.prog:before {
-          color: #FFB81C;
+            color: #FFB81C;
         }
         
         .square.todo:before {
-          color: #6BA539;
+            color: #6BA539;
         }
         
         #courseInfo {
-          display: inline-block;
-          width: 30%;
-          vertical-align: top;
+            display: inline-block;
+            width: 30%;
+            vertical-align: top;
         }
         
         #courseInfo h2 {
-          font-size: initial;
-          text-align: center;
-          display: inline-block;
-          width: calc(50% - 20px);
-          margin: 5px;
-          border-radius: 5px;
-          padding: 5px 1%;
-          background-color: #005F83;
-          height: 85px;
-          vertical-align: top;
-          line-height: 12pt;
+            font-size: initial;
+            text-align: center;
+            display: inline-block;
+            width: calc(50% - 20px);
+            margin: 5px;
+            border-radius: 5px;
+            padding: 5px 1%;
+            background-color: #005F83;
+            height: 85px;
+            vertical-align: top;
+            line-height: 12pt;
         }
         
         #courseInfo .help {
-          background-color: #BC242D;
+            background-color: #BC242D;
         }
         
         #courseInfo h2:before {
-          content: "i";
-          display: block;
-          width: 40px;
-          height: 40px;
-          border-radius: 20px;
-          background: #fff;
-          font-size: 21pt;
-          font-weight: 600;
-          color: #005F83;
-          line-height: 29pt;
-          margin: 5px auto;
+            content: "i";
+            display: block;
+            width: 40px;
+            height: 40px;
+            border-radius: 20px;
+            background: #fff;
+            font-size: 21pt;
+            font-weight: 600;
+            color: #005F83;
+            line-height: 29pt;
+            margin: 5px auto;
         }
         
         #courseInfo .help:before {
-          content: "?";
-          color: #BC242D;
+            content: "?";
+            color: #BC242D;
         }
         
         #banner a.remove {
-          text-decoration: none;
+            text-decoration: none;
         }
         
         #awardBar {
-          display: inline-block;
-          border-radius: 5px;
-          width: 300px;
-          text-align: right;
-          position: absolute;
-          right: 30px;
-          top: 2px;
-          margin: 0;
+            display: inline-block;
+            border-radius: 5px;
+            width: 300px;
+            text-align: right;
+            position: absolute;
+            right: 30px;
+            top: 2px;
+            margin: 0;
         }
         
         #awardBar * {
-          display: inline-block;
-          color: #fff;
-          padding: 5px 0;
-          vertical-align: middle;
-          font-size: 12pt;
-          margin: 0 1px;
+            display: inline-block;
+            color: #fff;
+            padding: 5px 0;
+            vertical-align: middle;
+            font-size: 12pt;
+            margin: 0 1px;
         }
         
         #awardBar img {
-          width: 15px;
-          margin-left: 6px;
+            width: 15px;
+            margin-left: 6px;
         }
         /*        Courses Area           */
         
         .course {
-          margin-top: 30px;
+            margin-top: 30px;
         }
         
         .course img {
-          width: 40px;
-          vertical-align: middle;
-          margin: 0 10px 10px 0;
+            width: 40px;
+            vertical-align: middle;
+            margin: 0 10px 10px 0;
         }
         
         .course h3 {
-          vertical-align: middle;
-          margin: 0 0 10px;
-          display: inline-block;
-          font-size: 16pt;
+            vertical-align: middle;
+            margin: 0 0 10px;
+            display: inline-block;
+            font-size: 16pt;
         }
         
         .progress {
-          vertical-align: middle;
-          font-size: initial;
-          background-color: #E6E6E8;
-          border-radius: 5px;
-          text-align: left;
-          margin-bottom: 8px;
-          border-radius: 5px;
+            vertical-align: middle;
+            font-size: initial;
+            background-color: #E6E6E8;
+            border-radius: 5px;
+            text-align: left;
+            margin-bottom: 8px;
+            border-radius: 5px;
         }
         
         .progress h4 {
-          display: inline-block;
-          width: 150px;
-          text-align: center;
-          margin: 0;
-          padding: 3px;
-          border-radius: 5px 0 0 5px;
+            display: inline-block;
+            width: 150px;
+            text-align: center;
+            margin: 0;
+            padding: 3px;
+            border-radius: 5px 0 0 5px;
         }
         
         .progress span {
-          color: #fff;
+            color: #fff;
         }
         
         .bar {
-          display: inline-block;
-          width: calc((100% - 161px) / 5);
-          background-color: #747778;
-          height: 28px;
-          border-radius: 0 5px 5px 0;
-          vertical-align: top;
+            display: inline-block;
+            width: calc((100% - 161px) / 5);
+            background-color: #747778;
+            height: 28px;
+            border-radius: 0 5px 5px 0;
+            vertical-align: top;
         }
         
         .container {
-          background-color: #E6E6E8;
-          border-radius: 10px;
-          padding: 10px;
+            background-color: #E6E6E8;
+            border-radius: 10px;
+            padding: 10px;
         }
         
         .tile {
-          display: inline-block;
-          width: calc(.25 * (100% - 80px));
-          margin: 10px;
-          color: #005F83;
-          padding: 0;
-          font-size: 0em;
-          border-radius: 10px;
-          transition: .1s;
-          height: 120px;
+            display: inline-block;
+            width: calc(.25 * (100% - 80px));
+            margin: 10px;
+            color: #005F83;
+            padding: 0;
+            font-size: 0em;
+            border-radius: 10px;
+            transition: .1s;
+            height: 120px;
         }
         
         #home .tile {
-          height: 100px;
+            height: 100px;
         }
         
         #home .tile h3 {
-          transform: translate(-50%, -50%);
-          top: 70%;
+            transform: translate(-50%, -50%);
+            top: 70%;
         }
         
         #home .tile img {
-          top: 35%;
+            top: 35%;
         }
         
         .tile:hover {
-          box-shadow: 0px 0px 10px #b3b8bc;
-          transform: scale(1.05);
-          transition: .1s;
+            box-shadow: 0px 0px 10px #b3b8bc;
+            transform: scale(1.05);
+            transition: .1s;
         }
         
         .label {
-          display: inline-block;
-          position: relative;
-          width: 85%;
-          background-color: #FFF;
-          margin: 0;
-          height: 100%;
-          border-radius: 0 5px 5px 0;
-          vertical-align: top;
+            display: inline-block;
+            position: relative;
+            width: 85%;
+            background-color: #FFF;
+            margin: 0;
+            height: 100%;
+            border-radius: 0 5px 5px 0;
+            vertical-align: top;
         }
         
         .label img {
-          position: absolute;
-          width: 40px;
-          top: 30%;
-          left: 50%;
-          transform: translate(-50%, -50%);
+            position: absolute;
+            width: 40px;
+            top: 30%;
+            left: 50%;
+            transform: translate(-50%, -50%);
         }
         
         .tile h3 {
-          line-height: 11pt;
-          text-align: center;
-          width: 90%;
-          font-size: 12pt;
-          position: absolute;
-          margin: 0;
-          top: 53%;
-          left: 50%;
-          transform: translate(-50%, 0%);
+            line-height: 11pt;
+            text-align: center;
+            width: 90%;
+            font-size: 12pt;
+            position: absolute;
+            margin: 0;
+            top: 53%;
+            left: 50%;
+            transform: translate(-50%, 0%);
         }
         
         .color {
-          display: inline-block;
-          width: 15%;
-          height: 100%;
-          margin: auto;
-          border-radius: 5px 0 0 5px;
+            display: inline-block;
+            width: 15%;
+            height: 100%;
+            margin: auto;
+            border-radius: 5px 0 0 5px;
         }
         /*Topics Page Styles*/
         
         .topics .progress {
-          display: block;
-          width: auto;
-          margin-bottom: 20px;
+            display: block;
+            width: auto;
+            margin-bottom: 20px;
         }
         
         .topics .container {
-          margin: 20px 0;
+            margin: 20px 0;
         }
         
         .container .button {
-          width: calc(.5 * (100% - 5px));
-          margin-right: 5px;
+            width: calc(.5 * (100% - 5px));
+            margin-right: 5px;
         }
         
         .twoThirds .button {
-          width: calc(.5 * (100% - 10px));
-          margin-right: 0;
+            width: calc(.5 * (100% - 10px));
+            margin-right: 0;
         }
         
         .twoThirds .button:first-of-type {
-          margin-right: 10px;
+            margin-right: 10px;
         }
         
         .oneThird .button {
-          width: 100% !important;
+            width: 100% !important;
         }
         
         .helps h2 {
-          margin: 0;
-          font-size: 18pt;
+            margin: 0;
+            font-size: 18pt;
         }
         
         .helps .container {
-          display: inline-block;
-          margin: 20px 0;
+            display: inline-block;
+            margin: 20px 0;
         }
         
         .container.twoThirds {
-          width: calc(66.66% - 30px);
-          margin: 20px 20px 0 0;
+            width: calc(66.66% - 30px);
+            margin: 20px 20px 0 0;
         }
         
         .oneThird {
-          width: calc(33.33% - 30px);
+            width: calc(33.33% - 30px);
         }
         
         .helps .button {
-          display: inline-block;
-          width: calc(50% - 5px);
-          padding: 10px 0;
+            display: inline-block;
+            width: calc(50% - 5px);
+            padding: 10px 0;
         }
         
-        .step {
-          margin: 40px 0 5px;
-          font-size: 18pt;
+        .icon {
+            margin: 40px 0 5px;
+            display: inline-block;
+            height: 40px;
+            width: 40px;
+            margin: -10px 10px -5px -15px;
         }
         
-        .step:before {
-          counter-increment: step;
-          content: counter(step);
-          display: inline-block;
-          height: 40px;
-          width: 40px;
-          border-radius: 30px;
-          background: #6BA539;
-          font-size: 21pt;
-          font-weight: 600;
-          color: #fff;
-          text-align: center;
-          margin: -10px 10px -5px -15px;
-        }
-        
-        .button.step:before {
-          position: absolute;
-          left: 30px;
-          bottom: 53px;
-        }
-        
-        .button.step {
-          width: calc(100% - 60px);
-          margin-left: 40px;
+        .button.mastery {
+            width: calc(100% - 80px);
+            margin-left: 40px;
         }
         /*Practices Page Styles*/
         
         #header.banner {
-          height: 230px;
-          background-position: center;
-          background-size: cover;
-          position: relative;
+            height: 230px;
+            background-position: center;
+            background-size: cover;
+            position: relative;
         }
         
         #practices #main {
-          padding-top: 0;
+            padding-top: 0;
         }
         
         .practicesHeading h4,
         .practicesHeading h2 {
-          margin: 0;
-          font-weight: 600;
-          line-height: 20pt;
+            margin: 0;
+            font-weight: 600;
+            line-height: 20pt;
         }
         
         .practicesHeading {
-          width: 100%;
-          position: absolute;
-          bottom: 0;
-          background-color: rgba(255, 255, 255, .6);
-          margin: 20px 0px;
+            width: 100%;
+            position: absolute;
+            bottom: 0;
+            background-color: rgba(255, 255, 255, .6);
+            margin: 20px 0px;
         }
         
         .practicesHeading div {
-          display: inline-block;
-          width: calc(100% - 106px);
-          position: relative;
-          vertical-align: middle;
-          padding: 0 0 5px;
+            display: inline-block;
+            width: calc(100% - 106px);
+            position: relative;
+            vertical-align: middle;
+            padding: 0 0 5px;
         }
         
         .practicesHeading img {
-          width: 70px;
-          height: 70px;
-          display: inline-block;
-          vertical-align: middle;
-          margin: -5px 10px;
-          line-height: 0;
+            width: 70px;
+            height: 70px;
+            display: inline-block;
+            vertical-align: middle;
+            margin: -5px 10px;
+            line-height: 0;
         }
         
         #pracNav {
-          list-style-type: none;
-          margin: 0;
-          padding: 0;
-          counter-reset: options;
-          overflow: hidden;
+            list-style-type: none;
+            margin: 10px 0 0;
+            padding: 0;
+            counter-reset: options;
+            overflow: hidden;
         }
         
         #pracNav a {
-          text-decoration: none;
-          display: block;
-          width: 100%;
-          margin: 0;
-          height: 40px;
+            text-decoration: none;
+            display: block;
+            width: 100%;
+            margin: 0;
+            height: 40px;
         }
         
         #pracNav li {
-          position: relative;
-          display: inline-block;
-          width: 10%;
+            position: relative;
+            display: inline-block;
+            width: 10%;
         }
         
         #pracNav a:before {
-          color: #fff;
-          counter-increment: options;
-          content: counter(options) " ";
-          position: absolute;
-          top: 25%;
-          left: 55%;
+            color: #fff;
+            counter-increment: options;
+            content: counter(options) " ";
+            position: absolute;
+            top: 25%;
+            left: 55%;
         }
         
         #pracNav a:after {
-          display: inline-block;
-          vertical-align: middle;
-          line-height: 0;
-          position: absolute;
-          left: 100%;
-          z-index: 1;
+            display: inline-block;
+            vertical-align: middle;
+            line-height: 0;
+            position: absolute;
+            left: 100%;
+            z-index: 1;
         }
         
         #pracNav .green a:after {
-          content: url(../images/greenPointer.svg);
+            content: url(../images/greenPointer.svg);
         }
         
         #pracNav .blue a:after {
-          content: url(../images/bluePointer.svg);
+            content: url(../images/bluePointer.svg);
         }
         
         #pracNav .yellow a:after {
-          content: url(../images/yellowPointer.svg);
+            content: url(../images/yellowPointer.svg);
         }
         
         #pracNav li:first-of-type {
-          border-radius: 5px 0px 0px 5px;
-          width: calc(10% - 10px);
+            border-radius: 5px 0px 0px 5px;
+            width: calc(10% - 10px);
         }
         
         #pracNav li:first-of-type a:before,
         #pracNav li:last-of-type a:before {
-          left: 45%;
+            left: 45%;
         }
         
         #pracNav li:last-of-type {
-          border-radius: 0px 5px 5px 0px;
-          width: calc(10% + 10px);
+            border-radius: 0px 5px 5px 0px;
+            width: calc(10% + 10px);
         }
         
         #pracNav li:last-of-type a:after {
-          content: none;
+            content: none;
         }
         
         #learnosity {
-          width: calc(100% - 6px);
-          border: solid #A2AAAD 3px;
-          border-radius: 5px;
-          margin: 20px 0;
+            width: calc(100% - 6px);
+            border: solid #A2AAAD 3px;
+            border-radius: 5px;
+            margin: 20px 0;
         }
         
         .button {
-          background-color: #747778;
-          text-decoration: none;
-          color: #FFF;
-          padding: 10px;
-          display: block;
-          border-radius: 5px;
-          text-align: center;
-          margin: 10px 0px;
-          transition: .2s;
+            background-color: #747778;
+            text-decoration: none;
+            color: #FFF;
+            padding: 10px;
+            display: block;
+            border-radius: 5px;
+            text-align: center;
+            margin: 10px 0px;
+            transition: .2s;
         }
         
         .button blue {
-          background-color: #005f83
+            background-color: #005f83
         }
         
         .button:hover {
-          opacity: .8;
-          transition: .2s;
-          cursor: pointer;
+            opacity: .8;
+            transition: .2s;
+            cursor: pointer;
         }
         /*  Awards Styles  */
         
         .content {
-          margin: 8vh 8vw;
-          width: 80vw;
-          height: 80vh;
-          border-radius: 10px;
-          transition: background .3s;
-          background: rgba(0, 0, 0, .6);
-          padding: 1vw;
+            margin: 8vh 8vw;
+            width: 80vw;
+            height: 80vh;
+            border-radius: 10px;
+            transition: background .3s;
+            background: rgba(0, 0, 0, .6);
+            padding: 1vw;
         }
         
         .content.hidden {
-          opacity: 0;
-          z-index: -1;
+            opacity: 0;
+            z-index: -1;
         }
         
         .content.visible {
-          opacity: 1;
-          z-index: 3;
+            opacity: 1;
+            z-index: 3;
         }
         
         .award {
-          display: inline-block;
-          vertical-align: top;
-          padding: 1%;
-          width: 23%;
-          text-align: center;
+            display: inline-block;
+            vertical-align: top;
+            padding: 1%;
+            width: 23%;
+            text-align: center;
         }
         
         .award img {
-          width: 60%;
-          max-width: 120px;
+            width: 60%;
+            max-width: 120px;
         }
         
         .award p {
-          color: #fff;
-          padding: 0 5px 3px;
-          width: 90%;
-          margin: 10px auto;
-          font-size: 10pt;
+            color: #fff;
+            padding: 0 5px 3px;
+            width: 90%;
+            margin: 10px auto;
+            font-size: 10pt;
         }
         
         .award div {
-          background: url('../images/Badge_star.png');
-          background-size: contain;
-          height: 30px;
-          margin: auto;
+            background: url('../images/Badge_star.png');
+            background-size: contain;
+            height: 30px;
+            margin: auto;
         }
         
         #awards h2 {
-          color: #f1f1f3;
-          display: inline-block;
-          width: 33.33%;
-          text-align: center;
-          padding: 10px 0;
-          margin: 0;
-          border-bottom: solid 3px #333333;
-          transition: background-color .3s;
+            color: #f1f1f3;
+            display: inline-block;
+            width: 33.33%;
+            text-align: center;
+            padding: 10px 0;
+            margin: 0;
+            border-bottom: solid 3px #333333;
+            transition: background-color .3s;
         }
         
         #awards h2:hover {
-          cursor: pointer;
-          background-color: #333333;
+            cursor: pointer;
+            background-color: #333333;
         }
         
         .page {
-          opacity: 0;
-          position: absolute;
-          top: 70px;
-          left: 20px;
-          width: calc(100% - 40px);
-          transition: opacity .3s;
+            opacity: 0;
+            position: absolute;
+            top: 70px;
+            left: 20px;
+            width: calc(100% - 40px);
+            transition: opacity .3s;
         }
         
         .page.focus {
-          opacity: 1;
+            opacity: 1;
         }
         /* Temporary Styles */
         
         .stars1 {
-          width: 30px;
+            width: 30px;
         }
         
         .stars2 {
-          width: 60px;
+            width: 60px;
         }
         
         .stars3 {
-          width: 90px;
+            width: 90px;
         }
         
         .stars4 {
-          width: 120px;
+            width: 120px;
         }
         
         .stars5 {
-          width: 150px;
+            width: 150px;
         }
         
         .stars0 {
-          width: 0px;
+            width: 0px;
         }
         
         .visible.temp {
-          color: #333333;
-          font-size: 2em;
-          background-color: #fff;
+            color: #333333;
+            font-size: 2em;
+            background-color: #fff;
         }
         
         .levelHeading {
-          border-bottom: 3px solid #747778;
-          height: 53px;
-          margin-bottom: 40px;
+            border-bottom: 3px solid #747778;
+            height: 53px;
+            margin-bottom: 40px;
         }
         
         .levelHeading:before {
-          background-image: url('../images/icons/ECI_Speaking.png');
-          content: "";
-          background-size: 70px 70px;
-          width: 70px;
-          height: 70px;
-          display: inline-block;
-          vertical-align: middle;
-          margin: -5px 10px 0 -15px;
-          line-height: 0;
+            background-image: url('../images/icons/ECI_Speaking.png');
+            content: "";
+            background-size: 70px 70px;
+            width: 70px;
+            height: 70px;
+            display: inline-block;
+            vertical-align: middle;
+            margin: -5px 10px 0 -15px;
+            line-height: 0;
         }
         /* Styles for mobile */
         
         @media screen and (max-width: 850px) {
-          .topics .tile,
-          #practice .tile {
-            width: calc(.3333 * (100% - 60px));
-            margin: 10px;
-            height: 110px;
-          }
-          .topics .tile h3,
-          #practice .tile h3 {
-            font-size: 11pt;
-          }
-          .award {
-            width: 31.33%;
-          }
-          .award img {
-            width: 40%;
-          }
-          #breadcrumbs {
-            padding: 0;
-          }
-          #awardBar {
-            display: block;
-            position: relative;
-            text-align: left;
-            left: 0;
-          }
-          #banner {
-            padding: 10px 15px;
-          }
+            .topics .tile,
+            #practice .tile {
+                width: calc(.3333 * (100% - 60px));
+                margin: 10px;
+                height: 110px;
+            }
+            .topics .tile h3,
+            #practice .tile h3 {
+                font-size: 11pt;
+            }
+            .award {
+                width: 31.33%;
+            }
+            .award img {
+                width: 40%;
+            }
+            #breadcrumbs {
+                padding: 0;
+            }
+            #awardBar {
+                display: block;
+                position: relative;
+                text-align: left;
+                left: 0;
+            }
+            #banner {
+                padding: 10px 15px;
+            }
         }
         
         @media screen and (max-width: 600px) {
-          #title {
-            display: none;
-          }
-          body {
-            margin: 0;
-          }
-          #main {
-            padding: 11px;
-          }
-          #profilePic {
-            display: block;
-            width: 40%;
-            margin-left: 20px;
-          }
-          .container {
-            padding: 5px;
-          }
-          .tile {
-            width: calc(.5 * (100% - 20px)) !important;
-            margin: 5px !important;
-            height: 100px !important;
-          }
-          #home .tile {
-            height: 70px !important;
-          }
-          .tile h3 {
-            font-size: 10pt !important;
-          }
-          #home .tile h3 {
-            font-size: 12pt !important;
-          }
-          #studentInfo {
-            width: 100%;
-            margin: 10px 1%;
-            font-size: 11pt;
-          }
-          #studentInfo h2 {
-            font-size: 14pt;
-          }
-          #studentInfo h2,
-          #key,
-          #profilePic {
-            margin: 0;
-          }
-          #courseInfo {
-            display: block;
-            width: initial;
-          }
-          .progress {
-            width: 100%;
-            margin-bottom: 15px;
-          }
-          #awards img {
-            width: 40%;
-          }
-          .award {
-            width: 48%;
-          }
-          .award h2 {
-            font-size: .9em;
-          }
-          .overview {
-            width: initial;
-          }
-          .helps {
-            margin: 20px 0;
-          }
-          .helps .button {
-            display: block;
-            width: auto;
-            margin: 10px 0;
-          }
-          .step.button {
-            width: calc(100% - 70px);
-            margin-left: 50px;
-          }
-          .step.button:before {
-            position: absolute;
-            bottom: 29px;
-            left: 10px;
-          }
-          .step:before {
-            margin: 0 10px 0 0;
-          }
-          #pracNav li {
-            width: 20%;
-            margin-bottom: 3px;
-          }
-          #pracNav li:first-of-type,
-          #pracNav li:nth-of-type(6) {
-            border-radius: 5px 0px 0px 5px;
-            width: calc(20% - 10px);
-          }
-          #pracNav li:nth-of-type(6) a:before,
-          #pracNav li:nth-of-type(5) a:before {
-            left: 45%;
-          }
-          #pracNav li:last-of-type,
-          #pracNav li:nth-of-type(5) {
-            border-radius: 0px 5px 5px 0px;
-            width: calc(20% + 10px);
-          }
+            #title {
+                display: none;
+            }
+            body {
+                margin: 0;
+            }
+            #main {
+                padding: 11px;
+            }
+            #profilePic {
+                display: block;
+                width: 40%;
+                margin-left: 20px;
+            }
+            .container {
+                padding: 5px;
+            }
+            .tile {
+                width: calc(.5 * (100% - 20px)) !important;
+                margin: 5px !important;
+                height: 100px !important;
+            }
+            #home .tile {
+                height: 70px !important;
+            }
+            .tile h3 {
+                font-size: 10pt !important;
+            }
+            #home .tile h3 {
+                font-size: 12pt !important;
+            }
+            #studentInfo {
+                width: 100%;
+                margin: 10px 1%;
+                font-size: 11pt;
+            }
+            #studentInfo h2 {
+                font-size: 14pt;
+            }
+            #studentInfo h2,
+            #key,
+            #profilePic {
+                margin: 0;
+            }
+            #courseInfo {
+                display: block;
+                width: initial;
+            }
+            .progress {
+                width: 100%;
+                margin-bottom: 15px;
+            }
+            #awards img {
+                width: 40%;
+            }
+            .award {
+                width: 48%;
+            }
+            .award h2 {
+                font-size: .9em;
+            }
+            .overview {
+                width: initial;
+            }
+            .helps {
+                margin: 20px 0;
+            }
+            .helps .button {
+                display: block;
+                width: auto;
+                margin: 10px 0;
+            }
+            .step.button {
+                width: calc(100% - 70px);
+                margin-left: 50px;
+            }
+            .step.button:before {
+                position: absolute;
+                bottom: 29px;
+                left: 10px;
+            }
+            .step:before {
+                margin: 0 10px 0 0;
+            }
+            #pracNav li {
+                width: 20%;
+                margin-bottom: 3px;
+            }
+            #pracNav li:first-of-type,
+            #pracNav li:nth-of-type(6) {
+                border-radius: 5px 0px 0px 5px;
+                width: calc(20% - 10px);
+            }
+            #pracNav li:nth-of-type(6) a:before,
+            #pracNav li:nth-of-type(5) a:before {
+                left: 45%;
+            }
+            #pracNav li:last-of-type,
+            #pracNav li:nth-of-type(5) {
+                border-radius: 0px 5px 5px 0px;
+                width: calc(20% + 10px);
+            }
         }

@@ -19,6 +19,11 @@
           position: relative;
       }
       
+      #title {
+          display: inline-block;
+          margin: 5px 0 10px;
+      }
+      
       .dark {
           background-color: #005F83;
           color: #FFF;
@@ -47,6 +52,7 @@
       #main {
           border: solid 1px #ddd;
           padding: 30px;
+          position: relative;
       }
       
       .visible {
@@ -84,6 +90,13 @@
           z-index 0s .3s;
       }
       
+      .container {
+          border-radius: 10px;
+          padding: 10px;
+          background: #E6E6E8;
+          margin-top: 20px;
+      }
+      
       .remove {
           font-size: 0em;
       }
@@ -108,6 +121,12 @@
           background-color: #ED585C;
       }
       /*        Header Info*/
+      
+      #home #header {
+          margin: 0 10px 10px 0;
+          padding-bottom: 10px;
+          border-bottom: solid #E6E6E8 2px;
+      }
       
       #profilePic {
           width: calc(20% - 6px);
@@ -222,39 +241,53 @@
           color: #6BA539;
       }
       
-      #courseInfo a {
+      #courseInfo .button {
           font-size: initial;
-          text-align: center;
-          display: inline-block;
           width: calc(100% - 30px);
           margin: 5px;
           border-radius: 5px;
-          padding: 5px 10px;
-          background-color: #6BA539;
-          height: 75px;
           vertical-align: top;
           line-height: 12pt;
-          position: relative;
+          padding: 5px 10px;
+      }
+      
+      #courseInfo .button:nth-child(2) {
+          margin-top: 10px;
+      }
+      
+      .help {
+          display: inline-block;
+          background-color: #BC242D;
+          position: absolute;
+          right: 0px;
+          width: auto;
+          top: 5px;
+          padding: 5px 10px;
       }
       
       #courseInfo .help {
-          background-color: #BC242D;
-          height: 40px;
-          position: absolute;
           bottom: 10px;
+          top: auto;
           left: 10px;
           width: calc(100% - 50px);
       }
       
-      #courseInfo .help:before {
+      .help:before {
           display: inline-block;
           content: "?";
           color: #BC242D;
+          margin: 5px auto;
           margin-right: 10px;
           line-height: 21pt;
+          width: 30px;
+          height: 30px;
+          border-radius: 15px;
+          background: #fff;
+          font-size: 16pt;
+          font-weight: 900;
       }
       
-      #courseInfo a:before {
+      .info:before {
           content: "i";
           display: block;
           width: 30px;
@@ -268,20 +301,24 @@
           margin: 5px auto;
       }
       
+      .gradeIcon:before {
+          content: "A+";
+          font-size: 14pt;
+      }
+      
       #banner a.remove {
           text-decoration: none;
       }
       
       #awardBar {
           display: inline-block;
-          width: calc(20% - 40px);
+          width: calc(20% - 20px);
           vertical-align: top;
           margin: 0;
           background-color: #005F83;
           position: absolute;
-          height: calc(100% - 195px);
+          height: calc(100% - 80px);
           border-radius: 10px;
-          margin: 10px;
           padding: 10px;
       }
       
@@ -289,7 +326,7 @@
           color: #fff;
           text-align: center;
           font-size: 12pt;
-          margin: 5px 0;
+          margin: 10px 0;
       }
       
       #awardBar img {
@@ -304,13 +341,11 @@
       }
       /*        Courses Area           */
       
-      #courses {
-          margin-top: 20px;
-      }
-      
       .course {
-          margin-top: 30px;
           display: inline-block;
+          width: calc(25% - 30px);
+          margin-right: 10px;
+          counter-reset: levels 5;
       }
       
       .courseWrapper {
@@ -318,9 +353,12 @@
       }
       
       .course img {
+          display: block;
           width: 40px;
           vertical-align: middle;
-          margin: 0 10px 10px 0;
+          margin: 0 auto 2px;
+          border-radius: 20px;
+          box-shadow: 0 0 0 2px #fff;
       }
       
       .container>h3 {
@@ -337,8 +375,9 @@
       
       .course h3 {
           vertical-align: middle;
-          margin: 0 0 10px;
-          display: inline-block;
+          text-align: center;
+          margin: 0 auto 10px;
+          display: block;
           font-size: 16pt;
       }
       
@@ -347,7 +386,6 @@
           vertical-align: top;
           width: 10%;
           font-size: initial;
-          background-color: #ffffff;
           border-radius: 10px;
           text-align: left;
           margin: 5px 0;
@@ -358,11 +396,12 @@
       .progress {
           vertical-align: middle;
           font-size: initial;
-          background-color: #E6E6E8;
+          background-color: #FFFFFF;
           border-radius: 5px;
           text-align: left;
-          margin-bottom: 8px;
-          border-radius: 5px;
+          margin: 10px;
+          border-radius: 10px;
+          height: 20px;
       }
       
       .progress span {
@@ -381,20 +420,9 @@
           display: inline-block;
           width: calc((100% - 161px) / 5);
           background-color: #FBCC29;
-          height: 28px;
-          border-radius: 5px 5px;
-          vertical-align: top;
-      }
-      
-      .container {
+          height: 20px;
           border-radius: 10px;
-          padding: 10px;
-      }
-      
-      #home .course {
-          width: calc(25% - 30px);
-          margin: 5px;
-          counter-reset: levels 5;
+          vertical-align: top;
       }
       
       #home .tile {
@@ -513,6 +541,10 @@
       }
       /*Topics Page Styles*/
       
+      .goalsContainer p {
+          margin-bottom: 0;
+      }
+      
       #topics .progress {
           display: block;
           width: auto;
@@ -560,32 +592,21 @@
       .step {
           margin: 40px 0 5px;
           font-size: 18pt;
+          display: inline-block;
       }
       
-      .step:before {
-          counter-increment: step;
-          content: counter(step);
+      .icon {
+          margin: 36px 10px 0 0;
           display: inline-block;
           height: 40px;
           width: 40px;
-          border-radius: 30px;
-          background: #6BA539;
-          font-size: 21pt;
-          font-weight: 600;
-          color: #fff;
-          text-align: center;
-          margin: -10px 10px -5px -15px;
+          vertical-align: top;
       }
       
-      .button.step:before {
-          position: absolute;
-          left: 30px;
-          bottom: 42px;
-      }
-      
-      .button.step {
-          width: calc(100% - 55px);
-          margin: 0 0 0 35px;
+      .button.mastery {
+          display: inline-block;
+          margin-top: 35px;
+          width: calc(100% - 75px);
       }
       /*Practices Page Styles*/
       
@@ -603,15 +624,14 @@
       .practicesHeading h4,
       .practicesHeading h2 {
           margin: 0;
-          font-weight: 600;
           line-height: 20pt;
+          color: white;
       }
       
       .practicesHeading {
           width: 100%;
           position: absolute;
           bottom: 0;
-          background-color: rgba(255, 255, 255, .6);
           margin: 20px 0px;
       }
       
@@ -634,7 +654,7 @@
       
       #pracNav {
           list-style-type: none;
-          margin: 0;
+          margin: 10px 0 0;
           padding: 0;
           counter-reset: options;
           overflow: hidden;
@@ -671,16 +691,8 @@
           z-index: 1;
       }
       
-      #pracNav .green a:after {
-          content: url(../images/greenPointer.svg);
-      }
-      
-      #pracNav .blue a:after {
-          content: url(../images/bluePointer.svg);
-      }
-      
-      #pracNav .yellow a:after {
-          content: url(../images/yellowPointer.svg);
+      #pracNav a:after {
+          content: url(../images/pointer.svg);
       }
       
       #pracNav li:first-of-type {
@@ -875,14 +887,13 @@
       }
       
       .levelHeading {
-          display: inline-block;
+          display: block;
           border-bottom: 3px solid #747778;
-          margin: 10px 0 0 15px;
-          padding: 0 0 5px 50px;
+          margin: 10px 0 0;
       }
       
       img.topicsHeading {
-          left: 15px;
+          right: 15px;
           position: absolute;
           width: 70px;
           height: 70px;
