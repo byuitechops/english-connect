@@ -6,10 +6,11 @@
     <meta charset="utf-8">
     <title>EnglishConnect | Home</title>
     <link rel="stylesheet" type="text/css" href="css/ecstyles.css">
+    <link rel="stylesheet" type="text/css" href="css/animate.css">
     <link rel="icon" type="image/png" href="images/PathwayLogoFavicon.png">
 </head>
 
-<body id="home">
+<body id="home" onload="getGoals()">
     <div class="center">
         <h1 id="title">EnglishConnect | Intermediate</h1>
         <div id="banner" class="dark">
@@ -22,8 +23,9 @@
                     <div id="studentInfo">
                         <h2 id="name">Please Log In</h2>
                         <a id="edit" href="/d2l/lp/profile/profile_edit.d2l?ou=30179" target="_blank"></a>
-                        <textarea>MY GLOALS</textarea>
-                        <a class="button">Update</a>
+                        <textarea id="goals">MY GOALS</textarea>
+                        <a class="button" onclick="updateGoals()">Update</a>
+                        <p id="updateMessage">Goals Updated</p>
                     </div>
                 </div>
                 <div id='courses'>
@@ -218,6 +220,7 @@
         <div id="awards" class="content hidden remove"></div>
         <div id="overlay" class="hidden"></div>
         <p>
+            <script type="text/javascript" src="js/goals.js"></script>
             <script src="js/grades.js" type="text/javascript"></script>
             <script src="js/scripts.js" type="text/javascript"></script>
         </p>
