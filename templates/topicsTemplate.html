@@ -11,6 +11,7 @@
 <body id="{{levelsmall}}_{{subjectsmall}}" class="topics">
     <div class="center">
         <h1 id="title">EnglishConnect | Intermediate</h1>
+        <a class="button help" href="https://byui.az1.qualtrics.com/jfe/form/SV_6QhmgO7v782ZADb?&Page={{levelsmall}}_{{subjectsmall}}" target="_blank">Help</a>
         <div id="banner" class="dark">
             <h2 id="breadcrumbs"><a href="index.html">Home</a> > {{subject}} {{level}}</h2>
         </div>
@@ -18,23 +19,23 @@
             <div id='header' class="remove">
                 <div class="overview reset">
                     <img class="topicsHeading" src="images/icons/ECI_{{subject}}.png">
-                    <h1 class="levelHeading">{{subject}} {{level}}</h1>
-                    <h2 class="step">Read</h2>
-                    <p>In this module, you will learn how to talk about what you like and don’t like with your friends and family. You will also be able to use sentences and words you already know in creative ways. Before you start the practice activities in any of the twelve topics below, begin with the strategies, grammar, and vocabulary to introduce you to the materials that will help you succeed in the practice activities.</p>
+                    <h1 class="levelHeading {{subjectsmall}}Heading">{{subject}} {{level}}</h1>
+                    <img src="images/icons/Goal_icon_{{subjectsmall}}.png" class="icon goals">
+                    <h2 class="step">Goals for this Level:</h2>
+                    <div class="goalsContainer">
+                        <p>In this module, you will learn how to talk about what you like and don’t like with your friends and family. You will also be able to use sentences and words you already know in creative ways. Before you start the practice activities in any of the twelve topics below, begin with the strategies, grammar, and vocabulary to introduce you to the materials that will help you succeed in the practice activities.</p>
+                    </div>
                 </div>
-                <h1 class="step reset">Study</h1>
+                <img src="images/icons/Resources_icon_{{subjectsmall}}.png" class="icon resources">
+                <h1 class="step reset">Resources</h1>
                 <div class="container helps">
                     <a class="button reset" onclick="toggle('overlay'); toggle('skill')">Skill Instruction</a>
                     <a class="button reset" onclick="toggle('overlay'); toggle('grammar')">Grammar</a>
                 </div>
             </div>
 
+            <img src="images/icons/Choose_icon_{{subject}}.png" class="icon chooseTopic">
             <h1 class="step">Choose Topic</h1>
-            <div id="key">
-                <h3 class="square todo">TO DO</h3>
-                <h3 class="square prog">IN PROGRESS</h3>
-                <h3 class="square master">MASTERED</h3>
-            </div>
             <div class="container remove {{subjectsmall}}">
                 <div id="{{levelsmall}}_{{subjectsmall}}" class="progress">
                     <div class="bar"></div>
@@ -152,8 +153,14 @@
     </div>
     <div id="awards" class="content hidden remove"></div>
     <div id="overlay" class="hidden"></div>
-    <div id="skill" class="hidden content temp"><a class="close" onclick="toggleThis(this.parentNode.id)">✕</a>Hello, I'm Your Skills</div>
-    <div id="grammar" class="hidden content temp"><a class="close" onclick="toggleThis(this.parentNode.id)">✕</a>Hello, I'm Your Grammar</div>
+    <div id="skill" class="hidden content temp">
+        <a class="close" onclick="toggleThis(this.parentNode.id)">✕</a>
+        <iframe src="skills instruction/Instruction Page - How to Summarize.pdf"></iframe>
+    </div>
+    <div id="grammar" class="hidden content temp">
+        <a class="close" onclick="toggleThis(this.parentNode.id)">✕</a>
+        <iframe src="grammar/grammar_{{levelsmall}}.pdf"></iframe>
+    </div>
     <p>
         <script src="js/scripts.js"></script>
     </p>
