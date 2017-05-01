@@ -7,6 +7,8 @@
           color: #333333;
       }
       
+
+
       body {
           background-color: #ffffff;
           z-index: 0;
@@ -205,6 +207,8 @@
           background-color: #FFB81C;
       }
       
+
+
       .square:before {
           font-size: 1.55em;
           content: "■ ";
@@ -511,6 +515,10 @@
           height: 20%;
           border-radius: 5px 5px 0 0;
       }
+
+.disabled{
+            background-color: #747778;
+}
       /*Topics Page Styles*/
       
       #topics .progress {
@@ -946,6 +954,8 @@
           transform: rotate(180deg) translate(30px, -10px);
           content: url('../images/bluePointer.svg');
       }
+
+
       /* Styles for mobile */
       
       @media screen and (max-width: 768px) {
@@ -1149,4 +1159,6 @@
           #info #pracNav a {
               font-size: 16px;
           }
+
+
       }

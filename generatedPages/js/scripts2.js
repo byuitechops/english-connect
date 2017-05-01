@@ -23,8 +23,7 @@ var subjects = ["reading", "writing", "speaking", "listening"],
 /* OU number required for LTI Request */
 var refer = window.location.pathname.split('~')[1].split('/')[0];
 var ou = refer[1];
-var ou = 1458190;
-/*hide D2L */
+var ou = 1458190; //course id in Canvas
 
 /* Toggle Functions */
 
@@ -288,7 +287,7 @@ function ECIlti(vars, frameId) {
       query += '&' + key + '=' + encodeURIComponent(vars[key]);
     }
   }
-    
+
   console.log("query", query, "ou:", ou);
   document.getElementById(frameId).src = 'https://byuh.instructure.com/courses/' + ou + '/modules/items/15607983' + query;
 }
