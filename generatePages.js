@@ -6,7 +6,8 @@ var fs = require('fs'),
   d3 = require('d3-dsv'),
   htmlFiles = require('./htmlFilesToObject.js')(),
   handlebars = require('Handlebars'),
-  topicsPage, practicesPage, i = 0,
+  practicesPerPage = require('./practicesPerLevel.js'),
+  topicsPage, practicesPage, page = 0,
   template, location;
 if (typeof (process.argv[2]) == 'undefined') {
   location = 'generatedPages'
@@ -45,6 +46,28 @@ function topicLink(string) {
     return "t" + (data.topics.indexOf(string) + 1);
   }
 }
+
+handlebars.registerHelper('generateLinks', function (subject, level, topic, practice) {
+  var count = practicesPerPage[topic][subject][level];
+  var out = "";
+  var url = "";
+
+  function getUrl(i) {
+    quizes.forEach(function (quiz) {
+      if (quiz.title == subject + " " + level + " - " + topic + " - " + practice + " " + i) {
+        url = quiz.mobile_url;
+      }
+    });
+    return url;
+  }
+
+  for (var i = 0; i < count; i++) {
+    out += '<li id="' + small(level) + '_' + small(subject) + '_' + small(topic) + '_psg1" class="reset ' + small(subject) + ' passage"><a href="' + new handlebars.SafeString(getUrl(i + 1)) + '" target="_blank"></a> </li>\n';
+  }
+
+  return new handlebars.SafeString(out);
+});
+
 var quizes = d3.csvParse(fs.readFileSync('quizes.csv', 'utf8'));
 handlebars.registerHelper('getUrl', function (subject, level, topic, practice) {
   var url = "";
@@ -82,19 +105,19 @@ data.levels.forEach(function (level) {
   data.subjects.forEach(function (subject) {
     //Generate the topics page
     topicsPage = generatePage(level, subject);
-    
+
     //Write the topicsPage
     fs.writeFileSync(location + '/' + small(level) + "_" + small(subject) + '.html', topicsPage);
-    i++;
-    console.log("Wrote page " + i + "/208");
+    page++;
+    console.log("Wrote page " + page + "/208");
     data.topics.forEach(function (topic) {
       //Generate the practice page
       practicesPage = generatePage(level, subject, topic);
-      
+
       //Write the practicesPage
       fs.writeFileSync(location + '/' + small(level) + "_" + small(subject) + "_" + small(topic) + '.html', practicesPage);
-      i++;
-      console.log("Wrote page " + i + "/208");
+      page++;
+      console.log("Wrote page " + page + "/208");
     })
   })
 })
