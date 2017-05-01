@@ -3,6 +3,7 @@
 
 var fs = require('fs'),
   data = require('./data.js'),
+  d3 = require('d3-dsv'),
   htmlFiles = require('./htmlFilesToObject.js')(),
   handlebars = require('Handlebars'),
   topicsPage, practicesPage, i = 0,
@@ -44,6 +45,16 @@ function topicLink(string) {
     return "t" + (data.topics.indexOf(string) + 1);
   }
 }
+var quizes = d3.csvParse(fs.readFileSync('quizes.csv', 'utf8'));
+handlebars.registerHelper('getUrl', function (subject, level, topic, practice) {
+  var url = "";
+  quizes.forEach(function (quiz) {
+    if (quiz.title == subject + " " + level + " - " + topic + " - " + practice) {
+      url = quiz.mobile_url;
+    }
+  });
+  return new handlebars.SafeString(url);
+});
 
 function generatePage(level, subject, topic) {
   var context = {
@@ -71,7 +82,7 @@ data.levels.forEach(function (level) {
   data.subjects.forEach(function (subject) {
     //Generate the topics page
     topicsPage = generatePage(level, subject);
-
+    
     //Write the topicsPage
     fs.writeFileSync(location + '/' + small(level) + "_" + small(subject) + '.html', topicsPage);
     i++;
@@ -79,7 +90,7 @@ data.levels.forEach(function (level) {
     data.topics.forEach(function (topic) {
       //Generate the practice page
       practicesPage = generatePage(level, subject, topic);
-
+      
       //Write the practicesPage
       fs.writeFileSync(location + '/' + small(level) + "_" + small(subject) + "_" + small(topic) + '.html', practicesPage);
       i++;

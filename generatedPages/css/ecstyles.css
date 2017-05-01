@@ -1005,6 +1005,10 @@
               text-align: left;
               left: 0;
           }
+          #leftCol {
+              display: block;
+              width: 100%;
+          }
           #banner {
               padding: 10px 15px;
           }

@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/byuicampuscd/english-connect/issues"
   },
-  "homepage": "https://github.com/byuicampuscd/english-connect#readme"
+  "homepage": "https://github.com/byuicampuscd/english-connect#readme",
+  "dependencies": {
+    "d3-dsv": "^1.0.5"
+  }
 }
