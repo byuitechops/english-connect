@@ -143,6 +143,7 @@ function controller() {
 }
 /* Get Grade values */
 
+//DIDYMUS IS WORKING HERE
 function getGradeValues() {
     var item = new XMLHttpRequest();
     item.open("GET", "/d2l/api/le/1.15/" + ou + "/grades/values/myGradeValues/");

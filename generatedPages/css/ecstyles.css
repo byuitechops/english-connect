@@ -7,6 +7,8 @@
           color: #333333;
       }
       
+
+
       body {
           background-color: #ffffff;
           z-index: 0;
@@ -40,13 +42,13 @@
       
       #breadcrumbs {
           color: #fff;
-          padding: 2px 10px 5px 30px;
+          padding: 2px 0px 5px 30px;
           margin: 0;
           font-size: 1.2em;
           display: inline-block;
           white-space: nowrap;
           text-overflow: ellipsis;
-          width: 100%;
+          width: calc(100% - 30px);
       }
       
       #main {
@@ -233,6 +235,8 @@
           background-color: #FFB81C;
       }
       
+
+
       .square:before {
           font-size: 1.55em;
           content: "■ ";
@@ -548,6 +552,10 @@
           height: 20%;
           border-radius: 5px 5px 0 0;
       }
+
+.disabled{
+            background-color: #747778;
+}
       /*Topics Page Styles*/
       
       .goalsContainer p {
@@ -966,6 +974,8 @@
           transform: rotate(180deg) translate(30px, -10px);
           content: url('../images/bluePointer.svg');
       }
+
+
       /* Styles for mobile */
       
       @media screen and (max-width: 768px) {
@@ -1173,4 +1183,6 @@
           #info #pracNav a {
               font-size: 16px;
           }
+
+
       }
