@@ -7,8 +7,6 @@
           color: #333333;
       }
       
-
-
       body {
           background-color: #ffffff;
           z-index: 0;
@@ -234,7 +232,7 @@
       .yellow {
           background-color: #FFB81C;
       }
-
+      
       .square:before {
           font-size: 1.55em;
           content: "■ ";
@@ -343,6 +341,12 @@
       #awardBar img {
           width: calc(50% - 12px);
           margin: 5px 6px;
+      }
+      
+      #awardBar #getMaterials {
+          position: absolute;
+          bottom: 70px;
+          width: calc(100% - 50px);
       }
       
       #leftCol {
@@ -550,10 +554,10 @@
           height: 20%;
           border-radius: 5px 5px 0 0;
       }
-
-.disabled{
-            background-color: #747778;
-}
+      
+      .disabled {
+          background-color: #747778;
+      }
       /*Topics Page Styles*/
       
       .goalsContainer p {
@@ -669,26 +673,26 @@
       
       #pracNav {
           list-style-type: none;
-        display: flex;
-        align-items: strech;
+          display: flex;
+          align-items: strech;
           margin: 10px 0 0;
           padding: 0;
           counter-reset: options;
           overflow: hidden;
           height: 40px;
-        width: 100%;
+          width: 100%;
       }
       
       #pracNav a {
           text-decoration: none;
           display: block;
           margin: 0;
-        width: 100%;
-        height: 100%;
+          width: 100%;
+          height: 100%;
       }
       
       #pracNav li {
-        flex-grow: 1;
+          flex-grow: 1;
           position: relative;
       }
       
@@ -974,8 +978,6 @@
           transform: rotate(180deg) translate(30px, -10px);
           content: url('../images/bluePointer.svg');
       }
-
-
       /* Styles for mobile */
       
       @media screen and (max-width: 768px) {
@@ -1183,6 +1185,4 @@
           #info #pracNav a {
               font-size: 16px;
           }
-
-
       }
