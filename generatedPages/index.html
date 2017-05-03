@@ -2,226 +2,226 @@
 <html>
 
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta charset="utf-8">
-    <title>EnglishConnect | Home</title>
-    <link rel="stylesheet" type="text/css" href="css/ecstyles.css">
-    <link rel="stylesheet" type="text/css" href="css/animate.css">
-    <link rel="icon" type="image/png" href="images/PathwayLogoFavicon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+  <title>EnglishConnect | Home</title>
+  <link rel="stylesheet" type="text/css" href="css/ecstyles.css">
+  <link rel="stylesheet" type="text/css" href="css/animate.css">
+  <link rel="icon" type="image/png" href="images/PathwayLogoFavicon.png">
 </head>
 
 <body id="home" onload="getGoals()">
-    <div class="center">
-        <h1 id="title">EnglishConnect | Intermediate</h1>
-        <div id="banner" class="dark">
-            <h2 id="breadcrumbs">Home</h2>
-        </div>
-        <div id='main' class="remove">
-            <div id="leftCol" class="remove">
-                <div id='header'>
-                    <img id="profilePic" src="images/profilePic.png" alt="Profile Picture">
-                    <div id="studentInfo">
-                        <h2 id="name">Welcome to EnglishConnect</h2>
-                        <a id="edit" onclick="top.location='https://byui.instructure.com/profile'" target="_blank"></a>
-                        <textarea id="goals">MY GOALS</textarea>
-                        <a class="button" onclick="updateGoals()">Update</a>
-                        <p id="updateMessage">Goals Updated</p>
-                    </div>
-                </div>
-                <div id='courses'>
-                    <div class="course container listening">
-                        <img src="images/icons/ECI_Listening.png">
-                        <h3>Listening</h3>
-                        <div class="courseWrapper">
-                            <div class="tiles">
-                                <a href="level4_listening.html">
-                                    <div class="tile">
-                                        <div class="color green checked" id="level1_listening"></div>
-                                        <div class="label">
-                                            <h3 class="afterIcon">Level</h3>
-                                        </div>
-                                    </div>
-                                </a>
-                                <a href="level3_listening.html">
-                                    <div class="tile">
-                                        <div class="color green" id="level2_listening"></div>
-                                        <div class="label">
-                                            <h3 class="afterIcon">Level</h3>
-                                        </div>
-                                    </div>
-                                </a>
-                                <a href="level2_listening.html">
-                                    <div class="tile">
-                                        <div class="color green" id="level3_listening"></div>
-                                        <div class="label">
-                                            <h3 class="afterIcon">Level</h3>
-                                        </div>
-                                    </div>
-                                </a>
-                                <a href="level1_listening.html">
-                                    <div class="tile">
-                                        <div class="color green" id="level4_listening"></div>
-                                        <div class="label">
-                                            <h3 class="afterIcon">Level</h3>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div id='listening' class="progress">
-                                <div class="bar"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="course container speaking">
-                        <img src="images/icons/ECI_Speaking.png">
-                        <h3>Speaking</h3>
-                        <div class="courseWrapper">
-                            <div class="tiles">
-                                <a href="level4_speaking.html">
-                                    <div class="tile">
-                                        <div class="color green" id="level1_speaking"></div>
-                                        <div class="label">
-                                            <h3 class="afterIcon">Level</h3>
-                                        </div>
-                                    </div>
-                                </a>
-                                <a href="level3_speaking.html">
-                                    <div class="tile">
-                                        <div class="color green" id="level2_speaking"></div>
-                                        <div class="label">
-                                            <h3 class="afterIcon">Level</h3>
-                                        </div>
-                                    </div>
-                                </a>
-                                <a href="level2_speaking.html">
-                                    <div class="tile">
-                                        <div class="color green" id="level3_speaking"></div>
-                                        <div class="label">
-                                            <h3 class="afterIcon">Level</h3>
-                                        </div>
-                                    </div>
-                                </a>
-                                <a href="level1_speaking.html">
-                                    <div class="tile">
-                                        <div class="color green" id="level4_speaking"></div>
-                                        <div class="label">
-                                            <h3 class="afterIcon">Level</h3>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div id='level2' class="progress">
-                                <div class="bar"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="course container reading">
-                        <img src="images/icons/ECI_Reading.png">
-                        <h3>Reading</h3>
-                        <div class="courseWrapper">
-                            <div class="tiles">
-                                <a href="level4_reading.html">
-                                    <div class="tile">
-                                        <div class="color green" id="level1_speaking"></div>
-                                        <div class="label">
-                                            <h3 class="afterIcon">Level</h3>
-                                        </div>
-                                    </div>
-                                </a>
-                                <a href="level3_reading.html">
-                                    <div class="tile">
-                                        <div class="color green" id="level2_speaking"></div>
-                                        <div class="label">
-                                            <h3 class="afterIcon">Level</h3>
-                                        </div>
-                                    </div>
-                                </a>
-                                <a href="level2_reading.html">
-                                    <div class="tile">
-                                        <div class="color green" id="level3_speaking"></div>
-                                        <div class="label">
-                                            <h3 class="afterIcon">Level</h3>
-                                        </div>
-                                    </div>
-                                </a>
-                                <a href="level1_reading.html">
-                                    <div class="tile">
-                                        <div class="color green" id="level4_speaking"></div>
-                                        <div class="label">
-                                            <h3 class="afterIcon">Level</h3>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div id='level3' class="progress">
-                                <div class="bar"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="course container writing">
-                        <img src="images/icons/ECI_Writing.png">
-                        <h3>Writing</h3>
-                        <div class="courseWrapper">
-                            <div class="tiles">
-                                <a href="level4_writing.html">
-                                    <div class="tile">
-                                        <div class="color green" id="level1_writing"></div>
-                                        <div class="label">
-                                            <h3 class="afterIcon">Level</h3>
-                                        </div>
-                                    </div>
-                                </a>
-                                <a href="level3_writing.html">
-                                    <div class="tile">
-                                        <div class="color green" id="level2_writing"></div>
-                                        <div class="label">
-                                            <h3 class="afterIcon">Level</h3>
-                                        </div>
-                                    </div>
-                                </a>
-                                <a href="level2_writing.html">
-                                    <div class="tile">
-                                        <div class="color green" id="level3_writing"></div>
-                                        <div class="label">
-                                            <h3 class="afterIcon">Level</h3>
-                                        </div>
-                                    </div>
-                                </a>
-                                <a href="level1_writing.html">
-                                    <div class="tile">
-                                        <div class="color green" id="level4_writing"></div>
-                                        <div class="label">
-                                            <h3 class="afterIcon">Level</h3>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div id='level4' class="progress">
-                                <div class="bar"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div id="awardBar" class="remove">
-                <div id="courseInfo">
-                    <a class="button green info" href="course_info.html">Course Information</a>
-                    <a class="button green info gradeIcon" onclick="top.location='https://byuh.instructure.com/courses/1458190/gradebook'">View My Grades</a>
-                    <a id="getMaterials" class="info green button" href="gathering/ECI_gatheringmaterials.pdf" target="_blank">Get Gatering Materials</a>
-                    <a class="help button" href="https://byui.az1.qualtrics.com/jfe/form/SV_6QhmgO7v782ZADb?&Page=index" target="_blank">Help</a>
-                </div>
-                <p class="reset">My Badges</p>
-                <img src="images/badges/FlatBadge_Journey.png" alt="Journey Begun" title="Journey Begun">
-            </div>
-        </div>
-        <div id="awards" class="content hidden remove"></div>
-        <div id="overlay" class="hidden"></div>
-        <p>
-            <script type="text/javascript" src="js/goals.js"></script>
-            <script src="js/grades.js" type="text/javascript"></script>
-            <script src="js/scripts.js" type="text/javascript"></script>
-        </p>
+  <div class="center">
+    <h1 id="title">EnglishConnect | Intermediate</h1>
+    <div id="banner" class="dark">
+      <h2 id="breadcrumbs">Home</h2>
     </div>
+    <div id='main' class="remove">
+      <div id="leftCol" class="remove">
+        <div id='header'>
+          <img id="profilePic" src="images/profilePic.png" alt="Profile Picture">
+          <div id="studentInfo">
+            <h2 id="name">Welcome to EnglishConnect</h2>
+            <a id="edit" href="https://byuh.instructure.com/profile" target="_top"></a>
+            <textarea id="goals">MY GOALS</textarea>
+            <a class="button" onclick="updateGoals()">Update</a>
+            <p id="updateMessage">Goals Updated</p>
+          </div>
+        </div>
+        <div id='courses'>
+          <div class="course container listening">
+            <img src="images/icons/ECI_Listening.png">
+            <h3>Listening</h3>
+            <div class="courseWrapper">
+              <div class="tiles">
+                <a href="level4_listening.html">
+                  <div class="tile">
+                    <div class="color green checked" id="level1_listening"></div>
+                    <div class="label">
+                      <h3 class="afterIcon">Level</h3>
+                    </div>
+                  </div>
+                </a>
+                <a href="level3_listening.html">
+                  <div class="tile">
+                    <div class="color green" id="level2_listening"></div>
+                    <div class="label">
+                      <h3 class="afterIcon">Level</h3>
+                    </div>
+                  </div>
+                </a>
+                <a href="level2_listening.html">
+                  <div class="tile">
+                    <div class="color green" id="level3_listening"></div>
+                    <div class="label">
+                      <h3 class="afterIcon">Level</h3>
+                    </div>
+                  </div>
+                </a>
+                <a href="level1_listening.html">
+                  <div class="tile">
+                    <div class="color green" id="level4_listening"></div>
+                    <div class="label">
+                      <h3 class="afterIcon">Level</h3>
+                    </div>
+                  </div>
+                </a>
+              </div>
+              <div id='listening' class="progress">
+                <div class="bar"></div>
+              </div>
+            </div>
+          </div>
+          <div class="course container speaking">
+            <img src="images/icons/ECI_Speaking.png">
+            <h3>Speaking</h3>
+            <div class="courseWrapper">
+              <div class="tiles">
+                <a href="level4_speaking.html">
+                  <div class="tile">
+                    <div class="color green" id="level1_speaking"></div>
+                    <div class="label">
+                      <h3 class="afterIcon">Level</h3>
+                    </div>
+                  </div>
+                </a>
+                <a href="level3_speaking.html">
+                  <div class="tile">
+                    <div class="color green" id="level2_speaking"></div>
+                    <div class="label">
+                      <h3 class="afterIcon">Level</h3>
+                    </div>
+                  </div>
+                </a>
+                <a href="level2_speaking.html">
+                  <div class="tile">
+                    <div class="color green" id="level3_speaking"></div>
+                    <div class="label">
+                      <h3 class="afterIcon">Level</h3>
+                    </div>
+                  </div>
+                </a>
+                <a href="level1_speaking.html">
+                  <div class="tile">
+                    <div class="color green" id="level4_speaking"></div>
+                    <div class="label">
+                      <h3 class="afterIcon">Level</h3>
+                    </div>
+                  </div>
+                </a>
+              </div>
+              <div id='level2' class="progress">
+                <div class="bar"></div>
+              </div>
+            </div>
+          </div>
+          <div class="course container reading">
+            <img src="images/icons/ECI_Reading.png">
+            <h3>Reading</h3>
+            <div class="courseWrapper">
+              <div class="tiles">
+                <a href="level4_reading.html">
+                  <div class="tile">
+                    <div class="color green" id="level1_speaking"></div>
+                    <div class="label">
+                      <h3 class="afterIcon">Level</h3>
+                    </div>
+                  </div>
+                </a>
+                <a href="level3_reading.html">
+                  <div class="tile">
+                    <div class="color green" id="level2_speaking"></div>
+                    <div class="label">
+                      <h3 class="afterIcon">Level</h3>
+                    </div>
+                  </div>
+                </a>
+                <a href="level2_reading.html">
+                  <div class="tile">
+                    <div class="color green" id="level3_speaking"></div>
+                    <div class="label">
+                      <h3 class="afterIcon">Level</h3>
+                    </div>
+                  </div>
+                </a>
+                <a href="level1_reading.html">
+                  <div class="tile">
+                    <div class="color green" id="level4_speaking"></div>
+                    <div class="label">
+                      <h3 class="afterIcon">Level</h3>
+                    </div>
+                  </div>
+                </a>
+              </div>
+              <div id='level3' class="progress">
+                <div class="bar"></div>
+              </div>
+            </div>
+          </div>
+          <div class="course container writing">
+            <img src="images/icons/ECI_Writing.png">
+            <h3>Writing</h3>
+            <div class="courseWrapper">
+              <div class="tiles">
+                <a href="level4_writing.html">
+                  <div class="tile">
+                    <div class="color green" id="level1_writing"></div>
+                    <div class="label">
+                      <h3 class="afterIcon">Level</h3>
+                    </div>
+                  </div>
+                </a>
+                <a href="level3_writing.html">
+                  <div class="tile">
+                    <div class="color green" id="level2_writing"></div>
+                    <div class="label">
+                      <h3 class="afterIcon">Level</h3>
+                    </div>
+                  </div>
+                </a>
+                <a href="level2_writing.html">
+                  <div class="tile">
+                    <div class="color green" id="level3_writing"></div>
+                    <div class="label">
+                      <h3 class="afterIcon">Level</h3>
+                    </div>
+                  </div>
+                </a>
+                <a href="level1_writing.html">
+                  <div class="tile">
+                    <div class="color green" id="level4_writing"></div>
+                    <div class="label">
+                      <h3 class="afterIcon">Level</h3>
+                    </div>
+                  </div>
+                </a>
+              </div>
+              <div id='level4' class="progress">
+                <div class="bar"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="awardBar" class="remove">
+        <div id="courseInfo">
+          <a class="button green info" href="course_info.html">Course Information</a>
+          <a class="button green info gradeIcon" href="top.location='https://byuh.instructure.com/courses/1458190/gradebook'">View My Grades</a>
+          <a id="getMaterials" class="info green button" href="gathering/ECI_gatheringmaterials.pdf" target="_blank">Get Gathering Materials</a>
+          <a class="help button" href="https://byui.az1.qualtrics.com/jfe/form/SV_6QhmgO7v782ZADb?&Page=index" target="_blank">Help</a>
+        </div>
+        <p class="reset">My Badges</p>
+        <img src="images/badges/FlatBadge_Journey.png" alt="Journey Begun" title="Journey Begun">
+      </div>
+    </div>
+    <div id="awards" class="content hidden remove"></div>
+    <div id="overlay" class="hidden"></div>
+    <p>
+      <script type="text/javascript" src="js/goals.js"></script>
+      <script src="js/grades.js" type="text/javascript"></script>
+      <script src="js/scripts.js" type="text/javascript"></script>
+    </p>
+  </div>
 </body>
 
 </html>

@@ -4,6 +4,7 @@
 var fs = require('fs'),
   data = require('./data.js'),
   d3 = require('d3-dsv'),
+  goalsContent = require('./eciLevelGoals2.js'),
   htmlFiles = require('./htmlFilesToObject.js')(),
   handlebars = require('Handlebars'),
   practicesPerPage = require('./practicesPerLevel.js'),
@@ -46,6 +47,10 @@ function topicLink(string) {
     return "t" + (data.topics.indexOf(string) + 1);
   }
 }
+
+handlebars.registerHelper('generateGoals', function (subject, level) {
+  return goalsContent[subject][level];
+})
 
 handlebars.registerHelper('generateLinks', function (subject, level, topic, practice) {
   var count = practicesPerPage[topic][subject][level];
