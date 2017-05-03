@@ -49,7 +49,7 @@ function topicLink(string) {
 }
 
 handlebars.registerHelper('generateGoals', function (subject, level) {
-  return goalsContent[subject][level];
+  return new handlebars.SafeString(goalsContent[subject + " " + level]);
 })
 
 handlebars.registerHelper('generateLinks', function (subject, level, topic, practice) {

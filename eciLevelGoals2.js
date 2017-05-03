@@ -32,4 +32,4 @@ var output = {
   "Speaking Level 4": "<p>Master the ability to:</p><ul><li>Give a Presentation</li><li>Narrate</li><li>Describe Objects, People, Places, and Events</li><li>Express &amp; Support Opinion</li><li>Compare &amp; Contrast Information</li><li>Give Step-by-Step Instructions</li><li>Summarize Information</li><li>Paraphrase Simple Ideas</li><li>Discuss Hypothetical Situations</li><li>Use Formal &amp; Informal Speech</li><li>Respond Correctly to Unexpected Situations</li></ul>"
 }
 
-module.exports = out;
+module.exports = output;
