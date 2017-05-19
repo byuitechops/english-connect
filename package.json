@@ -12,6 +12,7 @@
     "url": "git+https://github.com/byuicampuscd/english-connect.git"
   },
   "author": "Ben Harker",
+  "contributors": "Didymus Benson",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/byuicampuscd/english-connect/issues"
