@@ -11,14 +11,16 @@
     "type": "git",
     "url": "git+https://github.com/byuicampuscd/english-connect.git"
   },
-  "author": "Ben Harker",
-  "contributors": "Didymus Benson",
-  "license": "MIT",
   "bugs": {
     "url": "https://github.com/byuicampuscd/english-connect/issues"
   },
   "homepage": "https://github.com/byuicampuscd/english-connect#readme",
   "dependencies": {
     "d3-dsv": "^1.0.5"
-  }
+  },
+  "author": "Ben Harker",
+  "contributors": [{
+    "name": "Didymus Benson"
+  }],
+  "license": "MIT"
 }
